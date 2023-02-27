@@ -10,6 +10,7 @@ let MDXComponents = {
   a: Link,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
+    console.log({ components })
     let Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />
   },

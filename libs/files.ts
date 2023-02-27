@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-function pipe(...fns: Function[]) {
+function pipe(...fns: any[]) {
   return (x: any) => fns.reduce((v, f) => f(v), x)
 }
 

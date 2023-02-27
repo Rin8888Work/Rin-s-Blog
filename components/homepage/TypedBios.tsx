@@ -21,9 +21,9 @@ export function TypedBios() {
     <div>
       <ul id="bios" className="hidden">
         <li>
-          I'm aliased as <b className="font-medium">Leo</b> at work.
+          I&apos;m aliased as <b className="font-medium">Leo</b> at work.
         </li>
-        <li>I'm a learner, builder, and freedom seeker.</li>
+        <li>I&apos;m a learner, builder, and freedom seeker.</li>
         <li>
           I live in <b className="font-medium">Ha Noi, Viet Nam</b>.
         </li>
@@ -34,14 +34,14 @@ export function TypedBios() {
           My first programming language I learned was <b className="font-medium">Pascal</b>.
         </li>
         <li>I love web development.</li>
-        <li>I'm focusing on building eCommerce software.</li>
+        <li>I&apos;m focusing on building eCommerce software.</li>
         <li>I work mostly with JS/TS technologies.</li>
-        <li>I'm Tu Le's husband.</li>
+        <li>I&apos;m Tu Le&apos;s husband.</li>
         <li>
-          I'm a dog-person <Twemoji emoji="dog" />.
+          I&apos;m a dog-person <Twemoji emoji="dog" />.
         </li>
         <li>
-          I'm a sport-guy. I love
+          I&apos;m a sport-guy. I love
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
             <Twemoji emoji="man-swimming" />,

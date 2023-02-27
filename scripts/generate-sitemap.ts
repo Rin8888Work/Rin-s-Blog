@@ -1,8 +1,9 @@
 import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
+import { siteMetadata } from '~/data/siteMetadata'
 
-let SITE_URL = 'https://www.leohuynh.dev'
+let SITE_URL = siteMetadata.siteUrl
 
 ;(async () => {
   console.log('Generating sitemap...')
