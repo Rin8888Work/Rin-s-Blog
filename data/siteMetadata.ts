@@ -21,11 +21,11 @@ export let siteMetadata = {
   youtube: 'https://www.youtube.com/@rin8888work',
   linkedin: 'https://www.linkedin.com/in/rin8888work/',
   locale: 'en-US',
-  analyticsURL: 'https://analytics.leohuynh.dev/share/AwnJYH6n/leohuynh.dev',
+  analyticsURL: "https://analytics.umami.is/share/eWbwkSytsH6k4YrQ/Rin's%20Blog",
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    umamiWebsiteId: '32292c48-85c6-4338-85ff-a8d37482bb99', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    umamiWebsiteId: 'af8b54df-c1fa-4a45-aded-32b6e8ecc1fd', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
@@ -47,10 +47,10 @@ export let commentConfig = {
   provider: 'giscus', // 'giscus' | 'utterances' | 'disqus',
   // https://giscus.app/
   giscusConfig: {
-    repo: '', // process.env.GISCUS_REPO
-    repositoryId: '', // process.env.GISCUS_REPOSITORY_ID
-    category: '', // process.env.GISCUS_CATEGORY
-    categoryId: '', // process.env.GISCUS_CATEGORY_ID
+    repo: process.env.GISCUS_REPO, // process.env.GISCUS_REPO
+    repositoryId: process.env.GISCUS_REPOSITORY_ID, // process.env.GISCUS_REPOSITORY_ID
+    category: process.env.GISCUS_CATEGORY, // process.env.GISCUS_CATEGORY
+    categoryId: process.env.GISCUS_CATEGORY_ID, // process.env.GISCUS_CATEGORY_ID
     mapping: 'title',
     reactions: '1',
     metadata: '0',
