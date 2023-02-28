@@ -1,11 +1,11 @@
 import type { AnchorHTMLAttributes } from 'react'
 import type { SocialIconProps } from '~/types'
-import Facebook from '~/icons/facebook.svg'
-import Github from '~/icons/github.svg'
-import Linkedin from '~/icons/linkedin.svg'
-import Mail from '~/icons/mail.svg'
-import Twitter from '~/icons/twitter.svg'
-import Youtube from '~/icons/youtube.svg'
+import Facebook from '~/assets/icons/facebook.svg'
+import Github from '~/assets/icons/github.svg'
+import Linkedin from '~/assets/icons/linkedin.svg'
+import Mail from '~/assets/icons/mail.svg'
+import Twitter from '~/assets/icons/twitter.svg'
+import Youtube from '~/assets/icons/youtube.svg'
 
 export let SocialIconsMap = {
   Mail,

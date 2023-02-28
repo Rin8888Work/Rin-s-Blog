@@ -6,9 +6,9 @@ import { getCommentConfigs } from '~/libs/comment'
 import { formatSlug, getFiles } from '~/libs/files'
 import { generateRss } from '~/libs/generate-rss'
 import { getAllFilesFrontMatter, getFileBySlug } from '~/libs/mdx'
-import type { AuthorFrontMatter, BlogProps, MdxPageLayout } from '~/types'
+import type { AuthorFrontMatter, BlogProps, MdxScreenWidth } from '~/types'
 
-let DEFAULT_LAYOUT: MdxPageLayout = 'PostSimple'
+let DEFAULT_LAYOUT: MdxScreenWidth = 'PostSimple'
 
 export async function getStaticPaths() {
   let posts = getFiles('blog')

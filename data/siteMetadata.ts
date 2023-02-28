@@ -1,4 +1,6 @@
 export let siteMetadata = {
+  introduceWebsite:
+    'Phát triển bởi Nguyễn Văn Phước vào năm 2023, là blog cá nhân chia sẻ kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân nhanh nhất.',
   phoneNumber: '+84365610561',
   title: "Rin's blog - Frontend engineer",
   author: 'Rin',
@@ -15,6 +17,7 @@ export let siteMetadata = {
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
   email: 'work.rin8888@pm.me',
+  tiktok: '',
   github: 'https://github.com/rin8888work',
   twitter: 'https://twitter.com/rin8888work',
   facebook: 'https://facebook.com/nguyenvanphuoc.vn',

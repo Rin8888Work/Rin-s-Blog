@@ -1,7 +1,7 @@
 import type readingTime from 'reading-time'
 import type { DevIconsMap } from '~/components/DevIcon'
 
-export type MdxPageLayout =
+export type MdxScreenWidth =
   | 'AuthorLayout'
   | 'ListLayout'
   | 'PostLayout'
@@ -10,7 +10,7 @@ export type MdxPageLayout =
   | 'SnippetLayout'
 
 export interface MdxFrontMatter {
-  layout?: MdxPageLayout
+  layout?: MdxScreenWidth
   title: string
   name?: string
   date: string
@@ -47,7 +47,7 @@ export interface MdxFileData {
 }
 
 export interface MdxLayoutRendererProps {
-  layout: MdxPageLayout
+  layout: MdxScreenWidth
   mdxSource: string
   frontMatter: MdxFrontMatter
   [key: string]: any

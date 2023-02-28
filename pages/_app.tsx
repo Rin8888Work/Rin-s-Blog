@@ -1,5 +1,5 @@
-import 'css/tailwind.css'
-import 'css/twemoji.css'
+import '~/assets/css/tailwind.css'
+import '~/assets/css/twemoji.css'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'

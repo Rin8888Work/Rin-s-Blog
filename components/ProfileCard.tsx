@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ProfileCardInfo } from './ProfileInfo'
-import { SpotifyNowPlaying } from './SpotifyNowPlaying'
 
 export function ProfileCard() {
   let ref = useRef(null)
@@ -52,19 +51,20 @@ export function ProfileCard() {
     >
       <div
         style={style}
-        className="flex flex-col overflow-hidden bg-white shadow-cyan-100/50 transition-all duration-200 ease-out dark:bg-dark dark:shadow-cyan-700/50 xl:rounded-lg xl:shadow-lg"
+        className=" relative overflow-hidden rounded-lg bg-white shadow-lg shadow-cyan-100/50 transition-all duration-200 ease-out dark:bg-dark dark:shadow-cyan-700/50 sm:flex"
       >
-        <Image
-          src={'/static/images/logo.jpg'}
-          alt="avatar"
-          width={550}
-          height={350}
-          className="object-cover"
-          style={{ objectPosition: '50% 16%', width: 340, height: 220 }}
-        />
-        <SpotifyNowPlaying />
+        <div className="xl:w-2/4">
+          <Image
+            src={'/static/images/logo.jpg'}
+            alt="avatar"
+            width={320}
+            height={180}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        {/* <SpotifyNowPlaying /> */}
         <ProfileCardInfo />
-        <span className="h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+        <span className="absolute bottom-0 h-1.5 w-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
       </div>
     </div>
   )

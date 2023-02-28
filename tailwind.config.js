@@ -12,6 +12,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      maxWidth: {
+        '8xl': '90rem',
+      },
       keyframes: {
         wiggle: {
           '0%': { transform: 'rotate(0deg)' },

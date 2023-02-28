@@ -3,9 +3,9 @@ import { PageTitle } from '~/components/PageTitle'
 import { getCommentConfigs } from '~/libs/comment'
 import { formatSlug, getFiles } from '~/libs/files'
 import { getFileBySlug } from '~/libs/mdx'
-import type { MdxPageLayout, SnippetProps } from '~/types'
+import type { MdxScreenWidth, SnippetProps } from '~/types'
 
-let DEFAULT_LAYOUT: MdxPageLayout = 'PostSimple'
+let DEFAULT_LAYOUT: MdxScreenWidth = 'PostSimple'
 
 export async function getStaticPaths() {
   let snippets = getFiles('snippets')
