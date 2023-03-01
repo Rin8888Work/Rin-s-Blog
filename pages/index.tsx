@@ -12,17 +12,25 @@ import { siteMetadata } from '~/data/siteMetadata'
 import ScreenWidth from '~/layouts/ScreenWidth'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogFrontMatter } from '~/types'
+// import { useTranslation } from 'next-i18next'
+import type { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let posts = getAllFilesFrontMatter('blog')
-  return { props: { posts } }
+  return {
+    props: {
+      posts,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  }
 }
 
 export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
+  // const { t } = useTranslation()
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
-
       <ParticlesBg options={particlesData.header}>
         <ScreenWidth>
           <div className="mt-4 divide-y divide-gray-200 dark:divide-gray-700 md:mt-4">

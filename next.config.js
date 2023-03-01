@@ -1,8 +1,10 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const { i18n } = require('./next-i18next.config')
 
 module.exports = withBundleAnalyzer({
+  i18n,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   eslint: {
@@ -12,7 +14,8 @@ module.exports = withBundleAnalyzer({
     domains: ['i.scdn.co'],
   },
   typescript: { tsconfigPath: './tsconfig.json' },
-  webpack: (config, { dev, isServer }) => {
+  // webpack: (config, { dev, isServer }) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [

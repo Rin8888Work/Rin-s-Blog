@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { MDXLayoutRenderer } from '~/components/MDXComponents'
 import { PageTitle } from '~/components/PageTitle'
 import { POSTS_PER_PAGE } from '~/constant'
@@ -10,19 +11,31 @@ import type { AuthorFrontMatter, BlogProps, MdxScreenWidth } from '~/types'
 
 let DEFAULT_LAYOUT: MdxScreenWidth = 'PostSimple'
 
-export async function getStaticPaths() {
-  let posts = getFiles('blog')
+export async function getStaticPaths({ locales }) {
+  const posts = []
+  locales?.map((locale) => {
+    getFiles('blog')?.map((p: string) =>
+      posts.push({
+        params: {
+          slug: formatSlug(p).split('/'),
+        },
+        locale,
+      })
+    )
+  })
   return {
-    paths: posts.map((p: string) => ({
-      params: {
-        slug: formatSlug(p).split('/'),
-      },
-    })),
+    paths: posts,
     fallback: false,
   }
 }
 
-export async function getStaticProps({ params }: { params: { slug: string[] } }) {
+export async function getStaticProps({
+  locale,
+  params,
+}: {
+  params: { slug: string[] }
+  locale: 'en' | 'vi'
+}) {
   let allPosts = getAllFilesFrontMatter('blog')
   let postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
   let prev = allPosts[postIndex + 1] || null
@@ -44,7 +57,17 @@ export async function getStaticProps({ params }: { params: { slug: string[] } })
   fs.writeFileSync('./public/feed.xml', rss)
   let commentConfig = getCommentConfigs()
 
-  return { props: { post, authorDetails, prev, next, page, commentConfig } }
+  return {
+    props: {
+      post,
+      authorDetails,
+      prev,
+      next,
+      page,
+      commentConfig,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  }
 }
 
 export default function Blog(props: BlogProps) {

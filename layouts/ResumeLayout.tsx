@@ -2,12 +2,13 @@ import { PageSeo } from 'components/SEO'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { ResumeLayoutProps } from '~/types'
+import ScreenWidth from './ScreenWidth'
 
 export function ResumeLayout({ children }: ResumeLayoutProps) {
   let description = 'My professional career, experience, and skills.'
 
   return (
-    <>
+    <ScreenWidth>
       <PageSeo
         title={`Resume - ${siteMetadata.fullName} - ${description}`}
         description={`Resume - ${siteMetadata.fullName} - ${description}`}
@@ -24,7 +25,7 @@ export function ResumeLayout({ children }: ResumeLayoutProps) {
           <div className="prose prose-lg max-w-none pt-8 pb-8 dark:prose-dark">{children}</div>
         </div>
       </div>
-    </>
+    </ScreenWidth>
   )
 }
 

@@ -3,6 +3,7 @@ import { Pagination } from '~/components/Pagination'
 import { PostListItem } from '~/components/PostListItem'
 import { PostsSearch } from '~/components/PostsSearch'
 import type { ListLayoutProps } from '~/types'
+import ScreenWidth from './ScreenWidth'
 
 export function ListLayout(props: ListLayoutProps) {
   let { posts, title, initialDisplayPosts = [], pagination } = props
@@ -17,7 +18,7 @@ export function ListLayout(props: ListLayoutProps) {
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
   return (
-    <>
+    <ScreenWidth>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-4 pt-6 pb-12 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -39,7 +40,7 @@ export function ListLayout(props: ListLayoutProps) {
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}
-    </>
+    </ScreenWidth>
   )
 }
 

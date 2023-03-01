@@ -1,35 +1,78 @@
+import Image from 'next/image'
 import type { MdxFrontMatter } from '~/types'
 import { formatDate } from '~/utils/date'
+import { BlogTags } from './blog/BlogTags'
 import { Link } from './Link'
-import { Tag } from './Tag'
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
-  let { slug, date, title, summary, tags } = frontMatter
+  let { slug, date, title, summary, images, tags } = frontMatter
   return (
-    <li key={slug}>
-      <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-        <dl>
-          <dt className="sr-only">Published on</dt>
-          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-            <time dateTime={date}>{formatDate(date)}</time>
-          </dd>
-        </dl>
-        <div className="space-y-3 xl:col-span-3">
-          <div>
-            <h3 className="text-2xl font-bold leading-8 tracking-tight">
-              <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                <span className="umami--click--blog-title">{title}</span>
-              </Link>
-            </h3>
-            <div className="mt-1 flex flex-wrap">
-              {tags.map((tag) => (
-                <Tag key={tag} text={tag} />
-              ))}
+    <article key={slug}>
+      <div className="grid grid-cols-8 gap-6">
+        <div className=" relative col-span-3 h-52 w-full overflow-hidden rounded-md">
+          <Link href={`/blog/${slug}`}>
+            <Image
+              src={images[0]}
+              alt={title}
+              title={title}
+              layout="fill"
+              objectFit="cover"
+            ></Image>
+          </Link>
+        </div>
+        <div className="col-span-5 ">
+          <div className="space-y-5 xl:col-span-3">
+            <div className="flex flex-col space-y-3">
+              <div>
+                <h2 className="mb-1 text-xl font-bold tracking-tight">
+                  <Link
+                    href={`/blog/${slug}`}
+                    className="text-gray-900 hover:text-slate-900 dark:text-gray-100 dark:hover:text-slate-300"
+                    title={title}
+                  >
+                    <span className="umami--click--featured-title line-clamp-1">{title}</span>
+                  </Link>
+                </h2>
+              </div>
+              <dl>
+                <dt className="sr-only">Published on</dt>
+                <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <time dateTime={date}>{formatDate(date)}</time>
+                </dd>
+              </dl>
+              <div className="prose max-w-none text-gray-500 line-clamp-2 dark:text-gray-400">
+                {summary}
+              </div>
+              <BlogTags tags={tags} />
+              <div className="inline-flex">
+                <Link
+                  className="flex items-center text-sm font-medium text-sky-500"
+                  title={title}
+                  href={`/blog/${slug}`}
+                >
+                  <span className="relative">
+                    Đọc thêm
+                    <span className="sr-only">, {title}</span>
+                  </span>
+                  <svg
+                    className="relative mt-px ml-2.5 overflow-visible text-sky-300 dark:text-sky-700"
+                    width="3"
+                    height="6"
+                    viewBox="0 0 3 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M0 0L3 3L0 6"></path>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="prose max-w-none text-gray-500 dark:text-gray-400">{summary}</div>
         </div>
-      </article>
-    </li>
+      </div>
+    </article>
   )
 }

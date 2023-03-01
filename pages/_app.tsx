@@ -5,8 +5,9 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import { Analytics } from '~/components/analytics'
 import { LayoutWrapper } from '~/components/LayoutWrapper'
+import { appWithTranslation } from 'next-i18next'
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     // @ts-ignore
     <ThemeProvider attribute="class">
@@ -20,3 +21,5 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   )
 }
+
+export default appWithTranslation(App)
