@@ -1,28 +1,41 @@
-import { PageSeo } from 'components/SEO'
 import fs from 'fs'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import path from 'path'
-import { siteMetadata } from '~/data/siteMetadata'
-import { ListLayout } from '~/layouts/ListLayout'
+import TagLayout from '~/layouts/TagLayout'
 import { generateRss } from '~/libs/generate-rss'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
 import { getAllTags } from '~/libs/tags'
 import type { BlogFrontMatter } from '~/types'
 import { kebabCase } from '~/utils/kebab-case'
 
-export function getStaticPaths() {
+export function getStaticPaths({ locales }) {
   let tags = getAllTags('blog')
+  const paths = []
+
+  locales?.map((locale) => {
+    Object.keys(tags).map((tag) =>
+      paths.push({
+        params: {
+          tag,
+        },
+        locale,
+      })
+    )
+  })
 
   return {
-    paths: Object.keys(tags).map((tag) => ({
-      params: {
-        tag,
-      },
-    })),
+    paths,
     fallback: false,
   }
 }
 
-export async function getStaticProps({ params }: { params: { tag: string } }) {
+export async function getStaticProps({
+  locale,
+  params,
+}: {
+  locale: string
+  params: { tag: string }
+}) {
   let allPosts = getAllFilesFrontMatter('blog')
   let filteredPosts = allPosts.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
@@ -35,7 +48,13 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
   fs.mkdirSync(rssPath, { recursive: true })
   fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
 
-  return { props: { posts: filteredPosts, tag: params.tag } }
+  return {
+    props: {
+      posts: filteredPosts,
+      tag: params.tag,
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'header'])),
+    },
+  }
 }
 
 export default function Tag({ posts, tag }: { posts: BlogFrontMatter[]; tag: string }) {
@@ -43,11 +62,7 @@ export default function Tag({ posts, tag }: { posts: BlogFrontMatter[]; tag: str
   let title = tag[0] + tag.split(' ').join('-').slice(1)
   return (
     <>
-      <PageSeo
-        title={`${tag} - ${siteMetadata.title}`}
-        description={`${tag} tags - ${siteMetadata.title}`}
-      />
-      <ListLayout posts={posts} title={`Tag: #${title}`} />
+      <TagLayout posts={posts} title={title} />
     </>
   )
 }

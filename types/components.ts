@@ -6,7 +6,9 @@ import type { commentConfig } from '~/data/siteMetadata'
 import type { MdxFrontMatter, ReadingTime } from './mdx'
 
 export interface PageTitleProps {
-  children: React.ReactNode
+  children?: React.ReactNode
+  title?: string
+  leading?: string
 }
 
 export interface ImageLightBoxProps extends Pick<NextImageProps, 'src'> {
@@ -22,7 +24,7 @@ export interface ImageProps extends NextImageProps {
   shouldOpenLightbox?: boolean
 }
 
-export type ProjectDataType = typeof projectsData[0]
+export type ProjectDataType = (typeof projectsData)[0]
 
 export interface ProjectCardProps {
   project: ProjectDataType

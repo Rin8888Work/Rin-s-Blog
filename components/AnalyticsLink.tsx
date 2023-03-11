@@ -1,9 +1,12 @@
 import { siteMetadata } from '~/data/siteMetadata'
+import { useTranslation } from 'next-i18next'
 
 export function AnalyticsLink() {
+  const { t } = useTranslation('header')
   return (
     <button
-      aria-label="Open analytics"
+      title={t('analyticView')}
+      aria-label={t('analyticView')}
       type="button"
       className="umami--click--nav-analytics ml-1 rounded p-2 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
       onClick={() => window.open(siteMetadata.analyticsURL, '_blank')}

@@ -1,8 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { PageSeo } from '~/components/SEO'
 import { POSTS_PER_PAGE } from '~/constant'
-import { siteMetadata } from '~/data/siteMetadata'
-import { ListLayout } from '~/layouts/ListLayout'
+import { BlogLayout } from '~/layouts/BlogLayout'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogListProps } from '~/types'
 
@@ -19,7 +17,7 @@ export async function getStaticProps({ locale }) {
       posts,
       initialDisplayPosts,
       pagination,
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'header', 'blog'])),
     },
   }
 }
@@ -27,16 +25,7 @@ export async function getStaticProps({ locale }) {
 export default function Blog({ posts, initialDisplayPosts, pagination }: BlogListProps) {
   return (
     <>
-      <PageSeo
-        title={`All posts - ${siteMetadata.author}`}
-        description={siteMetadata.description}
-      />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
-      />
+      <BlogLayout posts={posts} initialDisplayPosts={initialDisplayPosts} pagination={pagination} />
     </>
   )
 }

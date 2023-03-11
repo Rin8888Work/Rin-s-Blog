@@ -61,9 +61,9 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
                     viewBox="0 0 3 6"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M0 0L3 3L0 6"></path>
                   </svg>

@@ -1,8 +1,11 @@
-import { headerNavLinks } from '~/data/headerNavLinks'
+import { headerNavLinks, headerToolbar } from '~/data/headerNavLinks'
 import { Link } from './Link'
 import clsx from 'clsx'
+import { useTranslation } from 'next-i18next'
 
 export function MobileNav({ navShow, onToggleNav }) {
+  const { t } = useTranslation('header')
+
   let className = clsx(
     `sm:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 transition-transform transform ease-in-out duration-300`,
     navShow ? 'translate-x-0' : 'translate-x-full'
@@ -29,14 +32,14 @@ export function MobileNav({ navShow, onToggleNav }) {
         </svg>
       </button>
       <nav className="fixed mt-8 h-full">
-        {headerNavLinks.map((link) => (
-          <div key={link.title} className="px-8 py-4">
+        {headerNavLinks.concat(headerToolbar).map((link) => (
+          <div key={t(link.title)} className="px-8 py-4">
             <Link
               href={link.href}
-              className="text-2xl font-semibold tracking-wide text-gray-900 dark:text-gray-100"
+              className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-100"
               onClick={onToggleNav}
             >
-              {link.title}
+              {t(link.title)}
             </Link>
           </div>
         ))}

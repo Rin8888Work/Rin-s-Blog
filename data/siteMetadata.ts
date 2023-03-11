@@ -1,3 +1,50 @@
+export let affiliatesLink = {
+  vultr: {
+    key: 'vultr-get-100',
+    label: 'vultr',
+    link: 'https://inet.vn/tld/xyz?aff=473034',
+    banner: '/static/images/promotions/vultr-100.png',
+  },
+  azdigiHosting: {
+    key: 'azdigi-hosting-quality-promotion-faint-50',
+    label: 'azdigiHosting',
+    link: 'https://inet.vn/tld/xyz?aff=473034',
+    banner: '/static/images/promotions/azdigi-hosting.png',
+  },
+  inetHostingFlashSale: {
+    key: 'inet-flash-sale-hosting-email-cloud-vps',
+    label: 'inetHostingFlashSale',
+    link: 'https://inet.vn/hosting/web-hosting?aff=473034',
+    banner: '/static/images/promotions/inet-flashsale.png',
+  },
+  inetDomainPromotion: {
+    key: 'inet-xyz-domain-name-promotion-program',
+    label: 'inetDomainPromotion',
+    link: 'https://inet.vn/tld/xyz?aff=473034',
+    banner:
+      'https://drive.inet.vn/uploads/donv@inet.vn/banner/ten mien xyz/file-1538977280140_ten-mien-xyz-29k.png',
+  },
+  inetHostingPromotion: {
+    key: 'inet-buy-hosting-and-get-a-free-com-or-net-domain-name',
+    label: 'inetHostingPromotion',
+    link: 'https://helpdesk.inet.vn/blog/mua-hosting-tang-ngay-ten-mien-quoc-te-chi-co-tai-inet?aff=473034',
+    banner:
+      'https://drive.inet.vn/uploads/trihd@inet.vn/ten-mien-hosting/file-1612317778648_file-1612241851550_facebook-ads(360x360).png',
+  },
+  tinoHosting: {
+    key: 'tino-the-number-1-hosting-provider-in-vietnam',
+    label: 'tinoHosting',
+    link: 'https://inet.vn/tld/xyz?aff=473034',
+    banner: '/static/images/promotions/tino-host.png',
+  },
+  hawkHosting: {
+    key: 'hawk-hosting',
+    label: 'hawkHosting',
+    link: 'https://inet.vn/tld/xyz?aff=473034',
+    banner: '/static/images/promotions/hawk-hosting.jpeg',
+  },
+}
+
 export let siteMetadata = {
   introduceWebsite:
     'Phát triển bởi Nguyễn Văn Phước vào năm 2023, là blog cá nhân chia sẻ kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân nhanh nhất.',
@@ -37,6 +84,38 @@ export let siteMetadata = {
     linkedin: 'rin8888work',
   },
   address: 'Dist 12, Ho Chi Minh city',
+  payments: [
+    {
+      methodName: 'vcb',
+      name: 'fullName',
+      bankNumber: '0911000052165',
+      logo: '/static/images/vcb.png',
+    },
+    {
+      methodName: 'vpbank',
+      name: 'fullName',
+      bankNumber: '89999999981',
+      logo: '/static/images/vpbank.png',
+    },
+    {
+      methodName: 'techcombank',
+      name: 'fullName',
+      bankNumber: '6853333333',
+      logo: '/static/images/techcombank.png',
+    },
+    {
+      methodName: 'momo',
+      name: 'fullName',
+      bankNumber: '0365610561',
+      logo: '/static/images/momo.png',
+    },
+    {
+      methodName: 'paypal',
+      name: 'fullName',
+      bankNumber: 'paypal.me/workrin8888',
+      logo: '/static/images/paypal.png',
+    },
+  ],
 }
 
 /**

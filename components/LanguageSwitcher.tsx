@@ -1,20 +1,22 @@
 import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 
 function LanguageSwitcher() {
   const router = useRouter()
+  const { t } = useTranslation('header')
 
   const handleLanguageChange = (value) => {
     router.push(router.pathname, router.asPath, { locale: value })
   }
   return (
     <button
-      title="Switch language"
-      aria-label="Toggle Language"
+      title={t('switchLanguage')}
+      aria-label={t('switchLanguage')}
       type="button"
       className="umami--click--nav-theme-switcher ml-1 rounded p-1.5"
       onClick={() => handleLanguageChange(router.locale == 'vi' ? 'en' : 'vi')}
     >
-      {router.locale == 'vi' ? (
+      {router.locale == 'en' ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"

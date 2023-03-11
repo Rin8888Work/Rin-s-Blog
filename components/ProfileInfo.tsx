@@ -77,7 +77,7 @@ export function ProfileCardInfo() {
           >
             <g>
               <path
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={1}

@@ -1,16 +1,23 @@
-import { PageSeo } from 'components/SEO'
-import ListLayout from 'layouts/ListLayout'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { POSTS_PER_PAGE } from '~/constant'
-import { siteMetadata } from '~/data/siteMetadata'
+import { BlogLayout } from '~/layouts/BlogLayout'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogListProps } from '~/types'
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
+  const paths = []
+
   let totalPosts = getAllFilesFrontMatter('blog')
   let totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
-  let paths = Array.from({ length: totalPages }, (_, i) => ({
-    params: { page: (i + 1).toString() },
-  }))
+
+  locales?.map((locale) => {
+    Array.from({ length: totalPages }, (_, i) =>
+      paths.push({
+        params: { page: (i + 1).toString() },
+        locale,
+      })
+    )
+  })
 
   return {
     paths,
@@ -18,7 +25,13 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: { params: { page: string } }) {
+export async function getStaticProps({
+  locale,
+  params,
+}: {
+  locale: string
+  params: { page: string }
+}) {
   let { page } = params
   let posts = getAllFilesFrontMatter('blog')
   let pageNumber = parseInt(page)
@@ -36,6 +49,7 @@ export async function getStaticProps({ params }: { params: { page: string } }) {
       posts,
       initialDisplayPosts,
       pagination,
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'header', 'blog'])),
     },
   }
 }
@@ -44,13 +58,7 @@ export default function PostPage(props: BlogListProps) {
   let { posts, initialDisplayPosts, pagination } = props
   return (
     <>
-      <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
-      />
+      <BlogLayout posts={posts} initialDisplayPosts={initialDisplayPosts} pagination={pagination} />
     </>
   )
 }

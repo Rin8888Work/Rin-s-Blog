@@ -1,4 +1,6 @@
 import { PageSeo } from 'components/SEO'
+import type { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { FeaturedPosts } from '~/components/homepage/FeaturedPosts'
 import { Greeting } from '~/components/homepage/Greeting'
 import { Heading } from '~/components/homepage/Heading'
@@ -12,22 +14,18 @@ import { siteMetadata } from '~/data/siteMetadata'
 import ScreenWidth from '~/layouts/ScreenWidth'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogFrontMatter } from '~/types'
-// import { useTranslation } from 'next-i18next'
-import type { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let posts = getAllFilesFrontMatter('blog')
   return {
     props: {
       posts,
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'home', 'header'])),
     },
   }
 }
 
 export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
-  // const { t } = useTranslation()
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />

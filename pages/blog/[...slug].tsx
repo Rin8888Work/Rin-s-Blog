@@ -65,7 +65,7 @@ export async function getStaticProps({
       next,
       page,
       commentConfig,
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'header'])),
     },
   }
 }

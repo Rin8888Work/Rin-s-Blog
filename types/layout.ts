@@ -3,14 +3,16 @@ import type { CommentConfigType } from './components'
 import type { AuthorFrontMatter, BlogFrontMatter, MdxFrontMatter, SnippetFrontMatter } from './mdx'
 import type { PaginationType } from './server'
 
+export interface PageLayoutProps {
+  children: React.ReactNode
+}
 export interface AuthorLayoutProps {
   children: React.ReactNode
   frontMatter: BlogFrontMatter
 }
 
-export interface ListLayoutProps {
+export interface BlogLayoutProps {
   posts: BlogFrontMatter[]
-  title: string
   initialDisplayPosts?: BlogFrontMatter[]
   pagination?: PaginationType
 }
@@ -24,7 +26,7 @@ export interface PostSimpleLayoutProps {
   page: number
 }
 
-export interface PostLayoutProps extends PostSimpleLayoutProps {}
+export type PostLayoutProps = PostSimpleLayoutProps
 
 export interface SnippetLayoutProps {
   snippets: SnippetFrontMatter[]

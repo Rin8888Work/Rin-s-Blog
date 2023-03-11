@@ -11,7 +11,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['components', 'constant', 'layouts', 'libs', 'pages', 'scripts', 'utils'],
   },
   images: {
-    domains: ['i.scdn.co'],
+    domains: ['drive.inet.vn'],
   },
   typescript: { tsconfigPath: './tsconfig.json' },
   // webpack: (config, { dev, isServer }) => {

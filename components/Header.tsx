@@ -1,7 +1,9 @@
 import clsx from 'clsx'
-import { headerNavLinks } from 'data/headerNavLinks'
+import { headerNavLinks, headerToolbar } from 'data/headerNavLinks'
 import NextImage from 'next/image'
 import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
+import { siteMetadata } from '~/data/siteMetadata'
 import ScreenWidth from '~/layouts/ScreenWidth'
 import { AnalyticsLink } from './AnalyticsLink'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -10,17 +12,37 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   let router = useRouter()
+  const { t } = useTranslation('header')
+
   return (
     <>
-      <header className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 overflow-x-hidden border-b border-slate-900/10 bg-white/75 py-3  backdrop-blur dark:border-slate-300/10  dark:bg-dark/75 ">
+      <div className="relative hidden bg-gradient-to-r from-yellow-800 to-red-800 py-2  pr-14 text-white dark:from-emerald-700  dark:to-lime-600 sm:block">
+        <ScreenWidth sx=" flex items-center text-sm leading-3 justify-end">
+          <div className="hidden space-x-2 sm:block">
+            {headerToolbar.map((link) => {
+              let className = clsx(
+                'inline-block rounded font-medium text-gray-100 px-1',
+                router.pathname === link.href ? 'underline' : 'hover:underline',
+                `umami--click--nav-${link.href.replace('/', '')}`
+              )
+              return (
+                <Link key={link.title} href={link.href}>
+                  <span className={className}>{t(link.title)}</span>
+                </Link>
+              )
+            })}
+          </div>
+        </ScreenWidth>
+      </div>
+      <header className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 overflow-x-hidden border-b border-slate-900/10 bg-white/75 py-1  backdrop-blur dark:border-slate-300/10  dark:bg-dark/75 ">
         <ScreenWidth sx=" flex max-w-3xl items-center justify-between">
           <div>
-            <Link href="/" aria-label="Leo's Blog">
+            <Link href="/" aria-label={siteMetadata.title}>
               <div className="umami--click--logo flex items-center justify-between">
                 <div className="mr-3 flex items-center justify-center">
                   <NextImage
                     src="/static/images/logo.jpg"
-                    alt="Leo's Blog logo"
+                    alt={siteMetadata.title}
                     width={45}
                     height={45}
                     className="rounded-full"
@@ -41,7 +63,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 )
                 return (
                   <Link key={link.title} href={link.href}>
-                    <span className={className}>{link.title}</span>
+                    <span className={className}>{t(link.title)}</span>
                   </Link>
                 )
               })}
@@ -71,9 +93,6 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           </div>
         </ScreenWidth>
       </header>
-      <div className="relative bg-gradient-to-r from-yellow-800 to-red-800 px-4 py-3 pr-14 text-white  dark:from-emerald-700 dark:to-lime-600">
-        <p className="text-center text-sm font-medium sm:text-center">Enjoy this moment!!!</p>
-      </div>
     </>
   )
 }
