@@ -1,9 +1,9 @@
-import { escape } from '~/utils/html-escaper'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { BlogFrontMatter } from '~/types'
+import { escape } from '~/utils/html-escaper';
+import { siteMetadata } from '~/data/siteMetadata';
+import type { BlogFrontMatter } from '~/types';
 
 function generateRssItem(post: BlogFrontMatter) {
-  return `
+	return `
   <item>
     <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
     <title>${escape(post.title)}</title>
@@ -13,11 +13,11 @@ function generateRssItem(post: BlogFrontMatter) {
     <author>${siteMetadata.email} (${siteMetadata.author})</author>
     ${post.tags && post.tags.map((t) => `<category>${t}</category>`).join('')}
   </item>
-`
+`;
 }
 
 export function generateRss(posts: BlogFrontMatter[], page = 'feed.xml') {
-  return `
+	return `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(siteMetadata.title)}</title>
@@ -31,5 +31,5 @@ export function generateRss(posts: BlogFrontMatter[], page = 'feed.xml') {
       ${posts.map(generateRssItem).join('')}
     </channel>
   </rss>
-`
+`;
 }

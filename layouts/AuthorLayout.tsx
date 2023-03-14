@@ -1,38 +1,39 @@
-import React from 'react'
-import { ProfileCard } from '~/components/ProfileCard'
-import { PageSeo } from '~/components/SEO'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { AuthorLayoutProps } from '~/types'
-import ScreenWidth from './ScreenWidth'
+import React from 'react';
+import { useTranslation } from 'next-i18next';
+import { PageTitle } from '~/components/PageTitle';
+import { ProfileCard } from '~/components/ProfileCard';
+import { PageSeo } from '~/components/SEO';
+import { siteMetadata } from '~/data/siteMetadata';
+import type { AuthorLayoutProps } from '~/types';
+import ScreenWidth from './ScreenWidth';
+import { ScrollTopButton } from '~/components/ScrollTopButton';
 
 export function AuthorLayout({ children }: AuthorLayoutProps) {
-  let title = 'About'
-  let description = 'More about me and this blog'
+	const { t } = useTranslation('author');
 
-  return (
-    <>
-      <PageSeo
-        title={`${title} - ${siteMetadata.author} - ${siteMetadata.title}`}
-        description={`${title} - ${siteMetadata.title} - ${description}`}
-      />
-      <ScreenWidth>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              {title}
-            </h1>
-            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">{description}</p>
-          </div>
-          <div className="items-start space-y-2 pt-8 xl:grid xl:grid-cols-3 xl:space-y-0">
-            <ProfileCard />
-            <div className="prose prose-lg max-w-none pb-8 dark:prose-dark xl:col-span-2 xl:pl-10">
-              {children}
-            </div>
-          </div>
-        </div>
-      </ScreenWidth>
-    </>
-  )
+	return (
+		<>
+			<PageSeo
+				title={`${t('title')} - ${siteMetadata.author} - ${siteMetadata.title}`}
+				description={`${t('title')} - ${siteMetadata.title} - ${t('leading')}`}
+			/>
+			<ScrollTopButton />
+			<PageTitle title={t('title')} leading={t('leading')} />
+
+			<ScreenWidth>
+				<div className="items-start space-y-2 pt-8 xl:grid xl:grid-cols-12 xl:space-y-0">
+					<div className="h-full xl:col-span-3">
+						<div className="sticky top-20 z-10">
+							<ProfileCard direction="column" />
+						</div>
+					</div>
+					<div className="prose prose-lg max-w-none pb-8 dark:prose-dark xl:col-span-9 xl:pl-10">
+						{children}
+					</div>
+				</div>
+			</ScreenWidth>
+		</>
+	);
 }
 
-export default AuthorLayout
+export default AuthorLayout;

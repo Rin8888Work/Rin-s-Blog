@@ -1,17 +1,17 @@
-let { replace } = ''
+let { replace } = '';
 
 // escape
 // let es = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g
-let ca = /[&<>'"]/g
+let ca = /[&<>'"]/g;
 
 let esca = {
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  "'": '&#39;',
-  '"': '&quot;',
-}
-let pe = (m: string): string => esca[m]
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	"'": '&#39;',
+	'"': '&quot;',
+};
+let pe = (m: string): string => esca[m];
 
 /**
  * Safely escape HTML entities such as `&`, `<`, `>`, `"`, and `'`.
@@ -21,5 +21,5 @@ let pe = (m: string): string => esca[m]
  *  converted as string.
  */
 export function escape(es: string): string {
-  return replace.call(es, ca, pe)
+	return replace.call(es, ca, pe);
 }

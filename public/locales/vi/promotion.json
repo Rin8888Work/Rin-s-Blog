@@ -1,11 +1,12 @@
 {
-  "title": "Khuyến mãi Domain, Hosting, VPS/Server",
-  "leading": "Khuyến mãi giảm giá, Mã giảm giá, Coupon khi mua Hosting, Domain, VPS/Server cập nhật hàng ngày.",
-  "description": "Khuyến mãi Domain, Hosting, VPS/Server cập nhật hàng ngày.",
-  "inetHostingPromotion": "Mua hosting tặng tên miền .COM/NET (Áp dụng Từ gói B với thời gian đăng ký 12 tháng trở lên với mức giá không khuyến mại)",
-  "inetHostingFlashSale": "Flash sale hosting, email, cloud vps",
-  "inetDomainPromotion": "Chương trình Ưu đãi Tên miền .XYZ chỉ 49K, giá cũ 260k",
-  "azdigiHosting": "Hosting chất khuyến mãi ngất 50%",
-  "tinoHosting": "Cung cấp hosting số 1 Việt Nam",
-  "hawkHosting": "Hawk hosting"
+	"title": "Khuyến mãi Domain, Hosting, VPS/Server",
+	"leading": "Khuyến mãi giảm giá, Mã giảm giá, Coupon khi mua Hosting, Domain, VPS/Server cập nhật hàng ngày.",
+	"description": "Khuyến mãi Domain, Hosting, VPS/Server cập nhật hàng ngày.",
+	"inetHostingPromotion": "Mua hosting tặng tên miền .COM/NET (Áp dụng Từ gói B với thời gian đăng ký 12 tháng trở lên với mức giá không khuyến mại)",
+	"inetHostingFlashSale": "Flash sale hosting, email, cloud vps",
+	"inetDomainPromotion": "Chương trình Ưu đãi Tên miền .XYZ chỉ 49K, giá cũ 260k",
+	"azdigiHosting": "Hosting chất khuyến mãi ngất 50%",
+	"tinoHosting": "Cung cấp hosting số 1 Việt Nam",
+	"hawkHosting": "Hawk hosting",
+	"promotionNewsTitle": "Tin tức khuyến mãi"
 }

@@ -1,11 +1,11 @@
-import type React from 'react'
-import type { PropsWithChildren } from 'react'
+import type React from 'react';
+import type { PropsWithChildren } from 'react';
 
 interface ScreenWidthProps {
-  sx?: string
+	sx?: string;
 }
 const ScreenWidth: React.FC<PropsWithChildren<ScreenWidthProps>> = ({ children, sx = '' }) => {
-  return <div className={`mx-auto max-w-5xl  px-3 xl:max-w-8xl xl:px-5 ${sx}`}>{children}</div>
-}
+	return <div className={`mx-auto max-w-5xl  px-3 xl:max-w-8xl xl:px-5 ${sx}`}>{children}</div>;
+};
 
-export default ScreenWidth
+export default ScreenWidth;
