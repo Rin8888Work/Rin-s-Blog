@@ -1,11 +1,13 @@
+import { useTranslation } from 'next-i18next';
 import { Twemoji } from '~/components/Twemoji';
 import { siteMetadata } from '~/data/siteMetadata';
 
 export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' }) {
+	const { t } = useTranslation('common');
 	return (
 		<div className={`py-4 px-5 xl:block ${direction === 'column' ? '' : 'xl:w-2/4'} xl:px-6`}>
 			<h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-				{siteMetadata.fullName}({siteMetadata.nickName})
+				{t(siteMetadata.fullName)}({siteMetadata.nickName})
 			</h3>
 			<h5 className="py-2 text-gray-700 dark:text-gray-400">
 				Mmo person - Website developer
@@ -88,7 +90,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 						</g>
 					</svg>
 
-					<a className="px-2" href={`tel:${siteMetadata.phoneNumber}`}>
+					<a className="px-2 hover:underline" href={`tel:${siteMetadata.phoneNumber}`}>
 						{siteMetadata.phoneNumber}
 					</a>
 				</div>
@@ -107,7 +109,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 							d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
 						/>
 					</svg>
-					<a className="px-2" href={`mailto:${siteMetadata.email}`}>
+					<a className="px-2 hover:underline" href={`mailto:${siteMetadata.email}`}>
 						{siteMetadata.email}
 					</a>
 				</div>

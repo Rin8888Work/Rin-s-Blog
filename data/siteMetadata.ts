@@ -43,13 +43,72 @@ export let affiliatesLink = {
 	},
 };
 
+export let giftsLink = {
+	vultr: {
+		key: 'vultr-get-100',
+		label: 'vultr',
+		link: 'https://inet.vn/tld/xyz?aff=473034',
+		banner: '/static/images/promotions/vultr-100.png',
+		title: 'gift1',
+	},
+	azdigiHosting: {
+		key: 'azdigi-hosting-quality-promotion-faint-50',
+		label: 'azdigiHosting',
+		link: 'https://inet.vn/tld/xyz?aff=473034',
+		banner: '/static/images/promotions/azdigi-hosting.png',
+	},
+	inetHostingFlashSale: {
+		key: 'inet-flash-sale-hosting-email-cloud-vps',
+		label: 'inetHostingFlashSale',
+		link: 'https://inet.vn/hosting/web-hosting?aff=473034',
+		banner: '/static/images/promotions/inet-flashsale.png',
+	},
+	inetDomainPromotion: {
+		key: 'inet-xyz-domain-name-promotion-program',
+		label: 'inetDomainPromotion',
+		link: 'https://inet.vn/tld/xyz?aff=473034',
+		banner: 'https://drive.inet.vn/uploads/donv@inet.vn/banner/ten mien xyz/file-1538977280140_ten-mien-xyz-29k.png',
+	},
+	inetHostingPromotion: {
+		key: 'inet-buy-hosting-and-get-a-free-com-or-net-domain-name',
+		label: 'inetHostingPromotion',
+		link: 'https://helpdesk.inet.vn/blog/mua-hosting-tang-ngay-ten-mien-quoc-te-chi-co-tai-inet?aff=473034',
+		banner: 'https://drive.inet.vn/uploads/trihd@inet.vn/ten-mien-hosting/file-1612317778648_file-1612241851550_facebook-ads(360x360).png',
+	},
+	tinoHosting: {
+		key: 'tino-the-number-1-hosting-provider-in-vietnam',
+		label: 'tinoHosting',
+		link: 'https://inet.vn/tld/xyz?aff=473034',
+		banner: '/static/images/promotions/tino-host.png',
+	},
+	hawkHosting: {
+		key: 'hawk-hosting',
+		label: 'hawkHosting',
+		link: 'https://inet.vn/tld/xyz?aff=473034',
+		banner: '/static/images/promotions/hawk-hosting.jpeg',
+	},
+};
+
+export const seedingLink = {
+	socialSeeding: {
+		key: 'social-seeding',
+		label: 'socialSeeding',
+		link: 'https://seeding.phuocnv.com',
+	},
+	adviseLink: {
+		key: 'advise',
+		label: 'adviseLink',
+		link: 'https://fb.com/nguyenvanphuoc.vn',
+	},
+};
+
 export let siteMetadata = {
 	introduceWebsite:
 		'Phát triển bởi Nguyễn Văn Phước vào năm 2023, là blog cá nhân chia sẻ kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân nhanh nhất.',
 	phoneNumber: '+84 36 561 0561',
 	title: "Rin's blog - Frontend engineer",
 	author: 'Rin',
-	fullName: 'Phuoc Nguyen Van',
+	fullName: 'nguyenvanphuoc',
 	nickName: 'Rin',
 	headerTitle: "Rin's blog - Frontend engineer",
 	footerTitle: "Rin's blog - Frontend engineer",

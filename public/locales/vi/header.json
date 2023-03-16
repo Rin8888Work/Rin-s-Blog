@@ -1,13 +1,14 @@
 {
-  "switchLanguage": "Thay đổi ngôn ngữ",
-  "switchTheme": "Thay đổi nền",
-  "analyticView": "Tổng quan về phân tích",
-  "blog": "Bài viết",
-  "tips": "Thủ thuật hay",
-  "projects": "Dự án",
-  "about": "Về mình",
-  "contact": "Liên hệ",
-  "gifts": "Quà tặng",
-  "payment": "Thanh toán",
-  "promotion": "Khuyến mãi Domain, Hosting, VPS/Server"
+	"switchLanguage": "Thay đổi ngôn ngữ",
+	"switchTheme": "Thay đổi nền",
+	"analyticView": "Tổng quan về phân tích",
+	"blog": "Bài viết",
+	"tips": "Thủ thuật hay",
+	"projects": "Dự án",
+	"about": "Về mình",
+	"contact": "Liên hệ",
+	"gifts": "Quà tặng",
+	"payment": "Thanh toán",
+	"promotion": "Khuyến mãi Domain, Hosting, VPS/Server",
+	"socialSeedingServices": "Dịch vụ mạng xã hội"
 }

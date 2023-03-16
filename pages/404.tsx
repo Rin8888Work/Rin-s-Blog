@@ -1,6 +1,16 @@
+import type { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import { Link } from '~/components/Link';
 import { Twemoji } from '~/components/Twemoji';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	return {
+		props: {
+			...(await serverSideTranslations(locale ?? 'en', ['common', 'header'])),
+		},
+	};
+};
 
 export default function FourZeroFour() {
 	return (

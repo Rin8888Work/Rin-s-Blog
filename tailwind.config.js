@@ -1,4 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -56,9 +55,6 @@ module.exports = {
 				12: '3rem',
 				13: '3.25rem',
 				14: '3.5rem',
-			},
-			fontFamily: {
-				sans: ['Outfit', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				primary: colors.indigo,
@@ -223,5 +219,27 @@ module.exports = {
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/line-clamp'),
+	],
+	safelist: [
+		'text-pink-700',
+		'text-rose-600',
+		'text-rose-900',
+		'text-sky-700',
+		'bg-sky-700',
+		'bg-pink-700',
+		'bg-rose-600',
+		'bg-rose-900',
+		'text-orange-500',
+		'bg-orange-500',
+		'text-sky-900',
+		'bg-sky-900',
+		'text-blue-300',
+		'bg-blue-300',
+		'text-indigo-200',
+		'bg-indigo-200',
+		'text-red-600',
+		'bg-red-600',
+		'text-yellow-600',
+		'bg-yellow-600',
 	],
 };

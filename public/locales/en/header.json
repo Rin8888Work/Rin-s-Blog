@@ -1,13 +1,14 @@
 {
-  "switchLanguage": "Switch language",
-  "switchTheme": "Switch theme",
-  "analyticView": "Analytics overview",
-  "blog": "Blog",
-  "tips": "Tips",
-  "projects": "Projects",
-  "about": "About",
-  "contact": "Contact",
-  "gifts": "Gifts",
-  "payment": "Payments",
-  "promotion": "Promotion Domain, Hosting, VPS/Server"
+	"switchLanguage": "Switch language",
+	"switchTheme": "Switch theme",
+	"analyticView": "Analytics overview",
+	"blog": "Blog",
+	"tips": "Tips",
+	"projects": "Projects",
+	"about": "About",
+	"contact": "Contact",
+	"gifts": "Gifts",
+	"payment": "Payments",
+	"promotion": "Promotion Domain, Hosting, VPS/Server",
+	"socialSeedingServices": "Social Services"
 }

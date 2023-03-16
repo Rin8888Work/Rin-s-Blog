@@ -1,13 +1,15 @@
-import { affiliatesLink } from '~/data/siteMetadata';
+import { affiliatesLink, seedingLink } from '~/data/siteMetadata';
+
+const allLink = { ...affiliatesLink, ...seedingLink };
 
 export function getKeysGoExternal() {
-	return Object.keys(affiliatesLink)?.map((key) => affiliatesLink[key].key);
+	return Object.keys(allLink)?.map((key) => allLink[key].key);
 }
 
 export function getLinkFromKey(key) {
-	const linkObj = Object.keys(affiliatesLink)
-		?.filter((k) => key === affiliatesLink[k]['key'])
-		?.map((k) => ({ ...affiliatesLink[k] }));
+	const linkObj = Object.keys(allLink)
+		?.filter((k) => key === allLink[k]['key'])
+		?.map((k) => ({ ...allLink[k] }));
 
 	return linkObj?.length > 0 ? linkObj[0]['link'] : 'not-found';
 }

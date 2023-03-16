@@ -1,0 +1,234 @@
+{
+	"title": "Dịch vụ mạng xã hội",
+	"leading": "Những dì mình có thể giúp bạn?",
+	"description": "Những dì mình có thể giúp bạn?",
+	"socialSeeding": "Socials seeding",
+	"websitePackage": "Thiết kế website trọn gói",
+	"advise": "Tư vấn",
+	"detail": "Xem chi tiết",
+	"price": "Giá: ",
+	"services": {
+		"facebook": {
+			"name": "Facebook",
+			"description": "Tổng hợp các dịch vụ Facebook Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ bán hàng Facebook hãy liên hệ với chúng tôi để được tư vấn",
+			"list": {
+				"buffLikePost": {
+					"name": "Tăng lượt thích bài viết",
+					"description": "Lượt thích và lượt chia sẻ sẽ đưa bài đăng của bạn đến gần hơn với nhiều người hơn. Theo nghiên cứu thì mỗi 1 lượt thích, bình luận và chia sẻ sẽ giúp bài đăng của bạn tiếp cận thêm với khoảng 6 - 7 người dùng mới. Các tương tác tương tác là cách tăng cận kề mà không mất thêm chi phí.",
+					"price": "1000/120k"
+				},
+				"buffLikeComment": {
+					"name": "Tăng lượt thích bình luận",
+					"price": "1000/120k"
+				},
+				"buffCommentPost": {
+					"name": "Tăng bình luận bài viết",
+					"price": "100/120k"
+				},
+				"buffSharePost": {
+					"name": "Tăng lượt chia sẻ bài viết",
+					"price": "1000/150k"
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi trang cá nhân",
+					"price": "1000/220k",
+					"description": "Vì con số bạn bè bị giới hạn có 5000 người , điều đó chưa đủ để bạn có thể kinh doanh hiệu quả được do vậy tăng theo dõi là cách hiệu quả dành cho nick facebook của bạn. Việc tăng theo dõi sẽ là cơ hội để có đa dạng đối tượng người dùng biết đến bạn hơn và trong số đó sẽ có những khách hàng tiềm năng cho bạn. Bạn có thể thấy với những người nổi tiếng hay với những cá nhân có lượng follow khủng mỗi bài viết họ đăng lên nhận được rất nhiều sự quan tâm tương tác của người dùng. Đây là 1 điều quan trọng nếu như bạn muốn phát triển kênh bán hàng trên facebook cá nhân."
+				},
+				"buffReviewFanpage": {
+					"name": "Tăng nhận xét/đánh giá fanpage",
+					"price": "100/300k",
+					"description": "Lợi ích của việc tăng đánh giá fanpage facebook: Khi đánh giá Fanpage của bạn, người dùng sau khi sử dụng sản phẩm, dịch vụ của bạn sẽ quay lại để có thể đánh giá chất lượng và chia sẻ trải nghiệm của họ trên fanpage. Từ đó, page của bạn trở nên uy tín hơn với Facebook cũng như khách hàng"
+				},
+				"buffLikeFanpage": {
+					"name": "Tăng lượt theo dõi fanpage",
+					"price": "1000/220k"
+				},
+				"buffEyeStream": {
+					"name": "Tăng mắt live stream",
+					"price": "100/120k",
+					"description": "Tăng mắt livestream giúp buổi livestream của bạn thu hút hơn nổi bật hơn, và điều quan trọng nhất là nó kích thích được nhu cầu của người tiêu dùng Việt Nam chúng ta đó chính là ngày càng đông càng tốt uy tín và chất lượng, đó chính là hiệu ứng đám đông mà việc tăng mắt livestream đến với các bạn."
+				},
+				"buffMemberGroup": {
+					"name": "Tăng thành viên nhóm",
+					"price": "1000/200k",
+					"description": "Giúp nhóm của bạn nổi bật và tăng độ uy tín, thu hút nhiều thành viên gia nhập hơn về sau"
+				},
+				"autoLikeMonth": {
+					"name": "Tự động like tháng",
+					"price": "Contact",
+					"description": "Nếu bạn bán hàng và muốn tăng độ uy tín thu hút người mua, bạn có thể sử dụng gói này. hệ thống sẽ tự động like các bài đăng của bạn trong khoảng thời gian bạn đăng kí. (5 bài viết mỗi ngày + số lượng like bạn muốn)"
+				},
+				"autoCommentMonth": {
+					"name": "Tự động bình luận tháng",
+					"price": "Contact",
+					"description": "Nếu bạn bán hàng và muốn tăng độ uy tín thu hút người mua, bạn có thể sử dụng gói này. hệ thống sẽ tự động bình luận các bài đăng của bạn trong khoảng thời gian bạn đăng kí. (5 bài viết mỗi ngày + số lượng like bạn muốn + nội dung bạn muốn bình luận)"
+				}
+			}
+		},
+		"instagram": {
+			"name": "Instagram",
+			"description": "Tổng hợp các dịch vụ Instagram Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ Instagram để bán hàng, hãy liên hệ với chúng tôi để được tư vấn ngay",
+			"list": {
+				"buffLike": {
+					"name": "Tăng lượt thích",
+					"price": ""
+				},
+				"buffComment": {
+					"name": "Tăng lượt bình luận",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi",
+					"price": ""
+				},
+				"buffLikeMonth": {
+					"name": "Tự động like tháng",
+					"price": ""
+				}
+			}
+		},
+		"tiktok": {
+			"name": "Tiktok",
+			"description": "Tổng hợp các dịch vụ TikTok Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ Tik Tok hãy liên hệ ngay với tôi để được tư vấn",
+			"list": {
+				"buffLike": {
+					"name": "Tăng lượt thích",
+					"price": ""
+				},
+				"buffComment": {
+					"name": "Tăng lượt bình luận",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi",
+					"price": ""
+				},
+				"buffLikeMonth": {
+					"name": "Tự động like tháng",
+					"price": ""
+				},
+				"buffView": {
+					"name": "Tăng lượt xem video",
+					"price": ""
+				},
+				"buffHeart": {
+					"name": "tăng tim video",
+					"price": ""
+				}
+			}
+		},
+		"youtube": {
+			"name": "Youtube",
+			"description": "Tổng hợp các dịch vụ Youtube Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ Youtube hãy liên hệ ngay với tôi để được tư vấn",
+			"list": {
+				"buffLike": {
+					"name": "Tăng lượt thích video",
+					"price": ""
+				},
+				"buffComment": {
+					"name": "Tăng bình luận video",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi kênh",
+					"price": ""
+				},
+				"buffView": {
+					"name": "Tăng lượt xem video",
+					"price": ""
+				}
+			}
+		},
+		"shopee": {
+			"name": "Shopee",
+			"description": "Tổng hợp các dịch vụ Shopee Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ Shopee, hãy liên hệ ngay với tôi để được tư vấn",
+			"list": {
+				"buffLike": {
+					"name": "Tăng lượt thích sản phẩm",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi shop",
+					"price": ""
+				}
+			}
+		},
+		"twitter": {
+			"name": "Twitter",
+			"description": "Tổng hợp các dịch vụ Twitter Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ Twitter hãy liên hệ ngay với tôi để được tư vấn",
+			"list": {
+				"buffLike": {
+					"name": "Tăng lượt thích",
+					"price": ""
+				},
+				"buffComment": {
+					"name": "Tăng bình luận",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng lượt theo dõi",
+					"price": ""
+				},
+				"buffRetweet": {
+					"name": "Tăng lượt trích dẫn",
+					"price": ""
+				}
+			}
+		},
+		"traffic": {
+			"name": "Tăng truy cập website",
+			"description": "Hiện tại chúng tôi có hơn 250.000 thành viên, bạn có thể sử dụng nó để đẩy SEO từ khóa lên Top hoặc tiếp cận người dùng để tăng độ nhận biết cho doanh nghiệp của mình.",
+			"list": {
+				"search": {
+					"name": "Thông qua google search",
+					"price": ""
+				},
+				"backlink": {
+					"name": "Thông qua backlink",
+					"price": ""
+				},
+				"direct": {
+					"name": "Truy cập trực tiếp",
+					"price": ""
+				},
+				"click": {
+					"name": "Click",
+					"price": ""
+				}
+			}
+		},
+		"review": {
+			"name": "Tăng nhận xét GGMap/Ứng dụng",
+			"description": "Chúng tôi hiện có hơn 30.000 thành viên, bạn có thể sử dụng số lượng thành viên này để nâng cao danh tiếng cho doanh nghiệp của mình",
+			"list": {
+				"googleMap": {
+					"name": "Đánh giá google map",
+					"price": ""
+				},
+				"application": {
+					"name": "Đánh giá ứng dụng",
+					"price": ""
+				}
+			}
+		},
+		"lazada": {
+			"name": "Lazada",
+			"description": "Tổng hợp các dịch vụ Lazada Marketing chất lượng nhất, giá tốt nhất. Nếu bạn cần dịch vụ của Lazada, hãy liên hệ ngay với tôi để được tư vấn",
+			"list": {
+				"buffLike": {
+					"name": "Tăng like sản phẩm",
+					"price": ""
+				},
+				"buffFollow": {
+					"name": "Tăng follow shop",
+					"price": ""
+				}
+			}
+		},
+		"other": {
+			"name": "DV khác",
+			"description": "Một số dịch vụ khác mình cung cấp",
+			"list": {}
+		}
+	}
+}

@@ -1,11 +1,10 @@
 import clsx from 'clsx';
 import { headerNavLinks, headerToolbar } from 'data/headerNavLinks';
+import { useTranslation } from 'next-i18next';
 import NextImage from 'next/image';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 import { siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
-import { AnalyticsLink } from './AnalyticsLink';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from './Link';
 import { ThemeSwitcher } from './ThemeSwitcher';
@@ -51,8 +50,8 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 							</div>
 						</Link>
 					</div>
-					<div className="flex items-center text-base leading-5">
-						<div className="hidden space-x-2 sm:block">
+					<nav className="flex items-center text-base leading-5">
+						<ul className="hidden space-x-2 sm:flex">
 							{headerNavLinks.map((link) => {
 								let className = clsx(
 									'inline-block rounded font-medium text-gray-900 dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
@@ -62,13 +61,15 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 									`umami--click--nav-${link.href.replace('/', '')}`
 								);
 								return (
-									<Link key={link.title} href={link.href}>
-										<span className={className}>{t(link.title)}</span>
-									</Link>
+									<li key={link.title}>
+										<Link href={link.href}>
+											<span className={className}>{t(link.title)}</span>
+										</Link>
+									</li>
 								);
 							})}
-						</div>
-						<AnalyticsLink />
+						</ul>
+						{/* <AnalyticsLink /> */}
 						<ThemeSwitcher />
 						<LanguageSwitcher />
 						<button
@@ -90,7 +91,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 								/>
 							</svg>
 						</button>
-					</div>
+					</nav>
 				</ScreenWidth>
 			</header>
 		</>
