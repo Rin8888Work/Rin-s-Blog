@@ -8,8 +8,16 @@ const baseTraffic = 'services.traffic';
 const baseReview = 'services.review';
 const baseLazada = 'services.lazada';
 const baseOther = 'services.other';
+const baseWebsite = 'services.website';
+const baseWebsitePriceList = 'website-price-list';
 
-export const getServicesData = () => {
+const websitePackage = {
+	basic: 'basic',
+	pro: 'pro',
+	highClass: 'high-class',
+};
+
+export const getSocialServicesData = () => {
 	const servicesData = [
 		{
 			name: `${baseFacebook}.name`,
@@ -250,4 +258,139 @@ export const getServicesData = () => {
 	];
 
 	return { servicesData };
+};
+
+export const getWebsiteServicesData = () => {
+	const listName = [
+		'byRequest',
+		'cheapPrice',
+		'introduce',
+		'ecommerce',
+		'realEstate',
+		'aesthetic',
+		'travel',
+		'hotel',
+		'wordpress',
+		'interior',
+		'news',
+		'law',
+		'ad',
+		'studyAbroad',
+	];
+
+	const servicesData = [
+		{
+			name: `${baseWebsite}.name`,
+			color: 'emerald-600',
+			description: `${baseWebsite}.description`,
+			list: listName?.map((name) => ({
+				name: `${baseWebsite}.list.${name}.name`,
+				price: `${baseWebsite}.list.${name}.price`,
+				description: `${baseWebsite}.list.${name}.description`,
+			})),
+		},
+	];
+
+	const moduleWebsite = [
+		{
+			name: 'administration',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'home',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'banner',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'category',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'new',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'contact',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'about',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{ name: 'cart', allow: [websitePackage.highClass] },
+		{ name: 'product', allow: [websitePackage.pro, websitePackage.highClass] },
+		{ name: 'product-detail', allow: [websitePackage.pro, websitePackage.highClass] },
+	];
+
+	const integralPart = [
+		{
+			name: 'live-chat',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{ name: 'multi-language', allow: [websitePackage.highClass] },
+		{
+			name: 'compatible-mobile',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'code-handover',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'banner-design',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'up-post',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'up-product',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{ name: 'optimize-speed', allow: [websitePackage.pro, websitePackage.highClass] },
+		{ name: 'ssl', allow: [websitePackage.pro, websitePackage.highClass] },
+		{ name: 'gg-analytic', allow: [websitePackage.pro, websitePackage.highClass] },
+		{ name: 'backup', allow: [websitePackage.pro, websitePackage.highClass] },
+		{
+			name: 'seo-standards',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'hosting-free',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'customization',
+			allow: [websitePackage.pro, websitePackage.highClass],
+		},
+
+		{
+			name: 'by-example',
+			allow: [websitePackage.basic, websitePackage.pro, websitePackage.highClass],
+		},
+		{
+			name: 'by-request',
+			allow: [websitePackage.highClass],
+		},
+	];
+
+	const websitePriceList = Object.keys(websitePackage)?.map((key) => ({
+		name: `${baseWebsitePriceList}.${websitePackage[key]}.name`,
+		description: `${baseWebsitePriceList}.${websitePackage[key]}.description`,
+		price: `${baseWebsitePriceList}.${websitePackage[key]}.price`,
+		moduleWebsite: moduleWebsite?.map((item) => ({
+			name: `moduleWebsiteList.${item.name}`,
+			isAllow: item.allow.includes(websitePackage[key]),
+		})),
+		integralPart: integralPart?.map((item) => ({
+			name: `integralPartList.${item.name}`,
+			isAllow: item.allow.includes(websitePackage[key]),
+		})),
+	}));
+
+	return { servicesData, websitePriceList };
 };

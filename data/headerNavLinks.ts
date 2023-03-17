@@ -3,12 +3,14 @@ export let headerNavLinks = [
 	{
 		href: '/social-services',
 		title: 'socialSeedingServices',
-		children: [
-			{
-				href: '/website',
-				title: 'website',
-			},
-		],
+	},
+	{
+		href: '/website-services',
+		title: 'websiteServices',
+	},
+	{
+		href: '/price-list',
+		title: 'priceList',
 	},
 	// { href: '/tips', title: 'tips' },
 	// { href: '/projects', title: 'projects' },

@@ -1,0 +1,54 @@
+{
+	"title": "Bảng giá",
+	"leading": "Tham khảo bảng giá cho dịch vụ của mình cung cấp",
+	"description": "Tham khảo bảng giá cho dịch vụ của mình cung cấp",
+	"module": "Mô-đun trang",
+	"integralPart": "Tích hợp",
+	"registerNow": "Nhận tư vấn",
+	"yes": "Có",
+	"no": "Không",
+	"moduleWebsiteList": {
+		"administration": "Quản trị",
+		"home": "Trang chủ",
+		"banner": "Banner",
+		"category": "Danh mục",
+		"new": "Tin tức",
+		"contact": "Liên hệ",
+		"about": "Giới thiệu",
+		"cart": "Giỏ hàng",
+		"product": "Sản phẩm",
+		"product-detail": "Chi tiết sản phẩm"
+	},
+	"integralPartList": {
+		"live-chat": "Trò chuyện trực tuyến",
+		"multi-language": "Đa ngôn ngữ",
+		"compatible-mobile": "Tương thích với phiên bản di động/tablet",
+		"code-handover": "Bàn giao mã nguồn",
+		"banner-design": "Thiết kế banner miễn phí",
+		"up-post": "Hỗ trợ đăng bài",
+		"up-product": "Hỗ trợ đăng sản phẩm",
+		"optimize-speed": "Tối ưu hóa tốc độ",
+		"ssl": "Bảo mật SSL miễn phí",
+		"gg-analytic": "Cài đặt phân tích google",
+		"backup": "Sao lưu tự động",
+		"seo-standards": "Thiết Kế Chuẩn SEO",
+		"hosting-free": "Miễn phí hosting 1 năm",
+		"by-request": "Thiết kế đặc biệt theo yêu cầu",
+		"by-example": "Thiết kế theo mẫu",
+		"customization": "Tùy biến giao diện"
+	},
+	"website-price-list": {
+		"basic": {
+			"name": "Cơ bản",
+			"price": "3 triệu - 5 triệu"
+		},
+		"pro": {
+			"name": "Chuyên nghiệp / Phổ biến",
+			"price": "5 triệu - 8 triệu"
+		},
+		"high-class": {
+			"name": "Cao cấp",
+			"price": "Từ 8 triệu"
+		}
+	}
+}

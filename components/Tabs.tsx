@@ -19,7 +19,7 @@ export function Tabs({ children }) {
 
 	return (
 		<>
-			<div className="flex flex-wrap justify-between gap-0 bg-white dark:bg-slate-900">
+			<div className="flex flex-wrap justify-center gap-0 bg-white dark:bg-slate-900">
 				{children.map((item, i) => {
 					return (
 						<div key={i}>
@@ -42,7 +42,7 @@ export function Tabs({ children }) {
 				{children.map((item, i) => {
 					return (
 						<div
-							className={`p-10 ${i === activeTab ? 'visible' : 'hidden'}  bg-${
+							className={`p-4 sm:p-10 ${i === activeTab ? 'visible' : 'hidden'}  bg-${
 								item.props.component.props?.color
 							} rounded-b text-white`}
 							key={i}
@@ -62,12 +62,12 @@ export function Tab({ children, activeTab, currentTab, setActiveTab, color }) {
 			{/* eslint-disable */}
 
 			<h2
-				className={`cursor-pointer rounded px-5  py-3 sm:rounded-t sm:rounded-b-none
+				className={`cursor-pointer rounded-t px-5  py-3  sm:rounded-b-none
       ${
 			activeTab === currentTab
 				? `bg-${color} text-white`
 				: `bg-white dark:bg-slate-900 text-${color}`
-		}  `}
+		} font-bold `}
 				onClick={() => setActiveTab(currentTab)}
 			>
 				{children}

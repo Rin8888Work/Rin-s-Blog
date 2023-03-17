@@ -241,5 +241,7 @@ module.exports = {
 		'bg-red-600',
 		'text-yellow-600',
 		'bg-yellow-600',
+		'text-emerald-600',
+		'bg-emerald-600',
 	],
 };
