@@ -7,16 +7,16 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function ContactLayout({ children }: PageLayoutProps) {
-	const { t } = useTranslation('contact');
+	const { t } = useTranslation(['contact', 'common']);
 
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${t('description')}`}
-				description={`${t('title')} - ${siteMetadata.fullName} - ${t('description')}`}
+				title={`${t('contact:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={`${t('contact:description')}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('contact:title')} leading={t('contact:leading')} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

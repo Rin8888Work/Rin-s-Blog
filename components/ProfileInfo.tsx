@@ -29,17 +29,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 						/>
 					</svg>
 
-					<p className="px-2">
-						CTO / Founder @
-						<a
-							target="_blank"
-							href="https://cheapershopping.net"
-							rel="noreferrer"
-							className="hover:underline"
-						>
-							Cheapershopping
-						</a>
-					</p>
+					<p className="px-2">Freelancer</p>
 				</div>
 
 				<div className="flex items-center text-gray-700 dark:text-gray-200">
@@ -65,7 +55,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 					</svg>
 
 					<p className="px-2">
-						{siteMetadata.address}
+						{t(siteMetadata.address)}
 						<span className="absolute ml-1 inline-flex pt-px">
 							<Twemoji emoji="flag-vietnam" />
 						</span>
@@ -91,7 +81,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 					</svg>
 
 					<a className="px-2 hover:underline" href={`tel:${siteMetadata.phoneNumber}`}>
-						{siteMetadata.phoneNumber}
+						{t(siteMetadata.phoneNumber)}
 					</a>
 				</div>
 				<div className="flex items-center text-gray-700 dark:text-gray-200">

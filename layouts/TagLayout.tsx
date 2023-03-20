@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PageTitle } from '~/components/PageTitle';
 import { Pagination } from '~/components/Pagination';
 import { PostListItem } from '~/components/PostListItem';
@@ -14,6 +15,7 @@ interface TagLayoutProps extends BlogLayoutProps {
 }
 
 export function TagLayout(props: TagLayoutProps) {
+	const { t } = useTranslation(['common']);
 	let { posts, title, initialDisplayPosts = [], pagination } = props;
 	let [searchValue, setSearchValue] = useState('');
 	let filteredBlogPosts = posts.filter((frontMatter) => {
@@ -28,8 +30,8 @@ export function TagLayout(props: TagLayoutProps) {
 	return (
 		<>
 			<PageSeo
-				title={`Tag - ${title} - ${siteMetadata.fullName}`}
-				description={siteMetadata.description}
+				title={`Tag - ${title} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={t(`common:${siteMetadata.description}`)}
 			/>
 			<PageTitle title={title} />
 			<ScrollTopButton />

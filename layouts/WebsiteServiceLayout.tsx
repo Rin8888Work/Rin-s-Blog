@@ -7,17 +7,16 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function WebsiteServiceLayout({ children }: PageLayoutProps) {
-	let description = 'My professional career, experience, and skills.';
-	const { t } = useTranslation('website');
+	const { t } = useTranslation(['website', 'common']);
 
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
-				description={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
+				title={`${t('website:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={`${t('website:description')}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('website:title')} leading={t('website:leading')} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

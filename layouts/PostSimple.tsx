@@ -16,33 +16,36 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 	let postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`;
 
 	return (
-		<ScreenWidth>
+		<>
 			<BlogSeo
 				url={`${siteMetadata.siteUrl}/${type}/${slug}`}
 				authorDetails={authorDetails}
 				{...frontMatter}
 			/>
 			<ScrollTopButton />
-			<div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-				<div className="lg:col-span-9">
-					<article>
-						<div>
-							<header className="py-6 xl:pb-16 xl:pt-16">
-								<div className="space-y-4">
-									<BlogTags tags={tags} />
-									<PageTitle>{title}</PageTitle>
-									<dl>
-										<div>
-											<dt className="sr-only">Published on</dt>
-											<BlogMeta
-												date={date}
-												slug={slug}
-												readingTime={readingTime}
-											/>
-										</div>
-									</dl>
+			<article>
+				<header>
+					<div className="space-y-4">
+						<PageTitle>
+							<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+								{title}
+							</h1>
+
+							<dl>
+								<div className="flex justify-center">
+									<dt className="sr-only">Published on</dt>
+									<BlogMeta date={date} slug={slug} readingTime={readingTime} />
 								</div>
-							</header>
+							</dl>
+							<div className="flex justify-center">
+								<BlogTags tags={tags} />
+							</div>
+						</PageTitle>
+					</div>
+				</header>
+				<ScreenWidth>
+					<div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+						<div className="lg:col-span-9">
 							<div className="pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
 								<div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
 									<div className="prose prose-lg max-w-none pb-8 dark:prose-dark md:prose-xl">
@@ -62,13 +65,13 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 								</div>
 							</div>
 						</div>
-					</article>
-				</div>
-				<div className="hidden lg:col-span-3 lg:block">
-					<BlogToc toc={toc} />
-				</div>
-			</div>
-		</ScreenWidth>
+						<div className="hidden lg:col-span-3 lg:block">
+							<BlogToc toc={toc} />
+						</div>
+					</div>
+				</ScreenWidth>
+			</article>
+		</>
 	);
 }
 

@@ -1,16 +1,21 @@
 import { PageSeo } from 'components/SEO';
 import type { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Link from 'next/link';
+import { BlogLinks } from '~/components/homepage/BlogLinks';
 import { FeaturedPosts } from '~/components/homepage/FeaturedPosts';
 import { Greeting } from '~/components/homepage/Greeting';
 import { Heading } from '~/components/homepage/Heading';
-import { ShortDescription } from '~/components/homepage/ShortDescription';
+import HomeService from '~/components/homepage/Service';
 import { TypedBios } from '~/components/homepage/TypedBios';
 import ParticlesBg from '~/components/Particles';
 import { ProfileCard } from '~/components/ProfileCard';
-import { Twemoji } from '~/components/Twemoji';
+import TitleSection from '~/components/TitleSection';
+import WebsitePricing from '~/components/WebsitePricing';
 import { particlesData } from '~/data/particlesData';
-import { siteMetadata } from '~/data/siteMetadata';
+import { homeServices } from '~/data/servicesData';
+import { seedingLink, siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import { getAllFilesFrontMatter } from '~/libs/mdx';
 import type { BlogFrontMatter } from '~/types';
@@ -20,15 +25,22 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	return {
 		props: {
 			posts,
-			...(await serverSideTranslations(locale ?? 'en', ['common', 'home', 'header'])),
+			...(await serverSideTranslations(locale ?? 'en', [
+				'common',
+				'home',
+				'header',
+				'price-list',
+			])),
 		},
 	};
 };
 
 export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
+	const { t } = useTranslation(['common', 'home']);
+
 	return (
 		<>
-			<PageSeo title={siteMetadata.title} description={siteMetadata.description} />
+			<PageSeo title={t(siteMetadata.title)} description={t(siteMetadata.description)} />
 			<ParticlesBg options={particlesData.header}>
 				<ScreenWidth>
 					<div className="mt-4 divide-y divide-gray-200 dark:divide-gray-700 md:mt-4">
@@ -38,12 +50,20 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
 								<div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
 									<Heading />
 									<TypedBios />
-									<ShortDescription />
-									{/* <BlogLinks /> */}
-									<p className="my-8 flex">
-										<span className="mr-2">Happy reading</span>
-										<Twemoji emoji="clinking-beer-mugs" />
-									</p>
+									<BlogLinks />
+									<Link
+										href={`/go/${seedingLink.adviseLink.key}`}
+										passHref
+										legacyBehavior
+									>
+										<a
+											className="mt-8 mb-8 inline-block rounded bg-teal-700  bg-gradient-to-r from-blue-500 to-teal-500 px-6 py-2.5 text-center text-base  uppercase leading-tight text-white transition-all duration-300 ease-in-out  hover:from-teal-500 hover:to-blue-500 focus:outline-none focus:ring-0 sm:mb-3 "
+											target={`_blank`}
+											href={`/go/${seedingLink.adviseLink.key}`}
+										>
+											{t(`home:connect`)}
+										</a>
+									</Link>
 								</div>
 							</div>
 							<div className="lg:items-center lg:justify-center xl:col-span-1 xl:flex">
@@ -54,6 +74,14 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
 				</ScreenWidth>
 			</ParticlesBg>
 			<ScreenWidth>
+				<section className="my-5 border-t border-gray-200 dark:border-gray-700 sm:my-10">
+					<TitleSection>{t('home:myService')}</TitleSection>
+					<HomeService services={homeServices} i18name={'home'} />
+				</section>
+				<section className="my-5 border-t border-gray-200 text-gray-800 dark:border-gray-700 sm:my-10">
+					<TitleSection>{t('home:quotePricing')}</TitleSection>
+					<WebsitePricing />
+				</section>
 				<FeaturedPosts posts={posts} />
 			</ScreenWidth>
 		</>

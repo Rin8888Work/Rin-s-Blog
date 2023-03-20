@@ -55,12 +55,12 @@
 				},
 				"autoLikeMonth": {
 					"name": "Tự động like tháng",
-					"price": "Contact",
+					"price": "Liên hệ",
 					"description": "Nếu bạn bán hàng và muốn tăng độ uy tín thu hút người mua, bạn có thể sử dụng gói này. hệ thống sẽ tự động like các bài đăng của bạn trong khoảng thời gian bạn đăng kí. (5 bài viết mỗi ngày + số lượng like bạn muốn)"
 				},
 				"autoCommentMonth": {
 					"name": "Tự động bình luận tháng",
-					"price": "Contact",
+					"price": "Liên hệ",
 					"description": "Nếu bạn bán hàng và muốn tăng độ uy tín thu hút người mua, bạn có thể sử dụng gói này. hệ thống sẽ tự động bình luận các bài đăng của bạn trong khoảng thời gian bạn đăng kí. (5 bài viết mỗi ngày + số lượng like bạn muốn + nội dung bạn muốn bình luận)"
 				}
 			}

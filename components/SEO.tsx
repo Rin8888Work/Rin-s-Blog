@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { siteMetadata } from '~/data/siteMetadata';
 import type { AuthorSEO, BlogSeoProps, PageSeoProps } from '~/types';
 
-export function PageSeo({ title, description }: PageSeoProps) {
+export function PageSeo({ title, description, image }: PageSeoProps) {
 	let router = useRouter();
 	return (
 		<Head>
@@ -12,7 +13,7 @@ export function PageSeo({ title, description }: PageSeoProps) {
 			<meta name="description" content={description} />
 			<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
 			<meta property="og:type" content="website" />
-			<meta property="og:site_name" content={siteMetadata.title} />
+			<meta property="og:site_name" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:title" content={title} />
 			<meta
@@ -23,16 +24,14 @@ export function PageSeo({ title, description }: PageSeoProps) {
 			<meta name="twitter:site" content={siteMetadata.twitter} />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
-			<meta
-				name="twitter:image"
-				content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`}
-			/>
+			{image && <meta name="twitter:image" content={`${siteMetadata.siteUrl}${image}`} />}
 		</Head>
 	);
 }
 
 export function BlogSeo(props: BlogSeoProps) {
 	let router = useRouter();
+	const { t } = useTranslation(['common']);
 
 	let { authorDetails, title, summary, date, lastmod, url, images = [] } = props;
 	let publishedAt = new Date(date).toISOString();
@@ -62,7 +61,7 @@ export function BlogSeo(props: BlogSeoProps) {
 	} else {
 		authorList = {
 			'@type': 'Person',
-			name: siteMetadata.author,
+			name: t(`common:${siteMetadata.author}`),
 		};
 	}
 
@@ -80,7 +79,7 @@ export function BlogSeo(props: BlogSeoProps) {
 		author: authorList,
 		publisher: {
 			'@type': 'Organization',
-			name: siteMetadata.author,
+			name: t(`common:${siteMetadata.author}`),
 			logo: {
 				'@type': 'ImageObject',
 				url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
@@ -92,14 +91,17 @@ export function BlogSeo(props: BlogSeoProps) {
 	return (
 		<>
 			<Head>
-				<title>{`${title} | ${siteMetadata.headerTitle}`}</title>
+				<title>{`${title} | ${t(`common:${siteMetadata.fullName}`)}`}</title>
 				<meta name="robots" content="follow, index" />
 				<meta name="description" content={summary} />
 				<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
 				<meta property="og:type" content="article" />
-				<meta property="og:site_name" content={siteMetadata.title} />
+				<meta property="og:site_name" content={t(`common:${siteMetadata.title}`)} />
 				<meta property="og:description" content={summary} />
-				<meta property="og:title" content={`${title} | ${siteMetadata.headerTitle}`} />
+				<meta
+					property="og:title"
+					content={`${title} | ${t(`common:${siteMetadata.fullName}`)}`}
+				/>
 				{featuredImages.map((img) => (
 					<meta property="og:image" content={img.url} key={img.url} />
 				))}

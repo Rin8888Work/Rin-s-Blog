@@ -25,6 +25,7 @@ export async function getStaticPaths({ locales }) {
 				})
 			);
 	});
+
 	return {
 		paths: posts,
 		fallback: false,

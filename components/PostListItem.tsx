@@ -5,7 +5,10 @@ import { BlogTags } from './blog/BlogTags';
 import { Link } from './Link';
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
-	let { slug, date, title, summary, images, tags } = frontMatter;
+	let { slug: slugWithLocale, date, title, summary, images, tags } = frontMatter;
+
+	const slug = slugWithLocale.split('.')[0];
+
 	return (
 		<article key={slug}>
 			<div className="grid grid-cols-8 gap-6">

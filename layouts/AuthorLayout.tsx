@@ -9,16 +9,16 @@ import ScreenWidth from './ScreenWidth';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
 
 export function AuthorLayout({ children }: AuthorLayoutProps) {
-	const { t } = useTranslation('author');
+	const { t } = useTranslation(['author', 'common']);
 
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.author} - ${siteMetadata.title}`}
-				description={`${t('title')} - ${siteMetadata.title} - ${t('leading')}`}
+				title={`${t('author:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={`${t('author:description')}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('author:title')} leading={t('author:leading')} />
 
 			<ScreenWidth>
 				<div className="items-start space-y-2 pt-8 xl:grid xl:grid-cols-12 xl:space-y-0">

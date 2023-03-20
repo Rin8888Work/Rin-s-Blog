@@ -1,5 +1,8 @@
 export let headerNavLinks = [
-	{ href: '/blog', title: 'blog' },
+	{
+		href: '/',
+		title: 'home',
+	},
 	{
 		href: '/social-services',
 		title: 'socialSeedingServices',
@@ -8,10 +11,11 @@ export let headerNavLinks = [
 		href: '/website-services',
 		title: 'websiteServices',
 	},
-	{
-		href: '/price-list',
-		title: 'priceList',
-	},
+	{ href: '/blog', title: 'blog' },
+	// {
+	// 	href: '/pricing',
+	// 	title: 'priceList',
+	// },
 	// { href: '/tips', title: 'tips' },
 	// { href: '/projects', title: 'projects' },
 ];

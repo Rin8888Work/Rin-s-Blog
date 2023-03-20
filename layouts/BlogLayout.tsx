@@ -11,7 +11,7 @@ import { PageSeo } from '~/components/SEO';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
 
 export function BlogLayout(props: BlogLayoutProps) {
-	const { t } = useTranslation('blog');
+	const { t } = useTranslation(['blog', 'common']);
 
 	let { posts, initialDisplayPosts = [], pagination } = props;
 	let [searchValue, setSearchValue] = useState('');
@@ -27,10 +27,10 @@ export function BlogLayout(props: BlogLayoutProps) {
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${t('leading')}`}
-				description={siteMetadata.description}
+				title={`${t('blog:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={t('blog:description')}
 			/>
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('blog:title')} leading={t('blog:leading')} />
 			<ScrollTopButton />
 
 			<ScreenWidth>

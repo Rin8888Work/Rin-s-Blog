@@ -7,16 +7,16 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function PromotionLayout({ children }: PageLayoutProps) {
-	const { t } = useTranslation('gift');
+	const { t } = useTranslation(['gift', 'common']);
 
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${t('description')}`}
-				description={`${t('title')} - ${siteMetadata.fullName} - ${t('description')}`}
+				title={`${t('gift:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={`${t('gift:description')}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('gift:title')} leading={t('gift:leading')} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

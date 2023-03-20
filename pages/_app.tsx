@@ -11,7 +11,7 @@ import { appWithTranslation } from 'next-i18next';
 function App({ Component, pageProps }) {
 	return (
 		// @ts-ignore
-		<ThemeProvider attribute="class">
+		<ThemeProvider attribute="class" defaultTheme="dark">
 			<Head>
 				<meta content="width=device-width, initial-scale=1" name="viewport" />
 			</Head>

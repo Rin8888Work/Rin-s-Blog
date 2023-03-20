@@ -1,12 +1,54 @@
 {
-  "welcome": "Welcome, bro",
-  "introduceMyself1": "I'm ",
-  "fullName": "Phuoc Van Nguyen",
-  "introduceMyself2": "- a website developer in ",
-  "introduceMyself3": "Ho Chi Minh city, VN",
-  "startLearn": "I started learning to code in 2017 and have been hooked ever since.",
-  "landed": "I landed my first job as a frontend engineer at SOC JSC",
-  "passion": "I have a passion for JS/TS, web dev, and eCommerce.",
-  "purpose": "I started this blog to document and share my knowledge & experience.",
-  "happy": "Happy reading"
+	"welcome": "Welcome, bro",
+	"introduceMyself1": "I'm ",
+	"fullName": "Phuoc Van Nguyen",
+	"introduceMyself2": "- a person who is passionate about making money online in ",
+	"introduceMyself3": "Ho Chi Minh city, VN",
+	"happy": "Happy reading",
+	"quotePricing": "Pricing of website design",
+	"myService": "My services",
+	"contactNow": "Contact now",
+	"services": {
+		"website": {
+			"name": "WEBSITE DESIGN",
+			"description": "Beautiful interface, professional design, scientific, quality assurance. Cheap SEO standard website, computer and phone display interface. Super fast loading speed. Free hosting, international domain name. Bao act forever."
+		},
+		"seeding": {
+			"name": "Seeding social networks",
+			"description": "Increasing reach to potential customers. Attract more quality traffic. Engaging content helps increase brand awareness. Build good information about brands' social networks."
+		},
+		"domain": {
+			"name": "DOMAIN",
+			"description": "Vietnamese national domain names, international domain names registered with full subject information. Domain names have reasonable selling prices, annual maintenance fees according to State regulations. Support consulting and configuration guidance. administration, handling technical issues 24/7."
+		},
+		"takeCare": {
+			"name": "WEBSITE CARE",
+			"description": "When building a website, we should invest in content and operate it in the later stage to help the brand develop further."
+		},
+		"hosting": {
+			"name": "Cheap HOSTING / VPS",
+			"description": "Excellent cheap hosting packages and VPS, optimizing costs for you. All the necessary elements are available to help you launch the project, manage and host the website."
+		},
+		"qualityContent": {
+			"name": "BUILD QUALITY CONTENT",
+			"description": "Use SEO standards to write articles. Link building is and will continue to be a very important component of Search Engine Optimization (SEO)."
+		}
+	},
+	"connect": "Connected with me",
+	"bios": {
+		"nickName": "I have another name at work, {{nickName}}",
+		"place": "I was born in the beautiful mountain town of Gia Lai",
+		"mainWork": "My main job is to design websites",
+		"supWork": "I also participate in crypto investment, providing social networking services",
+		"thankyou": "If you need my advice on any matter, feel free to contact me"
+	},
+	"internalLink": {
+		"blog": "Read more articles I share.",
+		"about": "More about me and myself?",
+		"socialService": "What social networking services do I provide?",
+		"promotion": "Where to choose hosting, domain, vps/server?",
+		"websiteService": "What website services do I provide?",
+		"payment": "How to pay yourself?",
+		"contact": "Are you looking for advice?"
+	}
 }

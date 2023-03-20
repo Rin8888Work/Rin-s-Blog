@@ -1,8 +1,19 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import { withTranslation } from 'next-i18next';
 class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
+		const initialProps = await Document.getInitialProps(ctx);
+
+		return {
+			...initialProps,
+			locale: ctx.locale || '',
+		};
+	}
+
 	render() {
+		const { locale }: any = this.props;
 		return (
-			<Html lang="en">
+			<Html lang={locale} className="dark">
 				<Head>
 					<link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/hat.png" />
 					<link
@@ -29,22 +40,15 @@ class MyDocument extends Document {
 						href="https://fonts.gstatic.com"
 						crossOrigin="anonymous"
 					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-						rel="stylesheet"
-					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
-						rel="stylesheet"
-					/>
 				</Head>
 				<body className="bg-white text-black antialiased dark:bg-slate-900 dark:text-white">
 					<Main />
 					<NextScript />
+					<script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js" async></script>
 				</body>
 			</Html>
 		);
 	}
 }
 
-export default MyDocument;
+export default withTranslation()(MyDocument);

@@ -1,3 +1,8 @@
+/**
+ *
+ * Each data here get value from i18n for multiple language
+ */
+
 export let affiliatesLink = {
 	vultr: {
 		key: 'vultr-get-100',
@@ -103,18 +108,15 @@ export const seedingLink = {
 };
 
 export let siteMetadata = {
-	introduceWebsite:
-		'Phát triển bởi Nguyễn Văn Phước vào năm 2023, là blog cá nhân chia sẻ kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân nhanh nhất.',
-	phoneNumber: '+84 36 561 0561',
-	title: "Rin's blog - Frontend engineer",
-	author: 'Rin',
+	introduceWebsite: 'introduceWebsite',
+	phoneNumber: 'phoneNumber',
+	title: 'title',
+	author: 'author',
 	fullName: 'nguyenvanphuoc',
 	nickName: 'Rin',
-	headerTitle: "Rin's blog - Frontend engineer",
-	footerTitle: "Rin's blog - Frontend engineer",
-	description:
-		'Phuoc Nguyen Van is a frontend engineer at Ho Chi Minh city. He is a developer 👨‍💻, blogger ✒️ and a person who is passionate about business and making money online',
-	language: 'en-us',
+	footerTitle: 'footerTitle',
+	description: 'description',
+	language: 'language',
 	siteUrl: 'https://www.phuocnv.com',
 	siteRepo: '',
 	siteLogo: '/static/images/logo.jpg',
@@ -140,7 +142,7 @@ export let siteMetadata = {
 		twitter: 'rin8888work',
 		linkedin: 'rin8888work',
 	},
-	address: 'Dist 12, Ho Chi Minh city',
+	address: 'address',
 	payments: [
 		{
 			methodName: 'vcb',

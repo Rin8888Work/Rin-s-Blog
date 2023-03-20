@@ -1,3 +1,5 @@
+import type { HomeServiceType } from '~/types/services';
+
 const baseFacebook = 'services.facebook';
 const baseInstagram = 'services.instagram';
 const baseTiktok = 'services.tiktok';
@@ -394,3 +396,36 @@ export const getWebsiteServicesData = () => {
 
 	return { servicesData, websitePriceList };
 };
+
+export const homeServices: HomeServiceType[] = [
+	{
+		name: `services.website.name`,
+		description: `services.website.description`,
+		image: `/static/images/services/website.png`,
+	},
+	{
+		name: `services.seeding.name`,
+		description: `services.seeding.description`,
+		image: `/static/images/services/seeding.png`,
+	},
+	{
+		name: `services.domain.name`,
+		description: `services.domain.description`,
+		image: `/static/images/services/domain.png`,
+	},
+	{
+		name: `services.takeCare.name`,
+		description: `services.takeCare.description`,
+		image: `/static/images/services/takeCare.png`,
+	},
+	{
+		name: `services.hosting.name`,
+		description: `services.hosting.description`,
+		image: `/static/images/services/hosting.png`,
+	},
+	{
+		name: `services.qualityContent.name`,
+		description: `services.qualityContent.description`,
+		image: `/static/images/services/qualityContent.png`,
+	},
+];

@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -55,6 +56,9 @@ module.exports = {
 				12: '3rem',
 				13: '3.25rem',
 				14: '3.5rem',
+			},
+			fontFamily: {
+				sans: [...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				primary: colors.indigo,
@@ -243,5 +247,6 @@ module.exports = {
 		'bg-yellow-600',
 		'text-emerald-600',
 		'bg-emerald-600',
+		'bg-teal-700',
 	],
 };

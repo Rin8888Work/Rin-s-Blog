@@ -7,17 +7,16 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function PaymentLayout({ children }: PageLayoutProps) {
-	let description = 'My professional career, experience, and skills.';
-	const { t } = useTranslation('payment');
+	const { t } = useTranslation(['payment', 'common']);
 
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
-				description={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
+				title={`${t('payment:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
+				description={`${t('payment:description')}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={t('payment:title')} leading={t('payment:leading')} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

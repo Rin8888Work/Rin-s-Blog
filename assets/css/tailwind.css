@@ -16,6 +16,10 @@
 	}
 }
 
+#__next {
+	white-space: pre-line;
+}
+
 .remark-code-title {
 	@apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200;
 }
@@ -95,7 +99,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: 'JetBrains Mono', monospace;
+	letter-spacing: initial;
 }
 
 html {
@@ -153,6 +157,7 @@ html.lightbox-loading * {
 
 .thumbnail-image img {
 	border-radius: 10px;
+	margin-top: 0 !important;
 }
 
 /* Some custom */

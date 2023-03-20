@@ -15,9 +15,12 @@ export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
 				{/* <div className="before:absolute before:block before:bg-pink-500"></div> */}
 			</div>
 			{children ? (
-				<h1 className="text-[34px] font-extrabold leading-10 tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl md:leading-14 lg:text-[54px] lg:leading-[64px]">
+				<div className="space-y-1 pt-6 pb-8 md:space-y-2">
 					{children}
-				</h1>
+					<div className="flex justify-center">
+						<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
+					</div>
+				</div>
 			) : (
 				<div className="space-y-1 pt-6 pb-8 md:space-y-2">
 					<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">

@@ -2,6 +2,7 @@
 	"switchLanguage": "Switch language",
 	"switchTheme": "Switch theme",
 	"analyticView": "Analytics overview",
+	"home": "Home",
 	"blog": "Blog",
 	"tips": "Tips",
 	"projects": "Projects",
@@ -12,5 +13,5 @@
 	"promotion": "Promotion Domain, Hosting, VPS/Server",
 	"socialSeedingServices": "Social Services",
 	"websiteServices": "Website design",
-	"priceList": "Price list"
+	"priceList": "Pricing"
 }

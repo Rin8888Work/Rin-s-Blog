@@ -1,8 +1,12 @@
-import { siteMetadata } from '~/data/siteMetadata';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { seedingLink, siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import { BuiltWith } from './BuiltWith';
 
 export function Footer() {
+	const { t } = useTranslation('common');
+
 	return (
 		<footer className="sm:mt-15 mt-10">
 			<ScreenWidth>
@@ -10,15 +14,30 @@ export function Footer() {
 					<div className="grid grid-cols-1 gap-8 pb-8 lg:grid-cols-2 xl:grid-cols-4">
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								Giới thiệu
+								{t('introduce')}
 							</h2>
-							<p className="mt-3">{siteMetadata.introduceWebsite}</p>
+							<p className="mt-3 text-justify">{t(siteMetadata.introduceWebsite)}</p>
 						</div>
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								Hệ sinh thái
+								{t('link')}
 							</h2>
 							<ul className="mt-3 space-y-2">
+								<li>
+									<Link
+										href={`/go/${seedingLink.socialSeeding.key}`}
+										passHref
+										legacyBehavior
+									>
+										<a
+											target={`_blank`}
+											href={`/go/${seedingLink.socialSeeding.key}`}
+											className={`umami--click--detail-seeding-page hover:text-slate-900 dark:hover:text-slate-300`}
+										>
+											Seeding
+										</a>
+									</Link>
+								</li>
 								<li>
 									<a
 										title="Facebook"
@@ -43,17 +62,6 @@ export function Footer() {
 								</li>
 								<li>
 									<a
-										href={siteMetadata?.tiktok || '#'}
-										title="Tiktok"
-										target="_blank"
-										rel="noreferrer"
-										className="hover:text-slate-900 dark:hover:text-slate-300"
-									>
-										Tiktok
-									</a>
-								</li>
-								<li>
-									<a
 										href={siteMetadata?.github || '#'}
 										title="Github"
 										target="_blank"
@@ -67,35 +75,35 @@ export function Footer() {
 						</div>
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								Chính sách &amp; Điều khoản
+								{t('policy')} &amp; {t('rules')}
 							</h2>
 							<ul className="mt-3 space-y-2">
 								<li>
-									<a
-										title="Chính sách bảo mật"
+									<Link
+										title={t('privacyPolicy')}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										href="/chinh-sach-bao-mat"
+										href="/privacy-policy"
 									>
-										Chính sách bảo mật
-									</a>
+										{t('privacyPolicy')}
+									</Link>
 								</li>
 								<li>
-									<a
-										title="Điều khoản"
+									<Link
+										title={t('rules')}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										href="/dieu-khoan"
+										href="/rules"
 									>
-										Điều khoản
-									</a>
+										{t('rules')}
+									</Link>
 								</li>
 								<li>
-									<a
-										title="Điều khoản"
+									<Link
+										title="RSS"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
 										href="/rss/feed.xml"
 									>
-										RSS Feed
-									</a>
+										RSS
+									</Link>
 								</li>
 							</ul>
 						</div>
@@ -106,7 +114,7 @@ export function Footer() {
 							</h2>
 							<div className="mt-3 space-y-2">
 								<iframe
-									title="Fanpage of mine"
+									title={`Fanpage of ${t(siteMetadata.fullName)}`}
 									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnguyenvanphuoc.page&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=433728550505340"
 									style={{ border: 'none', overflow: 'hidden' }}
 									width={'100%'}
@@ -118,10 +126,11 @@ export function Footer() {
 					</div>
 					<div className="mt-4 flex flex-col items-center justify-center py-10">
 						<BuiltWith />
-						<div className="my-2 mt-6 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+						<div className="my-2 mt-6 flex flex-col items-center justify-center space-x-2 text-sm text-gray-500 dark:text-gray-400 sm:flex-row">
 							<div>{`Copyright © ${new Date().getFullYear()}`}</div>
 							<span>{` • `}</span>
-							<span>{siteMetadata.footerTitle}</span>
+
+							<span className="text-center">{t(siteMetadata.footerTitle)}</span>
 						</div>
 					</div>
 				</div>
