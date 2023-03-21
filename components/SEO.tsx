@@ -23,19 +23,21 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 				property="og:image"
 				content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`}
 			/>
+			<meta property="og:image:alt" content={t(`common:${siteMetadata.fullName}`)} />
+
 			<meta property="profile:first_name" content="Phước" />
 			<meta property="profile:middle_name" content="Văn" />
 			<meta property="profile:last_name" content="Nguyễn" />
 			<meta property="profile:username" content="nguyenvanphuoc" />
 			<meta property="profile:gender" content="male" />
 
-			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:card" content="summary" />
 			<meta name="twitter:site" content={siteMetadata.twitter} />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			{image && <meta name="twitter:image" content={`${siteMetadata.siteUrl}${image}`} />}
 
-			<meta name="p:domain_verify" content={siteMetadata.domainVerifyId} />
+			<meta name="google-site-verification" content={siteMetadata.domainVerifyId} />
 			<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
 		</Head>
 	);

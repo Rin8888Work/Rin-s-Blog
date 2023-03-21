@@ -10,9 +10,13 @@ let SITE_URL = siteMetadata.siteUrl;
 	let prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
 	let pages = await globby([
 		'pages/*.tsx',
-		'data/blog/**/*.mdx',
-		'data/blog/**/*.md',
-		'public/tags/**/*.xml',
+		'data/blog/**/*.en.mdx',
+		'data/blog/**/*.en.md',
+		'data/promotions/**/*.en.mdx',
+		'data/promotions/**/*.en.md',
+		'data/snippets/**/*.en.mdx',
+		'data/snippets/**/*.en.md',
+		'public/rss/tags/**/*.en.xml',
 		'!pages/_*.tsx',
 		'!pages/api',
 	]);
@@ -25,11 +29,13 @@ let SITE_URL = siteMetadata.siteUrl;
 						let path = page
 							.replace('pages/', '/')
 							.replace('data/blog', '/blog')
-							.replace('public/', '/')
+							.replace('data/promotions', '/blog')
+							.replace('data/snippets', '/blog')
+							.replace('public/rss/', '/')
 							.replace('.ts', '')
-							.replace('.mdx', '')
-							.replace('.md', '')
-							.replace('/feed.xml', '');
+							.replace('.en.mdx', '')
+							.replace('.en.md', '')
+							.replace('/feed.en.xml', '');
 						let route = path === '/index' ? '' : path;
 						if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
 							return;
