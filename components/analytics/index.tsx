@@ -9,6 +9,8 @@ export function Analytics() {
 	if (isProduction) {
 		let { analytics } = siteMetadata;
 		let { simpleAnalytics, umamiWebsiteId, googleAnalyticsId } = analytics;
+
+		console.log({ googleAnalyticsId });
 		return (
 			<>
 				{simpleAnalytics && <SimpleAnalyticsScript />}
