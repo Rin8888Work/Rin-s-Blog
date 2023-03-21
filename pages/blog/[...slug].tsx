@@ -63,6 +63,7 @@ export async function getStaticProps({
 	let root = process.cwd();
 	let rss = generateRss(allPosts, `rss/feed.${locale}.xml`, locale);
 	let rssPath = path.join(root, 'public', 'rss');
+	fs.mkdirSync(rssPath, { recursive: true });
 	fs.writeFileSync(path.join(rssPath, `feed.${locale}.xml`), rss);
 
 	let commentConfig = getCommentConfigs();
