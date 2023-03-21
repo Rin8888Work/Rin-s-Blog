@@ -44,7 +44,10 @@ class MyDocument extends Document {
 				<body className="bg-white text-black antialiased dark:bg-slate-900 dark:text-white">
 					<Main />
 					<NextScript />
-					<script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js" async></script>
+					<script
+						src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
+						async
+					></script>
 				</body>
 			</Html>
 		);

@@ -23,12 +23,12 @@ export function BuiltWith() {
 				</Link>
 				<a
 					className="dmca-badge pl-px"
-					href="https://www.dmca.com/Protection/Status.aspx?id=5909999d-dcd1-4b33-b205-f6ad9e79f1c9"
+					href="https://www.dmca.com/Protection/Status.aspx?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<img
-						src="//images.dmca.com/Badges/dmca-badge-w100-5x1-04.png?ID=//www.dmca.com/Protection/Status.aspx?id=5909999d-dcd1-4b33-b205-f6ad9e79f1c9"
+						src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8"
 						alt="DMCA.com Protection Status"
 					/>
 				</a>

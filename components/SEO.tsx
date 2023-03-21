@@ -6,6 +6,8 @@ import type { AuthorSEO, BlogSeoProps, PageSeoProps } from '~/types';
 
 export function PageSeo({ title, description, image }: PageSeoProps) {
 	let router = useRouter();
+	const { t } = useTranslation(['common']);
+
 	return (
 		<Head>
 			<title>{title}</title>
@@ -16,15 +18,25 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 			<meta property="og:site_name" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:title" content={title} />
+			<meta property="og:locale" content={t(`common:${siteMetadata.language}`)} />
 			<meta
 				property="og:image"
 				content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`}
 			/>
+			<meta property="profile:first_name" content="Phước" />
+			<meta property="profile:middle_name" content="Văn" />
+			<meta property="profile:last_name" content="Nguyễn" />
+			<meta property="profile:username" content="nguyenvanphuoc" />
+			<meta property="profile:gender" content="male" />
+
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content={siteMetadata.twitter} />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			{image && <meta name="twitter:image" content={`${siteMetadata.siteUrl}${image}`} />}
+
+			<meta name="p:domain_verify" content={siteMetadata.domainVerifyId} />
+			<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
 		</Head>
 	);
 }
@@ -110,6 +122,15 @@ export function BlogSeo(props: BlogSeoProps) {
 				<meta name="twitter:title" content={title} />
 				<meta name="twitter:description" content={summary} />
 				<meta name="twitter:image" content={featuredImages[0].url} />
+				<meta property="og:locale" content={t(`common:${siteMetadata.language}`)} />
+				<meta property="profile:first_name" content="Phước" />
+				<meta property="profile:middle_name" content="Văn" />
+				<meta property="profile:last_name" content="Nguyễn" />
+				<meta property="profile:username" content="nguyenvanphuoc" />
+				<meta property="profile:gender" content="male" />
+				<meta name="google-site-verification" content={siteMetadata.domainVerifyId} />
+				<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
+
 				{date && <meta property="article:published_time" content={publishedAt} />}
 				{lastmod && <meta property="article:modified_time" content={modifiedAt} />}
 				<link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
