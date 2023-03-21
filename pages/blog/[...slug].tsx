@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { MDXLayoutRenderer } from '~/components/MDXComponents';
 import { PageTitle } from '~/components/PageTitle';
@@ -59,8 +60,10 @@ export async function getStaticProps({
 	);
 
 	// rss
+	let root = process.cwd();
 	let rss = generateRss(allPosts, `rss/feed.${locale}.xml`, locale);
-	fs.writeFileSync(`./public/rss/feed.${locale}.xml`, rss);
+	let rssPath = path.join(root, 'public', 'rss');
+	fs.writeFileSync(path.join(rssPath, `feed.${locale}.xml`), rss);
 
 	let commentConfig = getCommentConfigs();
 
