@@ -108,6 +108,8 @@ export const seedingLink = {
 };
 
 export let siteMetadata = {
+	domainVerifyId: '6oP9j3owBNBZc_m8OirYVDJM4UxVEN4fx-jhUVzQcMA',
+	dmcaVerifyId: 'fde0a6d4-3c92-4914-bccb-f1c7ded156b8',
 	introduceWebsite: 'introduceWebsite',
 	phoneNumber: 'phoneNumber',
 	title: 'title',
