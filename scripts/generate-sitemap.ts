@@ -33,6 +33,7 @@ let SITE_URL = siteMetadata.siteUrl;
 							.replace('data/snippets', '/blog')
 							.replace('public/rss/', '/')
 							.replace('.ts', '')
+							.replace('.tsx', '')
 							.replace('.en.mdx', '')
 							.replace('.en.md', '')
 							.replace('/feed.en.xml', '');
