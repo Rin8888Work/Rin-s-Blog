@@ -10,7 +10,6 @@ export function Analytics() {
 		let { analytics } = siteMetadata;
 		let { simpleAnalytics, umamiWebsiteId, googleAnalyticsId } = analytics;
 
-		console.log({ googleAnalyticsId });
 		return (
 			<>
 				{simpleAnalytics && <SimpleAnalyticsScript />}
