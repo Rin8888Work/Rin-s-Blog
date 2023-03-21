@@ -17,7 +17,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 export default function SocialServices() {
 	const { t } = useTranslation(['common', 'price-list']);
 	const { websitePriceList } = getWebsiteServicesData();
-	console.log({ websitePriceList });
 
 	return (
 		<PriceListLayout>

@@ -16,18 +16,7 @@ class MyDocument extends Document {
 			<Html lang={locale} className="dark">
 				<Head>
 					<link rel="apple-touch-icon" sizes="76x76" href="/static/images/logo.jpg" />
-					<link
-						rel="icon"
-						type="image/png"
-						sizes="32x32"
-						href="/static/images/logo.jpg"
-					/>
-					<link
-						rel="icon"
-						type="image/jpg"
-						sizes="16x16"
-						href="/static/favicons/hat.jpg"
-					/>
+					<link rel="icon" sizes="32x32" href="/static/favicons/favicon.ico" />
 					<link rel="manifest" href="/static/favicons/site.webmanifest" />
 					<link rel="mask-icon" href="/static/images/logo.jpg" color="#fff" />
 					<meta name="msapplication-TileColor" content="#000000" />
