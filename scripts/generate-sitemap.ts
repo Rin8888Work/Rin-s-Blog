@@ -32,8 +32,8 @@ let SITE_URL = siteMetadata.siteUrl;
 							.replace('data/promotions', '/blog')
 							.replace('data/snippets', '/blog')
 							.replace('public/rss/', '/')
-							.replace('.ts', '')
 							.replace('.tsx', '')
+							.replace('.ts', '')
 							.replace('.en.mdx', '')
 							.replace('.en.md', '')
 							.replace('/feed.en.xml', '');
