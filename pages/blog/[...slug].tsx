@@ -59,8 +59,9 @@ export async function getStaticProps({
 	);
 
 	// rss
-	let rss = generateRss(allPosts);
-	fs.writeFileSync('./public/feed.xml', rss);
+	let rss = generateRss(allPosts, `rss/feed.${locale}.xml`, locale);
+	fs.writeFileSync(`./public/rss/feed.${locale}.xml`, rss);
+
 	let commentConfig = getCommentConfigs();
 
 	return {

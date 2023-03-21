@@ -43,10 +43,10 @@ export async function getStaticProps({
 
 	// rss
 	let root = process.cwd();
-	let rss = generateRss(filteredPosts, `tags/${params.tag}/feed.xml`);
-	let rssPath = path.join(root, 'public', 'tags', params.tag);
+	let rss = generateRss(filteredPosts, `rss/tags/${params.tag}/feed.${locale}.xml`, locale);
+	let rssPath = path.join(root, 'public', 'rss', 'tags', params.tag);
 	fs.mkdirSync(rssPath, { recursive: true });
-	fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss);
+	fs.writeFileSync(path.join(rssPath, `feed.${locale}.xml`), rss);
 
 	return {
 		props: {

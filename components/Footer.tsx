@@ -1,10 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { seedingLink, siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import { BuiltWith } from './BuiltWith';
 
 export function Footer() {
+	const { locale } = useRouter();
 	const { t } = useTranslation('common');
 
 	return (
@@ -98,11 +100,18 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										title="RSS"
-										className="hover:text-slate-900 dark:hover:text-slate-300"
-										href="/rss/feed.xml"
+										href={`${siteMetadata.siteUrl}/rss/feed.${locale}.xml`}
+										passHref
+										legacyBehavior
 									>
-										RSS
+										<a
+											title="RSS"
+											className="hover:text-slate-900 dark:hover:text-slate-300"
+											href={`${siteMetadata.siteUrl}/rss/feed.${locale}.xml`}
+											target={'_blank'}
+										>
+											RSS
+										</a>
 									</Link>
 								</li>
 							</ul>

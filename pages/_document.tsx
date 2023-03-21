@@ -32,7 +32,7 @@ class MyDocument extends Document {
 					<link rel="mask-icon" href="/static/favicons/hat.png" color="#fff" />
 					<meta name="msapplication-TileColor" content="#000000" />
 					<meta name="theme-color" content="#000000" />
-					<link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+					<link rel="alternate" type="application/rss+xml" href="/rss/feed.xml" />
 
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link
