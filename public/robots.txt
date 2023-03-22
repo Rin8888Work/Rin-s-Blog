@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://phuocnv.com/sitemap.xml

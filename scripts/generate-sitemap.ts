@@ -24,26 +24,28 @@ let SITE_URL = siteMetadata.siteUrl;
 	let sitemap = `
 			<?xml version="1.0" encoding="UTF-8"?>
 			<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-				${pages
-					.map((page) => {
-						let path = page
-							.replace('pages/', '/')
-							.replace('data/blog', '/blog')
-							.replace('data/promotions', '/blog')
-							.replace('data/snippets', '/blog')
-							.replace('public/rss/', '/')
-							.replace('.tsx', '')
-							.replace('.ts', '')
-							.replace('.en.mdx', '')
-							.replace('.en.md', '')
-							.replace('/feed.en.xml', '');
-						let route = path === '/index' ? '' : path;
-						if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
-							return;
-						}
-						return `<url><loc>${SITE_URL}${route}</loc></url>\n`;
-					})
-					.join('')}
+				${['en', 'vi'].map((lang) =>
+					pages
+						.map((page) => {
+							let path = page
+								.replace('pages/', '/')
+								.replace('data/blog', '/blog')
+								.replace('data/promotions', '/blog')
+								.replace('data/snippets', '/blog')
+								.replace('public/rss/', '/')
+								.replace('.tsx', '')
+								.replace('.ts', '')
+								.replace('.en.mdx', '')
+								.replace('.en.md', '')
+								.replace('/feed.en.xml', '');
+							let route = path === '/index' ? '' : path;
+							if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
+								return;
+							}
+							return `<url><loc>${SITE_URL}/${lang}${route}</loc></url>\n`;
+						})
+						.join('')
+				)}
 			</urlset>
     `;
 
