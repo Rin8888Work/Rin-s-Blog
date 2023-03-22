@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { withTranslation } from 'next-i18next';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx);

@@ -13,7 +13,18 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 			<title>{title}</title>
 			<meta name="robots" content="follow, index" />
 			<meta name="description" content={description} />
-			<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+			<link
+				rel="canonical"
+				href={`${siteMetadata.siteUrl}${router.locale === 'en' ? '' : `/${router.locale}`}${
+					router.asPath
+				}`}
+			/>
+			<meta
+				property="og:url"
+				content={`${siteMetadata.siteUrl}${
+					router.locale === 'en' ? '' : `/${router.locale}`
+				}${router.asPath}`}
+			/>
 			<meta property="og:type" content="website" />
 			<meta property="og:site_name" content={title} />
 			<meta property="og:description" content={description} />
@@ -26,7 +37,6 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 			<meta property="og:image:alt" content={t(`common:${siteMetadata.fullName}`)} />
 
 			<meta property="profile:first_name" content="Phước" />
-			<meta property="profile:middle_name" content="Văn" />
 			<meta property="profile:last_name" content="Nguyễn" />
 			<meta property="profile:username" content="nguyenvanphuoc" />
 			<meta property="profile:gender" content="male" />
@@ -39,6 +49,7 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 
 			<meta name="google-site-verification" content={siteMetadata.domainVerifyId} />
 			<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
+			<meta name="author" content={t(`common:${siteMetadata.fullName}`)} />
 		</Head>
 	);
 }
@@ -108,7 +119,12 @@ export function BlogSeo(props: BlogSeoProps) {
 				<title>{`${title} | ${t(`common:${siteMetadata.fullName}`)}`}</title>
 				<meta name="robots" content="follow, index" />
 				<meta name="description" content={summary} />
-				<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+				<meta
+					property="og:url"
+					content={`${siteMetadata.siteUrl}${
+						router.locale === 'en' ? '' : `/${router.locale}`
+					}${router.asPath}`}
+				/>
 				<meta property="og:type" content="article" />
 				<meta property="og:site_name" content={t(`common:${siteMetadata.title}`)} />
 				<meta property="og:description" content={summary} />
@@ -119,6 +135,7 @@ export function BlogSeo(props: BlogSeoProps) {
 				{featuredImages.map((img) => (
 					<meta property="og:image" content={img.url} key={img.url} />
 				))}
+				<meta name="author" content={t(`common:${siteMetadata.fullName}`)} />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content={siteMetadata.twitter} />
 				<meta name="twitter:title" content={title} />
@@ -126,7 +143,6 @@ export function BlogSeo(props: BlogSeoProps) {
 				<meta name="twitter:image" content={featuredImages[0].url} />
 				<meta property="og:locale" content={t(`common:${siteMetadata.language}`)} />
 				<meta property="profile:first_name" content="Phước" />
-				<meta property="profile:middle_name" content="Văn" />
 				<meta property="profile:last_name" content="Nguyễn" />
 				<meta property="profile:username" content="nguyenvanphuoc" />
 				<meta property="profile:gender" content="male" />
@@ -135,7 +151,12 @@ export function BlogSeo(props: BlogSeoProps) {
 
 				{date && <meta property="article:published_time" content={publishedAt} />}
 				{lastmod && <meta property="article:modified_time" content={modifiedAt} />}
-				<link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
+				<link
+					rel="canonical"
+					href={`${siteMetadata.siteUrl}${
+						router.locale === 'en' ? '' : `/${router.locale}`
+					}${router.asPath}`}
+				/>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData, null, 2) }}
