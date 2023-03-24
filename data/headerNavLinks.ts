@@ -24,6 +24,6 @@ export let headerToolbar = [
 	// { href: '/gifts', title: 'gifts' },
 	{ href: '/promotion-domain-hosting-vps', title: 'promotion' },
 	{ href: '/payment', title: 'payment' },
-	{ href: '/about', title: 'about' },
+	// { href: '/about', title: 'about' },
 	{ href: '/contact', title: 'contact' },
 ];

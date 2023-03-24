@@ -27,19 +27,25 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 				<header>
 					<div className="space-y-4">
 						<PageTitle>
-							<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
-								{title}
-							</h1>
+							<ScreenWidth>
+								<h1 className="text-center text-2xl font-bold capitalize leading-9  text-gray-100 sm:leading-10 md:text-3xl md:leading-14 ">
+									{title}
+								</h1>
 
-							<dl>
+								<dl>
+									<div className="flex justify-center">
+										<dt className="sr-only">Published on</dt>
+										<BlogMeta
+											date={date}
+											slug={slug}
+											readingTime={readingTime}
+										/>
+									</div>
+								</dl>
 								<div className="flex justify-center">
-									<dt className="sr-only">Published on</dt>
-									<BlogMeta date={date} slug={slug} readingTime={readingTime} />
+									<BlogTags tags={tags} />
 								</div>
-							</dl>
-							<div className="flex justify-center">
-								<BlogTags tags={tags} />
-							</div>
+							</ScreenWidth>
 						</PageTitle>
 					</div>
 				</header>

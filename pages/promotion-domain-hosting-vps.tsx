@@ -11,7 +11,7 @@ import { getAllFilesFrontMatter } from '~/libs/mdx';
 import type { BlogFrontMatter } from '~/types';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-	let posts = getAllFilesFrontMatter('promotions');
+	let posts = getAllFilesFrontMatter(`promotions/${locale}`);
 
 	return {
 		props: {

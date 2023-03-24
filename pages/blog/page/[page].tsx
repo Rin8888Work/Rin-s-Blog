@@ -7,10 +7,12 @@ import type { BlogListProps } from '~/types';
 export async function getStaticPaths({ locales }) {
 	const paths = [];
 
-	let totalPosts = getAllFilesFrontMatter('blog').concat(getAllFilesFrontMatter('promotions'));
-	let totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE);
-
 	locales?.map((locale) => {
+		let totalPosts = getAllFilesFrontMatter(`blog/${locale}`).concat(
+			getAllFilesFrontMatter(`promotions/${locale}`)
+		);
+		let totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE);
+
 		Array.from({ length: totalPages }, (_, i) =>
 			paths.push({
 				params: { page: (i + 1).toString() },
@@ -33,7 +35,9 @@ export async function getStaticProps({
 	params: { page: string };
 }) {
 	let { page } = params;
-	let posts = getAllFilesFrontMatter('blog').concat(getAllFilesFrontMatter('promotions'));
+	let posts = getAllFilesFrontMatter(`blog/${locale}`).concat(
+		getAllFilesFrontMatter(`promotions/${locale}`)
+	);
 	let pageNumber = parseInt(page);
 	let initialDisplayPosts = posts.slice(
 		POSTS_PER_PAGE * (pageNumber - 1),

@@ -1,18 +1,19 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 import type { MdxFrontMatter } from '~/types';
 import { formatDate } from '~/utils/date';
 import { BlogTags } from './blog/BlogTags';
 import { Link } from './Link';
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
-	let { slug: slugWithLocale, date, title, summary, images, tags } = frontMatter;
+	let { slug, date, title, summary, images, tags } = frontMatter;
 
-	const slug = slugWithLocale.split('.')[0];
+	const { t } = useTranslation();
 
 	return (
 		<article key={slug}>
-			<div className="grid grid-cols-8 gap-6">
-				<div className=" relative col-span-3 h-52 w-full overflow-hidden rounded-md">
+			<div className="grid gap-4 sm:grid-cols-8 sm:gap-6">
+				<div className=" relative h-52 w-full overflow-hidden rounded-md sm:col-span-3">
 					<Link href={`/blog/${slug}`}>
 						<Image
 							src={images[0]}
@@ -23,9 +24,9 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
 						></Image>
 					</Link>
 				</div>
-				<div className="col-span-5 ">
-					<div className="space-y-5 xl:col-span-3">
-						<div className="flex flex-col space-y-3">
+				<div className="sm:col-span-5 ">
+					<div className="sm:space-y-5 xl:col-span-3">
+						<div className="flex flex-col space-y-1 sm:space-y-3">
 							<div>
 								<h2 className="mb-1 text-xl font-bold tracking-tight">
 									<Link
@@ -56,7 +57,7 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
 									href={`/blog/${slug}`}
 								>
 									<span className="relative">
-										Đọc thêm
+										{t('readMore')}
 										<span className="sr-only">, {title}</span>
 									</span>
 									<svg

@@ -14,5 +14,11 @@
 	"link": "Liên kết",
 	"policy": "Chính sách",
 	"privacyPolicy": "Chính sách bảo mật",
-	"rules": "Điều khoản"
+	"rules": "Điều khoản",
+	"tags": "Tags",
+	"searchPost": "Tìm kiếm bài viết...",
+	"notFound": "Không tìm thấy trang",
+	"notFoundT": "Hmm.. có vẻ như bạn bị lạc",
+	"notFoundContent": "Nhưng đừng lo lắng, bạn có thể tìm thấy nhiều thứ khác trên trang chủ.",
+	"notFoundButton": "Quay về trang chủ"
 }

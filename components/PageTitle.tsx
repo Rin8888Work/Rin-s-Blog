@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { siteMetadata } from '~/data/siteMetadata';
+import ScreenWidth from '~/layouts/ScreenWidth';
 import type { PageTitleProps } from '~/types';
 
 export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
@@ -14,28 +15,30 @@ export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
 				/>
 				{/* <div className="before:absolute before:block before:bg-pink-500"></div> */}
 			</div>
-			{children ? (
-				<div className="space-y-1 pt-6 pb-8 md:space-y-2">
-					{children}
-					<div className="flex justify-center">
-						<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
+			<ScreenWidth>
+				{children ? (
+					<div className="space-y-1 pt-6 pb-8 md:space-y-2">
+						{children}
+						<div className="flex justify-center">
+							<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
+						</div>
 					</div>
-				</div>
-			) : (
-				<div className="space-y-1 pt-6 pb-8 md:space-y-2">
-					<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
-						{title}
-					</h1>
-					{leading && (
-						<p className="px-8 text-center text-lg leading-7 text-gray-300">
-							{leading}
-						</p>
-					)}
-					<div className="flex justify-center">
-						<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
+				) : (
+					<div className="space-y-1 pt-6 pb-8 md:space-y-2">
+						<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+							{title}
+						</h1>
+						{leading && (
+							<p className="px-8 text-center text-lg leading-7 text-gray-300">
+								{leading}
+							</p>
+						)}
+						<div className="flex justify-center">
+							<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
+						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</ScreenWidth>
 		</div>
 	);
 }

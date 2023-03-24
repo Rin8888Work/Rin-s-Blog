@@ -24,9 +24,9 @@ const language = {
 function generateRssItem(post: BlogFrontMatter, locale: any) {
 	return `
   <item>
-    <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
+    <guid>${siteMetadata.siteUrl}/${locale}/blog/${post.slug}</guid>
     <title>${escape(post.title)}</title>
-    <link>${siteMetadata.siteUrl}/blog/${post.slug}</link>
+    <link>${siteMetadata.siteUrl}/${locale}/blog/${post.slug}</link>
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     <author>${siteMetadata.email} (${author[locale]})</author>
@@ -40,7 +40,7 @@ export function generateRss(posts: BlogFrontMatter[], page, locale: any) {
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(title[locale])}</title>
-      <link>${siteMetadata.siteUrl}/blog</link>
+      <link>${siteMetadata.siteUrl}/${locale}/blog</link>
       <description>${escape(description[locale])}</description>
       <language>${language[locale]}</language>
       <managingEditor>${siteMetadata.email} (${author[locale]})</managingEditor>

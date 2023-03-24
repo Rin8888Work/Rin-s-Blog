@@ -6,7 +6,7 @@ export function BlogTags({ tags }: { tags: string[] }) {
 	}
 
 	return (
-		<div className="flex flex-wrap">
+		<div className="mt-1 flex flex-wrap">
 			{tags.map((tag) => (
 				<Tag key={tag} text={tag} />
 			))}

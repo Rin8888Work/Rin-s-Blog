@@ -10,15 +10,21 @@ let SITE_URL = siteMetadata.siteUrl;
 	let prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
 	let pages = await globby([
 		'pages/*.tsx',
-		'data/blog/**/*.en.mdx',
-		'data/blog/**/*.en.md',
-		'data/promotions/**/*.en.mdx',
-		'data/promotions/**/*.en.md',
-		'data/snippets/**/*.en.mdx',
-		'data/snippets/**/*.en.md',
 		'public/rss/tags/**/*.en.xml',
 		'!pages/_*.tsx',
 		'!pages/api',
+	]);
+	let viDynamicPages = await globby([
+		'data/blog/vi/**/*.mdx',
+		'data/blog/vi/**/*.md',
+		'data/promotions/vi/**/*.mdx',
+		'data/promotions/vi/**/*.md',
+	]);
+	let enDynamicPages = await globby([
+		'data/blog/en/**/*.mdx',
+		'data/blog/en/**/*.md',
+		'data/promotions/en/**/*.mdx',
+		'data/promotions/en/**/*.md',
 	]);
 
 	let sitemap = `
@@ -29,15 +35,10 @@ let SITE_URL = siteMetadata.siteUrl;
 						.map((page) => {
 							let path = page
 								.replace('pages/', '/')
-								.replace('data/blog', '/blog')
-								.replace('data/promotions', '/blog')
-								.replace('data/snippets', '/blog')
 								.replace('public/rss/', '/')
 								.replace('.tsx', '')
 								.replace('.ts', '')
-								.replace('.en.mdx', '')
-								.replace('.en.md', '')
-								.replace('/feed.en.xml', '');
+								.replace(`/feed.en.xml`, '');
 							let route = path === '/index' ? '' : path;
 							if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
 								return;
@@ -46,6 +47,30 @@ let SITE_URL = siteMetadata.siteUrl;
 						})
 						.join('')
 				)}
+				${enDynamicPages
+					.map((page) => {
+						let path = page
+							.replace('data/blog/en', '/blog')
+							.replace('data/promotions/en', '/blog')
+							.replace('.mdx', '')
+							.replace('.md', '');
+						let route = path === '/index' ? '' : path;
+
+						return `<url><loc>${SITE_URL}/en${route}</loc></url>\n`;
+					})
+					.join('')}
+				${viDynamicPages
+					.map((page) => {
+						let path = page
+							.replace('data/blog/vi', '/blog')
+							.replace('data/promotions/vi', '/blog')
+							.replace('.mdx', '')
+							.replace('.md', '');
+						let route = path === '/index' ? '' : path;
+
+						return `<url><loc>${SITE_URL}/vi${route}</loc></url>\n`;
+					})
+					.join('')}
 			</urlset>
     `;
 
