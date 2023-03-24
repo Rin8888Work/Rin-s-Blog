@@ -5,7 +5,7 @@ import { getAllFilesFrontMatter } from '~/libs/mdx';
 import type { BlogListProps } from '~/types';
 
 export async function getStaticProps({ locale }) {
-	let posts = getAllFilesFrontMatter('blog');
+	let posts = getAllFilesFrontMatter(`blog/${locale}`);
 	let initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE);
 	let pagination = {
 		currentPage: 1,

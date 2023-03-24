@@ -12,7 +12,6 @@ type MDXComponentMap = {
 
 const MDXComponents: MDXComponentMap = {
 	Image,
-
 	a: Link,
 	pre: Pre,
 	wrapper: ({ components, layout, ...rest }: MdxLayoutRendererProps) => {

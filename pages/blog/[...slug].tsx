@@ -1,6 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import path from 'path';
 import { MDXLayoutRenderer } from '~/components/MDXComponents';
 import { PageTitle } from '~/components/PageTitle';
 import { POSTS_PER_PAGE } from '~/constant';
@@ -15,8 +15,8 @@ let DEFAULT_LAYOUT: MdxScreenWidth = 'PostSimple';
 export async function getStaticPaths({ locales }) {
 	const posts = [];
 	locales?.map((locale) => {
-		getFiles('blog')
-			.concat(getFiles('promotions'))
+		getFiles(`blog/${locale}`)
+			.concat(getFiles(`promotions/${locale}`))
 			?.map((p: string) =>
 				posts.push({
 					params: {
@@ -40,20 +40,22 @@ export async function getStaticProps({
 	params: { slug: string[] };
 	locale: 'en' | 'vi';
 }) {
-	let allPosts = getAllFilesFrontMatter('blog').concat(getAllFilesFrontMatter('promotions'));
+	let allPosts = getAllFilesFrontMatter(`blog/${locale}`).concat(
+		getAllFilesFrontMatter(`promotions/${locale}`)
+	);
 	let postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'));
 	let prev = allPosts[postIndex + 1] || null;
 	let next = allPosts[postIndex - 1] || null;
 	let page = Math.ceil((postIndex + 1) / POSTS_PER_PAGE);
 	let post = await getFileBySlug(
-		allPosts[postIndex]?.cat === 'promotion' ? 'promotions' : 'blog',
+		allPosts[postIndex]?.cat === 'promotion' ? `promotions/${locale}` : `blog/${locale}`,
 		params.slug.join('/')
 	);
 
 	let authors = post.frontMatter.authors || ['default'];
 	let authorDetails = await Promise.all(
 		authors.map(async (author) => {
-			let authorData = await getFileBySlug('authors', author);
+			let authorData = await getFileBySlug(`authors/${locale}`, author);
 			// eslint-disable-next-line
 			return authorData.frontMatter as unknown as AuthorFrontMatter;
 		})

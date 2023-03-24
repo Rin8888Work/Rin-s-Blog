@@ -26,7 +26,7 @@ export function getAllFilesRecursively(folder: string): string[] {
 }
 
 export function formatSlug(slug: string) {
-	return slug.replace(/\.(en|vi).(mdx|md)/, '');
+	return slug.replace(/\.(mdx|md)/, '');
 }
 
 export function getFiles(type: string): string[] {

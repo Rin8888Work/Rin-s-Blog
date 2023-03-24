@@ -12,7 +12,7 @@ export function Footer() {
 	return (
 		<footer className="sm:mt-15 mt-10">
 			<ScreenWidth>
-				<div className="divide-y divide-slate-200 border-t border-t-slate-200 px-4 pt-10 dark:divide-slate-700 dark:border-t-slate-700 md:px-5">
+				<div className="divide-y divide-slate-200 border-t border-t-slate-200 pt-10  dark:divide-slate-700 dark:border-t-slate-700 md:px-5">
 					<div className="grid grid-cols-1 gap-8 pb-8 lg:grid-cols-2 xl:grid-cols-4">
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">

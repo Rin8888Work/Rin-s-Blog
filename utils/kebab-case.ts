@@ -1,6 +1,11 @@
 export function kebabCase(str: string): string {
 	return str
-		?.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-		?.map((x) => x.toLowerCase())
-		?.join('-');
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.replace(/[đĐ]/g, 'd')
+		.replace(/([^0-9a-z-\s])/g, '-')
+		.replace(/(\s+)/g, '-')
+		.replace(/-+/g, '-')
+		.replace(/^-+|-+$/g, '');
 }

@@ -9,10 +9,11 @@ import type { BlogFrontMatter } from '~/types';
 import { kebabCase } from '~/utils/kebab-case';
 
 export function getStaticPaths({ locales }) {
-	let tags = getAllTags('blog');
 	const paths = [];
 
 	locales?.map((locale) => {
+		let tags = getAllTags(`blog/${locale}`);
+
 		Object.keys(tags).map((tag) =>
 			paths.push({
 				params: {
@@ -36,7 +37,7 @@ export async function getStaticProps({
 	locale: string;
 	params: { tag: string };
 }) {
-	let allPosts = getAllFilesFrontMatter('blog');
+	let allPosts = getAllFilesFrontMatter(`blog/${locale}`);
 	let filteredPosts = allPosts.filter(
 		(post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
 	);

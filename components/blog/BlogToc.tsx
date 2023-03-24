@@ -49,7 +49,7 @@ export default function BlogToc({ toc }) {
 				{toc?.map((t) => (
 					<li className="py-2" key={t.url}>
 						<div className="flex items-center">
-							<span className=" mr-1.5 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  bg-transparent bg-teal-600 dark:border-teal-500 dark:bg-teal-500"></span>
+							<span className=" mr-2 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  bg-transparent bg-teal-600 dark:border-teal-500 dark:bg-teal-500"></span>
 							<a
 								title={t.value}
 								href={t.url}

@@ -4,7 +4,7 @@ import { getFileBySlug } from '~/libs/mdx';
 import type { MdxFileData } from '~/types';
 
 export async function getStaticProps({ locale }) {
-	let privacyData = await getFileBySlug('policy-rules', 'policy', locale);
+	let privacyData = await getFileBySlug(`policy-rules/${locale}`, `policy`);
 	return {
 		props: {
 			privacyData,
