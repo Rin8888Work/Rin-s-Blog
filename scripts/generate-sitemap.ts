@@ -29,7 +29,7 @@ let SITE_URL = siteMetadata.siteUrl;
 
 	let sitemap = `
 			<?xml version="1.0" encoding="UTF-8"?>
-			<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+			<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
 				${['en', 'vi'].map((lang) =>
 					pages
 						.map((page) => {
@@ -43,7 +43,7 @@ let SITE_URL = siteMetadata.siteUrl;
 							if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
 								return;
 							}
-							return `<url><loc>${SITE_URL}/${lang}${route}</loc></url>\n`;
+							return `<url><loc>${SITE_URL}/${lang}${route}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n`;
 						})
 						.join('')
 				)}
@@ -56,7 +56,7 @@ let SITE_URL = siteMetadata.siteUrl;
 							.replace('.md', '');
 						let route = path === '/index' ? '' : path;
 
-						return `<url><loc>${SITE_URL}/en${route}</loc></url>\n`;
+						return `<url><loc>${SITE_URL}/en${route}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n`;
 					})
 					.join('')}
 				${viDynamicPages
@@ -68,7 +68,7 @@ let SITE_URL = siteMetadata.siteUrl;
 							.replace('.md', '');
 						let route = path === '/index' ? '' : path;
 
-						return `<url><loc>${SITE_URL}/vi${route}</loc></url>\n`;
+						return `<url><loc>${SITE_URL}/vi${route}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n`;
 					})
 					.join('')}
 			</urlset>
