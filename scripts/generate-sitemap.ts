@@ -40,7 +40,7 @@ let SITE_URL = siteMetadata.siteUrl;
 								.replace('.ts', '')
 								.replace(`/feed.en.xml`, '');
 							let route = path === '/index' ? '' : path;
-							if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
+							if (page === `pages/404.tsx` || page === `pages/blog/[...slug].tsx`) {
 								return;
 							}
 							return `<url><loc>${SITE_URL}/${lang}${route}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n`;
