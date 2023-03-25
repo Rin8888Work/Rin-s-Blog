@@ -1,12 +1,12 @@
+import '~/assets/css/custom.css';
 import '~/assets/css/tailwind.css';
 import '~/assets/css/twemoji.css';
-import '~/assets/css/custom.css';
 
+import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
 import Head from 'next/head';
 import { Analytics } from '~/components/analytics';
 import { LayoutWrapper } from '~/components/LayoutWrapper';
-import { appWithTranslation } from 'next-i18next';
 
 function App({ Component, pageProps }) {
 	return (
