@@ -19,6 +19,7 @@ module.exports = withBundleAnalyzer({
 		DATABASE_URL: process.env.DATABASE_URL,
 		GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
 		GG_ANALYTIC_ID: process.env.GG_ANALYTIC_ID,
+		FACEBOOK_PAGE_ID: process.env.FACEBOOK_PAGE_ID,
 	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	eslint: {
