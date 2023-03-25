@@ -177,6 +177,9 @@ export let siteMetadata = {
 			logo: '/static/images/paypal.png',
 		},
 	],
+	liveChat: {
+		facebookPageId: process.env.FACEBOOK_PAGE_ID,
+	},
 };
 
 /**
