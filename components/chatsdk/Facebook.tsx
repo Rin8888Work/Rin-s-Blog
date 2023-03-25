@@ -24,7 +24,7 @@ function Facebook() {
             window.fbAsyncInit = function() {
               FB.init({
                 xfbml            : true,
-                version          : 'v16.0'
+                version          : 'v14.0'
               });
             };
       

@@ -119,7 +119,7 @@ export let siteMetadata = {
 	footerTitle: 'footerTitle',
 	description: 'description',
 	language: 'language',
-	siteUrl: 'https://www.phuocnv.com',
+	siteUrl: 'https://phuocnv.com',
 	siteRepo: '',
 	siteLogo: '/static/images/logo.jpg',
 	image: '/static/images/logo.jpg',

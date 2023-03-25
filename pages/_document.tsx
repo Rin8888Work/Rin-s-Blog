@@ -13,7 +13,7 @@ class MyDocument extends Document {
 	render() {
 		const { locale }: any = this.props;
 		return (
-			<Html lang={locale} className="dark">
+			<Html lang={locale}>
 				<Head>
 					<link rel="apple-touch-icon" sizes="76x76" href="/static/images/logo.jpg" />
 					<link rel="icon" sizes="32x32" href="/static/favicons/favicon.ico" />
