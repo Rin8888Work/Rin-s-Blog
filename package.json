@@ -3,7 +3,7 @@
 	"scripts": {
 		"start": "next-remote-watch ./data",
 		"dev": "next dev",
-		"build": "tsx ./scripts/generate-sitemap && next build",
+		"build": "next build && tsx ./scripts/generate-sitemap",
 		"serve": "next start",
 		"analyze": "cross-env ANALYZE=true next build",
 		"lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts --dir pages",
@@ -37,6 +37,7 @@
 		"react-dom": "18.2.0",
 		"react-i18next": "^12.2.0",
 		"react-masonry-css": "^1.0.16",
+		"react-scrollspy": "^3.4.3",
 		"react-share": "^4.4.1",
 		"react-tsparticles": "^2.9.3",
 		"reading-time": "^1.5.0",
