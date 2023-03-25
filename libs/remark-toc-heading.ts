@@ -9,7 +9,7 @@ export function remarkTocHeading(options: RemarkTocHeadingOptions) {
 			let textContent = toString(node);
 			options.exportRef.push({
 				value: textContent,
-				url: '#' + slug(textContent),
+				url: slug(textContent),
 				depth: node.depth,
 			});
 		});
