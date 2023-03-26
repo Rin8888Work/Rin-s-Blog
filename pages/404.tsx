@@ -1,7 +1,8 @@
 import type { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { Link } from '~/components/Link';
 import { PageSeo } from '~/components/SEO';
 import { Twemoji } from '~/components/Twemoji';
@@ -17,6 +18,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 export default function FourZeroFour() {
 	const { t } = useTranslation();
+	const router = useRouter();
+
 	return (
 		<>
 			<PageSeo
@@ -34,6 +37,12 @@ export default function FourZeroFour() {
 							{t('notFoundT')} <Twemoji emoji={'face-with-monocle'} />
 						</p>
 						<p className="mb-8">{t('notFoundContent')}</p>
+						<button
+							onClick={() => router.back()}
+							className="focus:shadow-outline-blue mr-5 inline rounded-lg border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium leading-5 text-white shadow transition-colors duration-150 hover:bg-teal-700 focus:outline-none dark:hover:bg-teal-500"
+						>
+							{t('notFoundButtonBack')}
+						</button>
 						<Link href="/">
 							<button className="focus:shadow-outline-blue inline rounded-lg border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium leading-5 text-white shadow transition-colors duration-150 hover:bg-blue-700 focus:outline-none dark:hover:bg-blue-500">
 								{t('notFoundButton')}

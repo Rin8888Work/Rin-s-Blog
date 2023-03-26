@@ -51,11 +51,13 @@ export default function Contact() {
 											</p>
 											<p>
 												<a
-													href={`tel:${siteMetadata.phoneNumber}`}
+													href={`tel:${t(
+														`common:${siteMetadata.phoneNumber}`
+													)}`}
 													rel="noreferrer"
 													className="umami--click--contact-phone hover:underline"
 												>
-													{siteMetadata.phoneNumber}
+													{t(`common:${siteMetadata.phoneNumber}`)}
 												</a>
 											</p>
 										</div>

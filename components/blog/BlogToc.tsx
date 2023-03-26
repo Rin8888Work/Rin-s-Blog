@@ -11,16 +11,14 @@ function BlogToc({ toc }) {
 
 				<Scrollspy
 					items={toc.map((t) => t.url)}
-					currentClassName="text-teal-600 dark:text-teal-500"
+					currentClassName="active text-teal-600 dark:text-teal-500"
 				>
 					{toc?.map((t) => (
-						<li className="py-2" key={t.url}>
-							<div className="flex items-center">
-								<span className=" mr-2 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  bg-transparent bg-teal-600 dark:border-teal-500 dark:bg-teal-500"></span>
-								<a title={t.value} href={`#${t.url}`} className={' cursor-pointer'}>
-									{t.value}
-								</a>
-							</div>
+						<li className="group flex items-center py-2" key={t.url}>
+							<span className=" mr-2 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  bg-transparent group-[.active]:bg-teal-500  dark:border-teal-500"></span>
+							<a title={t.value} href={`#${t.url}`} className={' cursor-pointer'}>
+								{t.value}
+							</a>
 						</li>
 					))}
 				</Scrollspy>

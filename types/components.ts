@@ -1,85 +1,86 @@
-import type { ImageProps as NextImageProps } from 'next/image'
-import type React from 'react'
-import type { SocialIconsMap } from '~/components/SocialIcon'
-import type { projectsData } from '~/data/projectsData'
-import type { commentConfig } from '~/data/siteMetadata'
-import type { MdxFrontMatter, ReadingTime } from './mdx'
+import type { ImageProps as NextImageProps } from 'next/image';
+import type React from 'react';
+import type { SocialIconsMap } from '~/components/SocialIcon';
+import type { projectsData } from '~/data/projectsData';
+import type { commentConfig } from '~/data/siteMetadata';
+import type { MdxFrontMatter, ReadingTime } from './mdx';
 
 export interface PageTitleProps {
-  children?: React.ReactNode
-  title?: string
-  leading?: string
+	children?: React.ReactNode;
+	title?: string;
+	leading?: string;
 }
 
 export interface ImageLightBoxProps extends Pick<NextImageProps, 'src'> {
-  closeLightbox: () => void
+	closeLightbox: () => void;
 }
 
 export interface SocialIconProps {
-  name: keyof typeof SocialIconsMap
-  href: string
+	name: keyof typeof SocialIconsMap;
+	href: string;
 }
 
 export interface ImageProps extends NextImageProps {
-  shouldOpenLightbox?: boolean
+	shouldOpenLightbox?: boolean;
+	alt: string;
 }
 
-export type ProjectDataType = (typeof projectsData)[0]
+export type ProjectDataType = (typeof projectsData)[0];
 
 export interface ProjectCardProps {
-  project: ProjectDataType
+	project: ProjectDataType;
 }
 
 export interface SocialButtonsProps {
-  postUrl: string
-  title: string
-  fileName: string
+	postUrl: string;
+	title: string;
+	fileName: string;
 }
 
 export type TwemojiProps = {
-  emoji: string
-  size?: string
-  className?: string
-}
+	emoji: string;
+	size?: string;
+	className?: string;
+};
 
 export interface UnsplashPhotoProps {
-  photoURL: string
-  author: string
+	photoURL: string;
+	author: string;
 }
 
 export interface ViewCounterProps {
-  slug: string
-  className?: string
+	slug: string;
+	className?: string;
 }
 
 export interface BlogHeaderProps {
-  title: string
-  date: string
-  readingTime: ReadingTime
+	title: string;
+	date: string;
+	readingTime: ReadingTime;
 }
 
-export type CommentConfigType = typeof commentConfig
+export type CommentConfigType = typeof commentConfig;
 
 export interface BlogMetaProps {
-  date: string
-  slug: string
-  readingTime: ReadingTime
+	date: string;
+	slug: string;
+	readingTime: ReadingTime;
 }
 
 export interface CommentsProps {
-  frontMatter: MdxFrontMatter
-  config: CommentConfigType
+	frontMatter: MdxFrontMatter;
+	config: CommentConfigType;
 }
 
 export interface GiscusProps {
-  config: CommentConfigType['giscusConfig']
+	config: CommentConfigType['giscusConfig'];
 }
 
 export interface UtterancesProps {
-  config: CommentConfigType['utterancesConfig']
+	config: CommentConfigType['utterancesConfig'];
 }
 
 export interface DisqusProps {
-  identifier: string
-  disqus: CommentConfigType['disqus']
+	identifier: string;
+	disqus: CommentConfigType['disqus'];
 }

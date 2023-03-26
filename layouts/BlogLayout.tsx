@@ -42,8 +42,8 @@ export function BlogLayout(props: BlogLayoutProps) {
 					<div className="mb-5 flex w-full justify-center sm:mb-8">
 						<PostsSearch onChange={setSearchValue} />
 					</div>
-					<div className="grid w-full gap-4 py-4 sm:py-10 lg:grid-cols-12">
-						<div className="lg:col-span-9">
+					<div className="grid w-full gap-4 py-4 sm:py-10 xl:grid-cols-12">
+						<div className="xl:col-span-9">
 							<ul className="space-y-10">
 								{!filteredBlogPosts.length && 'No posts found.'}
 								{displayPosts.map((frontMatter) => (
@@ -54,7 +54,7 @@ export function BlogLayout(props: BlogLayoutProps) {
 								))}
 							</ul>
 						</div>
-						<div className="row-start-1 mb-4 lg:col-span-3">
+						<div className="row-start-1 mb-4 xl:col-span-3">
 							<h2 className="mb-3 text-xl font-bold uppercase ">
 								{t('common:tags')}
 							</h2>

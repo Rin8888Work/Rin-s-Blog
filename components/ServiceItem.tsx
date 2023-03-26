@@ -1,5 +1,5 @@
-import { Image } from './Image';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ServiceItem({
@@ -105,7 +105,6 @@ export default function ServiceItem({
 								alt="Dropdown icon"
 								width={8}
 								height={8}
-								shouldOpenLightbox={false}
 							/>
 						</div>
 						{/* eslint-disable */}

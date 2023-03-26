@@ -1,13 +1,22 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
+const conditionRedirectToBlogPage = {
+	options: ['/tags/[tag]', '/blog/[...slug]'],
+	redirectTo: '/blog',
+};
+
 function LanguageSwitcher() {
 	const router = useRouter();
 	const { t } = useTranslation('header');
 
 	const handleLanguageChange = (value) => {
-		router.push(router.pathname, router.asPath, { locale: value });
+		// redirect if on Tag, blog page
+		if (conditionRedirectToBlogPage.options.includes(router.pathname))
+			router.push(conditionRedirectToBlogPage.redirectTo, undefined, { locale: value });
+		else router.push(router.pathname, router.asPath, { locale: value });
 	};
+
 	return (
 		<button
 			title={t('switchLanguage')}
