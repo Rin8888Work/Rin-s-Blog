@@ -19,6 +19,7 @@
 	"searchPost": "Tìm kiếm bài viết...",
 	"notFound": "Không tìm thấy trang",
 	"notFoundT": "Hmm.. có vẻ như bạn bị lạc",
-	"notFoundContent": "Nhưng đừng lo lắng, bạn có thể tìm thấy nhiều thứ khác trên trang chủ.",
-	"notFoundButton": "Quay về trang chủ"
+	"notFoundContent": "Nhưng đừng lo lắng, bạn có thể tìm thấy nhiều thứ khác trên trang web của mình.",
+	"notFoundButton": "Quay về trang chủ",
+	"notFoundButtonBack": "Quay lại trang trước"
 }

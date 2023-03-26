@@ -5,9 +5,7 @@ import { siteMetadata } from '~/data/siteMetadata';
 import { Link } from './Link';
 import type { SocialButtonsProps } from '~/types';
 
-export function SocialButtons({ postUrl, title, fileName }: SocialButtonsProps) {
-	let creatEditOnGithubUrl = (fileName: string) =>
-		`${siteMetadata.siteRepo}/blob/main/data/blog/${fileName}`;
+export function SocialButtons({ postUrl, title }: SocialButtonsProps) {
 	let createDiscussonTwitterUrl = (postUrl: string) =>
 		`https://twitter.com/search?q=${encodeURIComponent(postUrl)}`;
 
@@ -21,12 +19,9 @@ export function SocialButtons({ postUrl, title, fileName }: SocialButtonsProps) 
 				>
 					{'Discuss on Twitter'}
 				</Link>
-				{` • `}
-				<Link href={creatEditOnGithubUrl(fileName)} className="hover:underline">
-					{'View on GitHub'}
-				</Link>
 			</div>
 			<div className="flex items-center">
+				<span className="sr-only mr-3"> Share with:</span>
 				<TwitterShareButton
 					url={postUrl}
 					title={title}

@@ -1,8 +1,8 @@
+import Image from 'next/image';
 import useSWR from 'swr';
 import type { GithubRepository, ProjectCardProps } from '~/types';
 import { fetcher } from '~/utils/fetcher';
 import { GithubRepo } from './GithubRepo';
-import { Image } from './Image';
 import { Link } from './Link';
 
 export function ProjectCard({ project }: ProjectCardProps) {

@@ -1,27 +1,27 @@
 export const TAGS = {
 	mmo: {
-		en: 'Mmo',
+		en: 'Make money online',
 		vi: 'Kiếm tiền qua mạng',
 		options: {
 			affiliate: {
-				en: 'Affiliate',
-				vi: 'Tiếp thị liên kết',
+				en: 'affiliate',
+				vi: 'tiep-thi-lien-ket',
 			},
 			airdrop: {
-				en: 'Airdrop',
-				vi: 'Airdrop',
+				en: 'airdrop',
+				vi: 'airdrop',
 			},
 			dropshipping: {
-				en: 'Drop shipping',
-				vi: 'Drop shipping',
+				en: 'drop-shipping',
+				vi: 'drop-shipping',
 			},
 			crypto: {
-				en: 'Crypto',
-				vi: 'Crypto',
+				en: 'crypto',
+				vi: 'crypto',
 			},
 			mmo: {
-				en: 'Mmo',
-				vi: 'Mmo/Kiếm tiền online',
+				en: 'make-money-online',
+				vi: 'kiem-tien-online',
 			},
 		},
 	},
@@ -30,32 +30,32 @@ export const TAGS = {
 		vi: 'Công nghệ',
 		options: {
 			domain: {
-				en: 'Domain',
-				vi: 'Tên miền',
+				en: 'domain',
+				vi: 'tên-miền',
 			},
 			hosting: {
-				en: 'Hosting',
-				vi: 'Hosting',
+				en: 'hosting',
+				vi: 'hosting',
 			},
 			vps: {
-				en: 'Vps/Server',
-				vi: 'Vps/Server',
+				en: 'vps-server',
+				vi: 'vps-server',
 			},
 			frontend: {
-				en: 'Frontend',
-				vi: 'Frontend',
+				en: 'frontend',
+				vi: 'frontend',
 			},
 			backend: {
-				en: 'Backend',
-				vi: 'Backend',
+				en: 'backend',
+				vi: 'backend',
 			},
 			react: {
-				en: 'ReactJs',
-				vi: 'ReactJs',
+				en: 'reactjs',
+				vi: 'reactjs',
 			},
 			next: {
-				en: 'NextJs',
-				vi: 'NextJs',
+				en: 'nextjs',
+				vi: 'nextjs',
 			},
 		},
 	},
@@ -64,12 +64,12 @@ export const TAGS = {
 		vi: 'Me',
 		options: {
 			life: {
-				en: 'Life',
-				vi: 'Cuộc sống',
+				en: 'life',
+				vi: 'cuoc-song',
 			},
 			share: {
-				en: 'Share',
-				vi: 'Chia sẻ',
+				en: 'share',
+				vi: 'chia-se',
 			},
 		},
 	},
@@ -78,12 +78,12 @@ export const TAGS = {
 		vi: 'Dịch vụ',
 		options: {
 			website: {
-				en: 'Website design',
-				vi: 'Thiết kế web',
+				en: 'web-design',
+				vi: 'thiet-ke-web',
 			},
 			socialSeeding: {
-				en: 'Seeding',
-				vi: 'Seeding',
+				en: 'seeding',
+				vi: 'seeding',
 			},
 		},
 	},

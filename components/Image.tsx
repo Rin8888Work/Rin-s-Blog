@@ -18,16 +18,22 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 		setOpenLightbox(true);
 	};
 	let className = clsx(
-		`flex justify-center`,
+		`flex justify-center flex-col`,
 		shouldOpenLightbox && 'cursor-zoom-in',
-		rest.id === 'thumbnail-image' && 'thumbnail-image umami--click--view-post-thumbnail'
+		rest.id === 'thumbnail-image' && 'thumbnail-image umami--click--view-post-thumbnail',
+		rest.alt.includes('thumbnail-image') && 'thumbnail-image umami--click--view-post-thumbnail'
 	);
 
 	return (
 		<>
-			<div className={className}>
+			<figure className={className}>
 				<NextImage {...rest} blurDataURL={blurDataURL} onClick={handleOpenLightbox} />
-			</div>
+				{rest.alt.replaceAll('thumbnail-image', '') && (
+					<figcaption className="text-center italic">
+						<span>{rest.alt.replaceAll('thumbnail-image', '')}</span>
+					</figcaption>
+				)}
+			</figure>
 			{openLightbox && (
 				<ImageLightbox closeLightbox={() => setOpenLightbox(false)} src={rest.src} />
 			)}

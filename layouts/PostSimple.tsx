@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { BlogMeta } from '~/components/blog/BlogMeta';
 import { BlogTags } from '~/components/blog/BlogTags';
 import BlogToc from '~/components/blog/BlogToc';
@@ -31,20 +32,6 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 								<h1 className="text-center text-2xl font-bold capitalize leading-9  text-gray-100 sm:leading-10 md:text-3xl md:leading-14 ">
 									{title}
 								</h1>
-
-								<dl>
-									<div className="flex justify-center">
-										<dt className="sr-only">Published on</dt>
-										<BlogMeta
-											date={date}
-											slug={slug}
-											readingTime={readingTime}
-										/>
-									</div>
-								</dl>
-								<div className="flex justify-center">
-									<BlogTags tags={tags} />
-								</div>
 							</ScreenWidth>
 						</PageTitle>
 					</div>
@@ -52,10 +39,45 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 				<ScreenWidth>
 					<div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
 						<div className="lg:col-span-9">
+							<div className=" mb-4 sm:mb-8">
+								{authorDetails.map((author, index) => (
+									<dl key={index}>
+										<div className="flex items-center justify-start">
+											<dt className="sr-only">Author by</dt>
+											<div className="h-12 w-12 overflow-hidden rounded-full">
+												<Image
+													src={author.avatar}
+													alt={author.name}
+													width={30}
+													height={30}
+													layout="responsive"
+												/>
+											</div>
+											<div className="ml-3 ">
+												<div className="font-bold text-teal-500">
+													{author.name}
+												</div>
+												<div className="flex justify-start ">
+													<dt className="sr-only">Published on</dt>
+													<BlogMeta
+														date={date}
+														slug={slug}
+														readingTime={readingTime}
+													/>
+												</div>
+											</div>
+										</div>
+									</dl>
+								))}
+							</div>
 							<div className="pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
 								<div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
 									<div className="prose prose-lg max-w-none pb-8 dark:prose-dark md:prose-xl">
 										{children}
+									</div>
+									<div className="mb-4 flex justify-start sm:mb-8">
+										<span className="mr-3">Tags: </span>
+										<BlogTags tags={tags} />
 									</div>
 									<div className="border-t border-gray-200 dark:border-gray-700">
 										<SocialButtons

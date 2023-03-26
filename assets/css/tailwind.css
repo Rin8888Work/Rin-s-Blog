@@ -41,10 +41,6 @@
 	content: attr(line);
 }
 
-.md\:prose-xl :not(pre) > code:not([class*='language']) {
-	font-size: 0.8em !important;
-	margin: 0 2px;
-}
 .prose pre {
 	margin-top: 1em;
 	background-color: #222;
@@ -83,21 +79,29 @@
 	border-left-color: #b7abab !important;
 }
 
+.prose :where(code):not(:where([class~='not-prose'] *))::before {
+	--tw-content: "'";
+	content: var(--tw-content);
+	margin: 0 3px;
+}
+.prose :where(code):not(:where([class~='not-prose'] *))::after {
+	--tw-content: "'";
+	content: var(--tw-content);
+	margin: 0 3px;
+}
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+	background-color: transparent;
+}
 .prose.prose :not(pre) > code:not([class*='language']) {
 	display: inline-block;
-	color: rgb(244 63 94);
-	font-weight: 500;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-top: 0;
-	padding-bottom: 0;
-	border-radius: 6px;
+	font-weight: 600;
 }
 
 code,
 kbd,
 pre,
 samp {
+	font-family: iCielVAG, system-ui, sans-serif;
 	letter-spacing: initial;
 }
 
@@ -158,6 +162,10 @@ html.lightbox-loading * {
 	width: 100%;
 	border-radius: 10px;
 	margin-top: 0 !important;
+}
+
+.prose figure.thumbnail-image {
+	margin-top: 0;
 }
 
 /* Some custom */
