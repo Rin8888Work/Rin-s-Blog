@@ -21,5 +21,20 @@
 	"notFoundT": "Hmm... it seems that you're lost",
 	"notFoundContent": "But don't worry, you can find many more on my website.",
 	"notFoundButton": "Back to home page",
-	"notFoundButtonBack": "Back to previous page"
+	"notFoundButtonBack": "Back to previous page",
+	"ariaLabel": {
+		"nextjs": "Home page of Nextjs",
+		"tailwindcss": "Home page of tailwindcss",
+		"prisma": "Home page of prisma",
+		"typescriptlang": "Home page of typescript",
+		"umami": "Home page of umami",
+		"dmca": "Home page of dmca",
+		"seeding": "Link seeding of phuocnv.com",
+		"facebook": "Link facebook of phuocnv.com",
+		"youtube": "Link youtube of phuocnv.com",
+		"githup": "Link githup of phuocnv.com",
+		"policy": "Link policy of phuocnv.com",
+		"rules": "Link rules of phuocnv.com",
+		"rss": "Rss of phuocnv.com"
+	}
 }

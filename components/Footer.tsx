@@ -35,6 +35,7 @@ export function Footer() {
 											target={`_blank`}
 											href={`/go/${seedingLink.socialSeeding.key}`}
 											className={`umami--click--detail-seeding-page hover:text-slate-900 dark:hover:text-slate-300`}
+											aria-label={t('ariaLabel.seeding')}
 										>
 											Seeding
 										</a>
@@ -47,6 +48,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
+										aria-label={t('ariaLabel.facebook')}
 									>
 										Facebook
 									</a>
@@ -58,6 +60,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
+										aria-label={t('ariaLabel.youtube')}
 									>
 										Youtube
 									</a>
@@ -69,6 +72,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
+										aria-label={t('ariaLabel.githup')}
 									>
 										Github
 									</a>
@@ -85,6 +89,7 @@ export function Footer() {
 										title={t('privacyPolicy')}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
 										href="/privacy-policy"
+										aria-label={t('ariaLabel.policy')}
 									>
 										{t('privacyPolicy')}
 									</Link>
@@ -94,6 +99,7 @@ export function Footer() {
 										title={t('rules')}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
 										href="/rules"
+										aria-label={t('ariaLabel.rules')}
 									>
 										{t('rules')}
 									</Link>
@@ -109,6 +115,7 @@ export function Footer() {
 											className="hover:text-slate-900 dark:hover:text-slate-300"
 											href={`${siteMetadata.siteUrl}/rss/feed.${locale}.xml`}
 											target={'_blank'}
+											aria-label={t('ariaLabel.rss')}
 										>
 											RSS
 										</a>

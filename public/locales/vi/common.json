@@ -21,5 +21,20 @@
 	"notFoundT": "Hmm.. có vẻ như bạn bị lạc",
 	"notFoundContent": "Nhưng đừng lo lắng, bạn có thể tìm thấy nhiều thứ khác trên trang web của mình.",
 	"notFoundButton": "Quay về trang chủ",
-	"notFoundButtonBack": "Quay lại trang trước"
+	"notFoundButtonBack": "Quay lại trang trước",
+	"ariaLabel": {
+		"nextjs": "Trang chủ của Nextjs",
+		"tailwindcss": "Trang chủ của tailwindcss",
+		"prisma": "Trang chủ của prisma",
+		"typescriptlang": "Trang chủ của typescript",
+		"umami": "Trang chủ của umami",
+		"dmca": "Trang chủ của dmca",
+		"seeding": "Link seeding của phuocnv.com",
+		"facebook": "Link facebook của phuocnv.com",
+		"youtube": "Link youtube của phuocnv.com",
+		"githup": "Link githup của phuocnv.com",
+		"policy": "Link policy của phuocnv.com",
+		"rules": "Link rules của phuocnv.com",
+		"rss": "Rss của phuocnv.com"
+	}
 }
