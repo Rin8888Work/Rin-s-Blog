@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Masonry from 'react-masonry-css';
 import type { BlogFrontMatter } from '~/types';
 import { BlogTags } from '../blog/BlogTags';

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { headerNavLinks, headerToolbar } from 'data/headerNavLinks';
 import { useTranslation } from 'next-i18next';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import { useRouter } from 'next/router';
 import { siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';

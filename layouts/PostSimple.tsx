@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { BlogMeta } from '~/components/blog/BlogMeta';
 import { BlogTags } from '~/components/blog/BlogTags';
 import BlogToc from '~/components/blog/BlogToc';

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import type { PageTitleProps } from '~/types';

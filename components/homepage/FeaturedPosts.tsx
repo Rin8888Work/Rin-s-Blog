@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { FEATURED_POSTS } from '~/constant';
 import type { BlogFrontMatter } from '~/types';
 import { formatDate } from '~/utils/date';

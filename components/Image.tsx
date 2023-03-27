@@ -1,5 +1,5 @@
 import { BLUR_IMAGE_DATA_URL, LOGO_IMAGE_PATH } from 'constant';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import { useState } from 'react';
 import type { ImageProps } from 'types';
 import { ImageLightbox } from './ImageLightbox';

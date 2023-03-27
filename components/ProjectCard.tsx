@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import useSWR from 'swr';
 import type { GithubRepository, ProjectCardProps } from '~/types';
 import { fetcher } from '~/utils/fetcher';
