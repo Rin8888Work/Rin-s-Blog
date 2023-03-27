@@ -123,12 +123,12 @@ export function Footer() {
 							</h2>
 							<div className="mt-3 space-y-2">
 								<iframe
+									className="bg-transparent"
 									title={`Fanpage of ${t(siteMetadata.fullName)}`}
-									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnguyenvanphuoc.page&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=433728550505340"
+									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnguyenvanphuoc.page&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=433728550505340"
 									style={{ border: 'none', overflow: 'hidden' }}
-									width={'100%'}
-									height={271}
-									allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+									width={'340'}
+									height={130}
 								></iframe>
 							</div>
 						</div>

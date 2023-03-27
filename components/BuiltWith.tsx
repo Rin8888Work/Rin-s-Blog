@@ -1,7 +1,10 @@
+import { useRouter } from 'next/router';
+import { siteMetadata } from '~/data/siteMetadata';
 import { DevIcon } from './DevIcon';
 import { Link } from './Link';
 
 export function BuiltWith() {
+	const router = useRouter();
 	return (
 		<div className="flex items-center space-x-1">
 			<span className="mr-1 text-gray-500 dark:text-gray-400">Built with</span>
@@ -21,17 +24,15 @@ export function BuiltWith() {
 				<Link href="https://umami.is/" className="pl-px">
 					<DevIcon type="Umami" className="h-5 w-5" />
 				</Link>
-				<a
+				<Link
 					className="dmca-badge pl-px"
-					href="https://www.dmca.com/Protection/Status.aspx?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8"
-					target="_blank"
-					rel="noopener noreferrer"
+					href={`https://dmca.com/Protection/Status.aspx?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8&refurl=${siteMetadata.siteUrl}${router.pathname}`}
 				>
 					<img
 						src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8"
 						alt="DMCA.com Protection Status"
 					/>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
