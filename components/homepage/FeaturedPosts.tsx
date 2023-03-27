@@ -22,8 +22,11 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 											src={images[0]}
 											alt={title}
 											title={title}
-											layout="fill"
-											objectFit="cover"
+											fill
+											sizes="100vw"
+											style={{
+												objectFit: 'cover',
+											}}
 										></Image>
 									</Link>
 								</div>

@@ -27,7 +27,15 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 	return (
 		<>
 			<figure className={className}>
-				<NextImage {...rest} blurDataURL={blurDataURL} onClick={handleOpenLightbox} />
+				<NextImage
+					{...rest}
+					blurDataURL={blurDataURL}
+					onClick={handleOpenLightbox}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
+				/>
 				{rest.alt.replaceAll('thumbnail-image', '') && (
 					<figcaption className="text-center italic">
 						<span>{rest.alt.replaceAll('thumbnail-image', '')}</span>

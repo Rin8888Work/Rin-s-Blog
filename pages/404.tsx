@@ -29,7 +29,16 @@ export default function FourZeroFour() {
 
 			<div className="flex flex-col items-center justify-center pt-4 md:pt-10 xl:pt-20">
 				<div>
-					<Image src={'/static/images/404.png'} alt="404" width={500} height={500} />
+					<Image
+						src={'/static/images/404.png'}
+						alt="404"
+						width={500}
+						height={500}
+						style={{
+							maxWidth: '100%',
+							height: 'auto',
+						}}
+					/>
 				</div>
 				<div className="space-x-2 pt-8 md:space-y-5 md:pt-12 xl:pt-16">
 					<div className="max-w-md text-center">

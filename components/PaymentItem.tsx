@@ -22,6 +22,10 @@ export default function PaymentItem({
 					alt={t(methodName)}
 					width={methodName === 'momo' ? 100 : 200}
 					height={100}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
 				/>
 			</div>
 			<div className="text-center">

@@ -105,6 +105,10 @@ export default function ServiceItem({
 								alt="Dropdown icon"
 								width={8}
 								height={8}
+								style={{
+									maxWidth: '100%',
+									height: 'auto',
+								}}
 							/>
 						</div>
 						{/* eslint-disable */}

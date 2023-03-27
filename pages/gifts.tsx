@@ -41,9 +41,13 @@ export default function Gifts() {
 										src={item.banner}
 										alt={t(`gift:${item.label}`)}
 										title={t(`gift:${item.label}`)}
-										layout="responsive"
 										width={360}
 										height={360}
+										sizes="100vw"
+										style={{
+											width: '100%',
+											height: 'auto',
+										}}
 									/>
 								</a>
 							</Link>

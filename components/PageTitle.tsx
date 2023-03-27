@@ -9,9 +9,12 @@ export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
 			<div className="absolute top-0 -z-20 h-full w-full after:absolute after:block after:h-full after:w-full after:bg-neutral-800/50">
 				<Image
 					src={'/static/images/bg-head.jpg'}
-					layout="fill"
-					objectFit="cover"
 					alt={`Background header of ${siteMetadata.title}`}
+					fill
+					sizes="100vw"
+					style={{
+						objectFit: 'cover',
+					}}
 				/>
 				{/* <div className="before:absolute before:block before:bg-pink-500"></div> */}
 			</div>

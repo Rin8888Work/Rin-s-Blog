@@ -47,9 +47,13 @@ export default function Promotion({ posts }: { posts: BlogFrontMatter[] }) {
 										src={item.banner}
 										alt={t(`promotion:${item.label}`)}
 										title={t(`promotion:${item.label}`)}
-										layout="responsive"
 										width={360}
 										height={360}
+										sizes="100vw"
+										style={{
+											width: '100%',
+											height: 'auto',
+										}}
 									/>
 								</a>
 							</Link>

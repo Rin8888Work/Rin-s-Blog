@@ -20,6 +20,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 					className="object-cover object-center md:h-36 lg:h-60"
 					width={1088}
 					height={612}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
 				/>
 				<div className="flex grow flex-col justify-between space-y-8 p-6">
 					<div className="space-y-3">

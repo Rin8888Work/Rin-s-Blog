@@ -34,15 +34,23 @@ export function PromotionNews({ posts }: { posts: BlogFrontMatter[] }) {
 										alt={`hot---${title}`}
 										width={80}
 										height={80}
+										style={{
+											maxWidth: '100%',
+											height: 'auto',
+										}}
 									></Image>
 									<Link href={`/blog/${slug}`}>
 										<Image
 											src={images[0]}
 											alt={title}
 											title={title}
-											layout="responsive"
 											width={400}
 											height={300}
+											sizes="100vw"
+											style={{
+												width: '100%',
+												height: 'auto',
+											}}
 										></Image>
 									</Link>
 								</div>

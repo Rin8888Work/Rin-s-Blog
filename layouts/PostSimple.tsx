@@ -50,7 +50,11 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 													alt={author.name}
 													width={30}
 													height={30}
-													layout="responsive"
+													sizes="100vw"
+													style={{
+														width: '100%',
+														height: 'auto',
+													}}
 												/>
 											</div>
 											<div className="ml-3 ">
