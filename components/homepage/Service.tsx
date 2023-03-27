@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { seedingLink } from '~/data/siteMetadata';
 import type { HomeServiceType } from '~/types/services';
@@ -23,9 +23,12 @@ export default function HomeService({
 								src={service.image}
 								alt={t(`${i18name}:${service.name}`)}
 								title={t(`${i18name}:${service.name}`)}
-								layout={'responsive'}
 								width={300}
 								height={250}
+								style={{
+									maxWidth: '100%',
+									height: 'auto',
+								}}
 							/>
 						</div>
 						<h3 className="mt-2 text-xl font-bold uppercase text-cyan-500">

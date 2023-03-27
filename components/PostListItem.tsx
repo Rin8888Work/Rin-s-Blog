@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import type { MdxFrontMatter } from '~/types';
 import { formatDate } from '~/utils/date';
@@ -19,8 +19,11 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
 							src={images[0]}
 							alt={title}
 							title={title}
-							layout="fill"
-							objectFit="cover"
+							fill
+							sizes="100vw"
+							style={{
+								objectFit: 'cover',
+							}}
 						></Image>
 					</Link>
 				</div>

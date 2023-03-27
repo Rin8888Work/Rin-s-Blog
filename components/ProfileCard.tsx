@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ProfileCardInfo } from './ProfileInfo';
 
@@ -62,6 +62,10 @@ export function ProfileCard({ direction }: { direction?: 'column' | 'row' }) {
 						width={320}
 						height={180}
 						className="h-full w-full object-cover"
+						style={{
+							maxWidth: '100%',
+							height: 'auto',
+						}}
 					/>
 				</div>
 				{/* <SpotifyNowPlaying /> */}

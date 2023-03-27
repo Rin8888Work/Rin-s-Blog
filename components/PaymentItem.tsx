@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import type { PaymentItemProps } from '~/types/payments';
 import { Copy } from './Copy';
 
@@ -22,6 +22,10 @@ export default function PaymentItem({
 					alt={t(methodName)}
 					width={methodName === 'momo' ? 100 : 200}
 					height={100}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
 				/>
 			</div>
 			<div className="text-center">

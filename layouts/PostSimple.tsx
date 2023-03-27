@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { BlogMeta } from '~/components/blog/BlogMeta';
 import { BlogTags } from '~/components/blog/BlogTags';
 import BlogToc from '~/components/blog/BlogToc';
@@ -50,7 +50,11 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 													alt={author.name}
 													width={30}
 													height={30}
-													layout="responsive"
+													sizes="100vw"
+													style={{
+														width: '100%',
+														height: 'auto',
+													}}
 												/>
 											</div>
 											<div className="ml-3 ">

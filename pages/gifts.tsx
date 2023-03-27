@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import Masonry from 'react-masonry-css';
 import { giftsLink } from '~/data/siteMetadata';
@@ -41,9 +41,13 @@ export default function Gifts() {
 										src={item.banner}
 										alt={t(`gift:${item.label}`)}
 										title={t(`gift:${item.label}`)}
-										layout="responsive"
 										width={360}
 										height={360}
+										sizes="100vw"
+										style={{
+											width: '100%',
+											height: 'auto',
+										}}
 									/>
 								</a>
 							</Link>

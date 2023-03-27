@@ -1,5 +1,5 @@
 import { BLUR_IMAGE_DATA_URL, LOGO_IMAGE_PATH } from 'constant';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import { useState } from 'react';
 import type { ImageProps } from 'types';
 import { ImageLightbox } from './ImageLightbox';
@@ -27,7 +27,15 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 	return (
 		<>
 			<figure className={className}>
-				<NextImage {...rest} blurDataURL={blurDataURL} onClick={handleOpenLightbox} />
+				<NextImage
+					{...rest}
+					blurDataURL={blurDataURL}
+					onClick={handleOpenLightbox}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
+				/>
 				{rest.alt.replaceAll('thumbnail-image', '') && (
 					<figcaption className="text-center italic">
 						<span>{rest.alt.replaceAll('thumbnail-image', '')}</span>

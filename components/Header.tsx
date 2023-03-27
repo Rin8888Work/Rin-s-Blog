@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { headerNavLinks, headerToolbar } from 'data/headerNavLinks';
 import { useTranslation } from 'next-i18next';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 import { siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
@@ -40,11 +40,16 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 							<div className="umami--click--logo flex items-center justify-between">
 								<div className="mr-3 flex items-center justify-center">
 									<NextImage
+										priority
 										src="/static/images/logo.jpg"
 										alt={siteMetadata.title}
 										width={45}
 										height={45}
 										className="rounded-full"
+										style={{
+											maxWidth: '100%',
+											height: 'auto',
+										}}
 									/>
 								</div>
 							</div>
