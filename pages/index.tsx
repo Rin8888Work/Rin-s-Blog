@@ -66,7 +66,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
 			<ScreenWidth>
 				<section className="my-5 border-t border-gray-200 dark:border-gray-700 sm:my-10">
 					<TitleSection>Dịch vụ của tôi</TitleSection>
-					<HomeService services={homeServices} i18name={'home'} />
+					<HomeService services={homeServices} />
 				</section>
 				<section className="my-5 border-t border-gray-200 text-gray-800 dark:border-gray-700 sm:my-10">
 					<TitleSection>Bảng báo giá thiết kế website</TitleSection>

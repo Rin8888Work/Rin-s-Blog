@@ -20,14 +20,14 @@ export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
 			</div>
 			<ScreenWidth>
 				{children ? (
-					<div className="space-y-1 pt-6 pb-8 md:space-y-2">
+					<div className="space-y-1 pb-8 pt-6 md:space-y-2">
 						{children}
 						<div className="flex justify-center">
 							<div className="w-2/4 border-b  border-gray-100/50 py-2"></div>
 						</div>
 					</div>
 				) : (
-					<div className="space-y-1 pt-6 pb-8 md:space-y-2">
+					<div className="space-y-1 pb-8 pt-6 md:space-y-2">
 						<h1 className="text-center text-2xl font-extrabold capitalize leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
 							{title}
 						</h1>
