@@ -80,30 +80,57 @@
 }
 
 .prose :where(code):not(:where([class~='not-prose'] *))::before {
-	--tw-content: "'";
+	--tw-content: '`';
 	content: var(--tw-content);
 	margin: 0 3px;
 }
 .prose :where(code):not(:where([class~='not-prose'] *))::after {
-	--tw-content: "'";
+	--tw-content: '`';
 	content: var(--tw-content);
 	margin: 0 3px;
 }
 .prose :where(code):not(:where([class~='not-prose'] *)) {
 	background-color: transparent;
+	color: black;
+}
+.dark .dark\:prose-dark :where(code):not(:where([class~='not-prose'] *)) {
+	background-color: transparent;
+	color: white;
 }
 .prose.prose :not(pre) > code:not([class*='language']) {
 	display: inline-block;
 	font-weight: 600;
 }
-.dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *)),
+
 .prose :where(a):not(:where([class~='not-prose'] *)) {
-	color: rgb(13 148 136) !important;
+	color: black !important;
+	text-decoration: none;
+	font-weight: bold;
+	position: relative;
 }
 
-.dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *)):hover,
-.prose :where(a):not(:where([class~='not-prose'] *)):hover {
-	color: rgb(20 184 166) !important;
+.dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *)) {
+	color: white !important;
+	text-decoration: none;
+	font-weight: bold;
+	position: relative;
+}
+.prose :where(a):not(:where([class~='not-prose'] *))::after,
+.dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *))::after {
+	position: absolute;
+	content: '';
+	width: 50%;
+	height: 2px;
+	background-color: rgb(13 148 136 / var(--tw-text-opacity));
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	transition: all 0.2s ease-in-out;
+}
+
+.dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *)):hover::after,
+.prose :where(a):not(:where([class~='not-prose'] *)):hover::after {
+	width: 100%;
 }
 
 code,
