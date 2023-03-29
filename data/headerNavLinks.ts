@@ -1,17 +1,17 @@
 export let headerNavLinks = [
 	{
 		href: '/',
-		title: 'home',
+		title: 'Trang chủ',
 	},
 	{
-		href: '/social-services',
-		title: 'socialSeedingServices',
+		href: '/dich-vu-mang-xa-hoi',
+		title: 'Dịch vụ mạng xã hội',
 	},
 	{
-		href: '/website-services',
-		title: 'websiteServices',
+		href: '/thiet-ke-web',
+		title: 'Thiết kế web',
 	},
-	{ href: '/blog', title: 'blog' },
+	{ href: '/bai-viet', title: 'Bài viết' },
 	// {
 	// 	href: '/pricing',
 	// 	title: 'priceList',
@@ -22,8 +22,8 @@ export let headerNavLinks = [
 
 export let headerToolbar = [
 	// { href: '/gifts', title: 'gifts' },
-	{ href: '/promotion-domain-hosting-vps', title: 'promotion' },
-	{ href: '/payment', title: 'payment' },
+	{ href: '/khuyen-mai-ten-mien-hosting-vps', title: 'Khuyến mãi tên miền, Hosting, Vps/Server' },
+	{ href: '/thong-tin-thanh-toan', title: 'Thông tin thanh toán' },
 	// { href: '/about', title: 'about' },
-	{ href: '/contact', title: 'contact' },
+	{ href: '/lien-he', title: 'Liên hệ' },
 ];

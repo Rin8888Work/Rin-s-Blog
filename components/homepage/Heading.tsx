@@ -1,13 +1,12 @@
-import { useTranslation } from 'next-i18next';
 import { Twemoji } from '~/components/Twemoji';
+import { siteMetadata } from '~/data/siteMetadata';
 
 export function Heading() {
-	const { t } = useTranslation('home');
 	return (
 		<h1 className="text-neutral-900 dark:text-neutral-200">
-			{t('introduceMyself1')} <span className="font-medium">{t('fullName')}</span>{' '}
-			{t('introduceMyself2')}
-			<span className="hidden font-medium">{t('introduceMyself3')}</span>
+			Mình là <span className="font-medium">{siteMetadata.fullName}</span> - một người đam mê
+			kiếm tiền online tại
+			<span className="sr-only font-medium">TP. Hồ Chí Minh, Việt Nam</span>
 			<span className="absolute ml-2 inline-flex pt-[3px]">
 				<Twemoji emoji="flag-vietnam" />
 			</span>

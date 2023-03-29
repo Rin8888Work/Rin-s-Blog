@@ -1,5 +1,4 @@
 import { PageSeo } from 'components/SEO';
-import { useTranslation } from 'next-i18next';
 import { PageTitle } from '~/components/PageTitle';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
 import { siteMetadata } from '~/data/siteMetadata';
@@ -7,16 +6,14 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function PromotionLayout({ children }: PageLayoutProps) {
-	const { t } = useTranslation(['gift', 'common']);
-
 	return (
 		<>
 			<PageSeo
-				title={`${t('gift:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
-				description={`${t('gift:description')}`}
+				title={`${`Quà tặng`} | ${siteMetadata.fullName}`}
+				description={`Trang này sẽ liệt kê những quà tặng miễn phí mà mình dành cho bạn về kiếm tiền online, công nghệ...`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('gift:title')} leading={t('gift:leading')} />
+			<PageTitle title={`Quà tặng`} leading={`Quà tặng miễn phí mình dành cho bạn`} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

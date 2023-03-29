@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { PageTitle } from '~/components/PageTitle';
 import { Pagination } from '~/components/Pagination';
 import { PostListItem } from '~/components/PostListItem';
@@ -19,8 +18,7 @@ interface TagLayoutProps extends BlogLayoutProps {
 }
 
 export function TagLayout(props: TagLayoutProps) {
-	const { t } = useTranslation(['common']);
-	const { locale, ...router } = useRouter();
+	const { ...router } = useRouter();
 	let { posts, title, initialDisplayPosts = [], pagination } = props;
 	let [searchValue, setSearchValue] = useState('');
 	let filteredBlogPosts = posts.filter((frontMatter) => {
@@ -37,8 +35,8 @@ export function TagLayout(props: TagLayoutProps) {
 	return (
 		<>
 			<PageSeo
-				title={`Tag | ${title} | ${t(`common:${siteMetadata.fullName}`)}`}
-				description={t(`common:${siteMetadata.description}`)}
+				title={`Tag | ${title} | ${siteMetadata.fullName}`}
+				description={`${siteMetadata.description}`}
 			/>
 			<PageTitle title={title} />
 			<ScrollTopButton />
@@ -64,12 +62,12 @@ export function TagLayout(props: TagLayoutProps) {
 							<div>
 								{Object.keys(TAGS).map((key) => (
 									<div className="mt-4" key={key}>
-										<h3>{TAGS[key][locale]}</h3>
+										<h3>{TAGS[key]['vi']}</h3>
 										<div className="mt-2 flex flex-wrap gap-2">
 											{Object.keys(TAGS[key]['options']).map((k) => (
 												<div
 													className={`rounded-xl ${
-														tag === TAGS[key]['options'][k][locale]
+														tag === TAGS[key]['options'][k]['vi']
 															? 'bg-rose-800 text-white  dark:bg-red-500 '
 															: ''
 													}  p-1 text-sm hover:bg-rose-800  hover:dark:bg-red-500`}
@@ -77,11 +75,11 @@ export function TagLayout(props: TagLayoutProps) {
 												>
 													<Link
 														href={`/tags/${kebabCase(
-															TAGS[key]['options'][k][locale]
+															TAGS[key]['options'][k]['vi']
 														)}`}
 													>
 														<span className="umami--click--tag italic">
-															#{TAGS[key]['options'][k][locale]}
+															#{TAGS[key]['options'][k]['vi']}
 														</span>
 													</Link>
 												</div>

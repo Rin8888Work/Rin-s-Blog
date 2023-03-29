@@ -1,14 +1,9 @@
-import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { seedingLink, siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import { BuiltWith } from './BuiltWith';
 
 export function Footer() {
-	const { locale } = useRouter();
-	const { t } = useTranslation('common');
-
 	return (
 		<footer className="sm:mt-15 mt-10">
 			<ScreenWidth>
@@ -16,13 +11,19 @@ export function Footer() {
 					<div className="grid grid-cols-1 gap-8 pb-8 lg:grid-cols-2 xl:grid-cols-4">
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								{t('introduce')}
+								Giới thiệu
 							</h2>
-							<p className="mt-3 text-justify">{t(siteMetadata.introduceWebsite)}</p>
+							<p className="mt-3 text-justify">
+								Phát triển bởi Nguyễn Văn Phước vào năm 2023, là website cá nhân
+								cung cấp các dịch vụ về website và seeding mạng xã hội và chia sẻ
+								kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân
+								nhanh nhất. Mình tự tin đáp ứng mọi yêu cầu của bạn, giúp bạn có thể
+								tiếp cận tốt hơn đến khách hàng của mình trên internet
+							</p>
 						</div>
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								{t('link')}
+								Liên kết
 							</h2>
 							<ul className="mt-3 space-y-2">
 								<li>
@@ -35,7 +36,7 @@ export function Footer() {
 											target={`_blank`}
 											href={`/go/${seedingLink.socialSeeding.key}`}
 											className={`umami--click--detail-seeding-page hover:text-slate-900 dark:hover:text-slate-300`}
-											aria-label={t('ariaLabel.seeding')}
+											aria-label={`Link seeding của ${siteMetadata.siteUrl}`}
 										>
 											Seeding
 										</a>
@@ -48,7 +49,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										aria-label={t('ariaLabel.facebook')}
+										aria-label={`Link facebook của ${siteMetadata.fullName}`}
 									>
 										Facebook
 									</a>
@@ -60,7 +61,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										aria-label={t('ariaLabel.youtube')}
+										aria-label={`Link youtube của ${siteMetadata.fullName}`}
 									>
 										Youtube
 									</a>
@@ -72,7 +73,7 @@ export function Footer() {
 										target="_blank"
 										rel="noreferrer"
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										aria-label={t('ariaLabel.githup')}
+										aria-label={`Link githup của ${siteMetadata.fullName}`}
 									>
 										Github
 									</a>
@@ -81,41 +82,41 @@ export function Footer() {
 						</div>
 						<div>
 							<h2 className="font-semibold text-slate-900 dark:text-slate-100">
-								{t('policy')} &amp; {t('rules')}
+								Chính sách &amp; Điều khoản
 							</h2>
 							<ul className="mt-3 space-y-2">
 								<li>
 									<Link
-										title={t('privacyPolicy')}
+										title={`Chính sách bảo mật`}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										href="/privacy-policy"
-										aria-label={t('ariaLabel.policy')}
+										href="/chinh-sach-bao-mat"
+										aria-label={`Link policy của ${siteMetadata.siteUrl}`}
 									>
-										{t('privacyPolicy')}
+										{`Chính sách bảo mật`}
 									</Link>
 								</li>
 								<li>
 									<Link
-										title={t('rules')}
+										title={`Điều khoản sử dụng`}
 										className="hover:text-slate-900 dark:hover:text-slate-300"
-										href="/rules"
-										aria-label={t('ariaLabel.rules')}
+										href="/dieu-khoan-su-dung"
+										aria-label={`Link rules của ${siteMetadata.siteUrl}`}
 									>
-										{t('rules')}
+										{`Điều khoản sử dụng`}
 									</Link>
 								</li>
 								<li>
 									<Link
-										href={`${siteMetadata.siteUrl}/rss/feed.${locale}.xml`}
+										href={`${siteMetadata.siteUrl}/rss/feed.xml`}
 										passHref
 										legacyBehavior
 									>
 										<a
 											title="RSS"
 											className="hover:text-slate-900 dark:hover:text-slate-300"
-											href={`${siteMetadata.siteUrl}/rss/feed.${locale}.xml`}
+											href={`${siteMetadata.siteUrl}/rss/feed.xml`}
 											target={'_blank'}
-											aria-label={t('ariaLabel.rss')}
+											aria-label={`Rss của ${siteMetadata.siteUrl}`}
 										>
 											RSS
 										</a>
@@ -131,7 +132,7 @@ export function Footer() {
 							<div className="mt-3 space-y-2">
 								<iframe
 									className="bg-transparent"
-									title={`Fanpage of ${t(siteMetadata.fullName)}`}
+									title={`Fanpage of ${siteMetadata.fullName}`}
 									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnguyenvanphuoc.page&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=433728550505340"
 									style={{ border: 'none', overflow: 'hidden' }}
 									width={'340'}
@@ -146,7 +147,7 @@ export function Footer() {
 							<div>{`Copyright © ${new Date().getFullYear()}`}</div>
 							<span>{` • `}</span>
 
-							<span className="text-center">{t(siteMetadata.footerTitle)}</span>
+							<span className="text-center">{siteMetadata.footerTitle}</span>
 						</div>
 					</div>
 				</div>

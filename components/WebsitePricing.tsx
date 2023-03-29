@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 import { getWebsiteServicesData } from '~/data/servicesData';
 import { seedingLink } from '~/data/siteMetadata';
 
 export default function WebsitePricing() {
-	const { t } = useTranslation(['price-list']);
-
 	const { websitePriceList } = getWebsiteServicesData();
 
 	return (
@@ -17,16 +14,16 @@ export default function WebsitePricing() {
 							index == 1
 								? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
 								: ''
-						} ${index == 0 ? 'lg:rounded-tr-none lg:rounded-br-none' : ''} ${
-							index == 2 ? 'lg:rounded-tl-none lg:rounded-bl-none' : ''
+						} ${index == 0 ? 'lg:rounded-br-none lg:rounded-tr-none' : ''} ${
+							index == 2 ? 'lg:rounded-bl-none lg:rounded-tl-none' : ''
 						}`}
 					>
 						<div className=" p-6 text-center">
-							<p className="mb-4 inline-block rounded-3xl bg-gradient-to-r from-cyan-500 to-blue-500 py-2 px-4 text-sm uppercase ">
-								<strong>{t(`price-list:${item.name}`)}</strong>
+							<p className="mb-4 inline-block rounded-3xl bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 text-sm uppercase ">
+								<strong>{item.name}</strong>
 							</p>
 							<h3 className="mb-6 text-2xl">
-								<strong>{t(`price-list:${item.price}`)}</strong>
+								<strong>{item.price}</strong>
 								<small className="text-sm text-dark">/website</small>
 							</h3>
 
@@ -40,27 +37,27 @@ export default function WebsitePricing() {
 									target={`_blank`}
 									href={`/go/${seedingLink.adviseLink.key}`}
 								>
-									{t(`price-list:registerNow`)}
+									{`Nhận tư vấn`}
 								</a>
 							</Link>
 						</div>
 						<div className="p-6">
-							<h4 className=" pb-2 font-bold">{t('price-list:module')}</h4>
+							<h4 className=" pb-2 font-bold">{`Mô-đun trang`}</h4>
 							<ol className="grid list-inside grid-cols-2 gap-x-3 border-t border-gray-300 pt-2">
 								{item.moduleWebsite?.map((module, idx) => (
 									<li
 										className="mb-2 flex items-center justify-between"
 										key={idx}
 									>
-										<span>{t(`price-list:${module.name}`)}</span>
+										<span>{module.name}</span>
 
 										{module.isAllow ? (
 											<span className="mr-5 w-10 rounded-xl bg-white p-1 text-center text-xs text-green-700">
-												{t(`price-list:yes`)}
+												{`Có`}
 											</span>
 										) : (
 											<span className="1-4 mr-5 w-10 rounded-xl bg-white text-center text-xs text-red-900">
-												{t(`price-list:no`)}
+												{`Không`}
 											</span>
 										)}
 									</li>
@@ -68,19 +65,19 @@ export default function WebsitePricing() {
 							</ol>
 						</div>
 						<div className="p-6">
-							<h4 className=" pb-2 font-bold">{t('price-list:integralPart')}</h4>
+							<h4 className=" pb-2 font-bold">{`Phần tích hợp`}</h4>
 							<ol className="grid list-inside border-t border-gray-300 pt-2">
 								{item.integralPart?.map((integralPart, i) => (
 									<li className="mb-2 flex items-center justify-between" key={i}>
-										<span>{t(`price-list:${integralPart.name}`)}</span>
+										<span>{integralPart.name}</span>
 
 										{integralPart.isAllow ? (
 											<span className="mr-5 w-10 rounded-xl bg-white p-1 text-center text-xs text-green-700">
-												{t(`price-list:yes`)}
+												{`Có`}
 											</span>
 										) : (
 											<span className="1-4 mr-5 w-10 rounded-xl bg-white text-center text-xs text-red-900">
-												{t(`price-list:no`)}
+												{`Không`}
 											</span>
 										)}
 									</li>

@@ -1,9 +1,6 @@
-import { useTranslation } from 'next-i18next';
 import Scrollspy from 'react-scrollspy';
 
 function BlogToc({ toc }) {
-	const { t } = useTranslation('common');
-
 	return (
 		<nav className="sticky top-24 rounded-lg bg-slate-100/70 p-2 py-4 text-sm dark:bg-slate-800 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto">
 			<ul className="relative max-h-48 overflow-hidden lg:max-h-[unset] lg:overflow-visible">
@@ -25,7 +22,7 @@ function BlogToc({ toc }) {
 			</ul>
 			<div className="mx-auto w-full text-center lg:hidden">
 				<button className="-my-4 mx-auto flex items-center border-none p-4 font-semibold tracking-widest text-gray-400">
-					<span>{t('readMore')}</span>
+					<span>{`Xem thêm`}</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

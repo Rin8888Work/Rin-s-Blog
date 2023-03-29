@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
 import TagLayout from '~/layouts/TagLayout';
 import { generateRss } from '~/libs/generate-rss';
@@ -8,21 +7,18 @@ import { getAllTags } from '~/libs/tags';
 import type { BlogFrontMatter } from '~/types';
 import { kebabCase } from '~/utils/kebab-case';
 
-export function getStaticPaths({ locales }) {
+export function getStaticPaths() {
 	const paths = [];
 
-	locales?.map((locale) => {
-		let tags = getAllTags(`blog/${locale}`);
+	let tags = getAllTags(`blog`);
 
-		Object.keys(tags).map((tag) =>
-			paths.push({
-				params: {
-					tag,
-				},
-				locale,
-			})
-		);
-	});
+	Object.keys(tags).map((tag) =>
+		paths.push({
+			params: {
+				tag,
+			},
+		})
+	);
 
 	return {
 		paths,
@@ -30,30 +26,23 @@ export function getStaticPaths({ locales }) {
 	};
 }
 
-export async function getStaticProps({
-	locale,
-	params,
-}: {
-	locale: string;
-	params: { tag: string };
-}) {
-	let allPosts = getAllFilesFrontMatter(`blog/${locale}`);
+export async function getStaticProps({ params }: { locale: string; params: { tag: string } }) {
+	let allPosts = getAllFilesFrontMatter(`blog`);
 	let filteredPosts = allPosts.filter(
 		(post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
 	);
 
 	// rss
 	let root = process.cwd();
-	let rss = generateRss(filteredPosts, `rss/tags/${params.tag}/feed.${locale}.xml`, locale);
+	let rss = generateRss(filteredPosts, `rss/tags/${params.tag}/feed.xml`);
 	let rssPath = path.join(root, 'public', 'rss', 'tags', params.tag);
 	fs.mkdirSync(rssPath, { recursive: true });
-	fs.writeFileSync(path.join(rssPath, `feed.${locale}.xml`), rss);
+	fs.writeFileSync(path.join(rssPath, `feed.xml`), rss);
 
 	return {
 		props: {
 			posts: filteredPosts,
 			tag: params.tag,
-			...(await serverSideTranslations(locale ?? 'en', ['common', 'header'])),
 		},
 	};
 }

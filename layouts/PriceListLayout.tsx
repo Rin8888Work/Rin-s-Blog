@@ -1,5 +1,4 @@
 import { PageSeo } from 'components/SEO';
-import { useTranslation } from 'next-i18next';
 import { PageTitle } from '~/components/PageTitle';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
 import { siteMetadata } from '~/data/siteMetadata';
@@ -7,17 +6,14 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function PriceListLayout({ children }: PageLayoutProps) {
-	let description = 'My professional career, experience, and skills.';
-	const { t } = useTranslation('price-list');
-
 	return (
 		<>
 			<PageSeo
-				title={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
-				description={`${t('title')} - ${siteMetadata.fullName} - ${description}`}
+				title={`Bảng giá - ${siteMetadata.fullName}`}
+				description={`Bảng giá tham khảo cho các dịch vụ tại ${siteMetadata.siteUrl}`}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('title')} leading={t('leading')} />
+			<PageTitle title={`Bảng giá`} leading={``} />
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

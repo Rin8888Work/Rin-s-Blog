@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,12 +10,9 @@ export default function ServiceItem({
 	externalLink,
 	adviseLink,
 	color,
-	i18name,
 }: {
 	[x: string]: any;
 }) {
-	const { t } = useTranslation([i18name]);
-
 	return (
 		<li>
 			<div
@@ -30,7 +26,7 @@ export default function ServiceItem({
 					} flex items-center justify-center    p-4`}
 				>
 					<h3 className={`ml-2 ${itemActive === name ? 'text-xl' : 'text-base'} `}>
-						{t(`${i18name}:${name}`)}
+						{name}
 					</h3>
 				</div>
 				<div
@@ -43,12 +39,12 @@ export default function ServiceItem({
 							itemActive === name ? '' : 'hidden'
 						} transition-all duration-300 ease-in-out`}
 					>
-						{description && <p>{t(`${i18name}:${description}`)}</p>}
-						{t(`${i18name}:${price}`) && (
+						{description && <p>{description}</p>}
+						{price && (
 							<div className="mt-2 flex items-center  justify-center ">
-								<span>{t('service:price')}</span>
+								<span>Giá: </span>
 								<span className={`rounded-lg p-1 bg-${color} ml-2 text-sm`}>
-									{t(`${i18name}:${price}`)}
+									{price}
 								</span>
 							</div>
 						)}
@@ -61,9 +57,9 @@ export default function ServiceItem({
 									className={`umami--click--advise-${name.replaceAll(
 										'.',
 										'-'
-									)} rounded bg-rose-600 py-2 px-5`}
+									)} rounded bg-rose-600 px-5 py-2`}
 								>
-									{t(`${i18name}:advise`)}
+									{`Tư vấn`}
 								</a>
 							</Link>
 							{externalLink && (
@@ -74,9 +70,9 @@ export default function ServiceItem({
 										className={`umami--click--detail-${name.replaceAll(
 											'.',
 											'-'
-										)} rounded bg-sky-600 py-2 px-5`}
+										)} rounded bg-sky-600 px-5 py-2`}
 									>
-										{t(`${i18name}:detail`)}
+										{`Xem chi tiết`}
 									</a>
 								</Link>
 							)}

@@ -3,7 +3,7 @@ import { Link } from '../Link';
 export function BackToPosts({ page }: { page: number }) {
 	return (
 		<Link
-			href={`/blog/page/${page}`}
+			href={`/bai-viet/page/${page}`}
 			className="flex text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
 		>
 			<svg viewBox="0 -9 3 24" className="mr-3 h-6 w-auto overflow-visible">

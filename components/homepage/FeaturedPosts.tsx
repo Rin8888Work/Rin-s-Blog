@@ -8,7 +8,7 @@ import TitleSection from '../TitleSection';
 export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 	return (
 		<div className="border-t border-gray-200 dark:border-gray-700">
-			<TitleSection>Latest Posts</TitleSection>
+			<TitleSection>Bài viết mới nhất</TitleSection>
 			<div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8 ">
 				{!posts.length && 'No posts found.'}
 				{posts.slice(0, FEATURED_POSTS).map((frontMatter) => {
@@ -16,8 +16,8 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 					return (
 						<article key={slug}>
 							<div className="flex flex-col">
-								<div className=" relative h-52 w-full overflow-hidden rounded-md">
-									<Link href={`/blog/${slug}`}>
+								<div className=" relative h-52 w-full overflow-hidden rounded-md sm:h-64">
+									<Link href={`/bai-viet/${slug}`}>
 										<Image
 											src={images[0]}
 											alt={title}
@@ -41,7 +41,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 										<div>
 											<h2 className="mb-1 text-xl font-bold tracking-tight">
 												<Link
-													href={`/blog/${slug}`}
+													href={`/bai-viet/${slug}`}
 													className="text-gray-900 dark:text-gray-100"
 												>
 													<span className="umami--click--featured-title line-clamp-1">
@@ -51,7 +51,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 											</h2>
 											{/* <BlogTags tags={tags} /> */}
 										</div>
-										<div className="prose max-w-none text-gray-500 line-clamp-2 dark:text-gray-400">
+										<div className="prose line-clamp-2 max-w-none text-gray-500 dark:text-gray-400">
 											{summary}
 										</div>
 									</div>

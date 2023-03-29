@@ -1,18 +1,16 @@
-import { useTranslation } from 'next-i18next';
 import { Twemoji } from '~/components/Twemoji';
 import { siteMetadata } from '~/data/siteMetadata';
 
 export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' }) {
-	const { t } = useTranslation('common');
 	return (
-		<div className={`py-4 px-5 xl:block ${direction === 'column' ? '' : 'xl:w-2/4'} xl:px-6`}>
+		<div className={`px-5 py-4 xl:block ${direction === 'column' ? '' : 'xl:w-2/4'} xl:px-6`}>
 			<h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-				{t(siteMetadata.fullName)}({siteMetadata.nickName})
+				{siteMetadata.fullName}({siteMetadata.nickName})
 			</h3>
 			<h5 className="py-2 text-gray-700 dark:text-gray-400">
 				Mmo person - Website developer
 			</h5>
-			<div className="mt-4 mb-2 space-y-4">
+			<div className="mb-2 mt-4 space-y-4">
 				<div className="flex items-center text-gray-700 dark:text-gray-200">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +53,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 					</svg>
 
 					<p className="px-2">
-						{t(siteMetadata.address)}
+						{siteMetadata.address}
 						<span className="absolute ml-1 inline-flex pt-px">
 							<Twemoji emoji="flag-vietnam" />
 						</span>
@@ -81,7 +79,7 @@ export function ProfileCardInfo({ direction }: { direction?: 'column' | 'row' })
 					</svg>
 
 					<a className="px-2 hover:underline" href={`tel:${siteMetadata.phoneNumber}`}>
-						{t(siteMetadata.phoneNumber)}
+						{siteMetadata.phoneNumber}
 					</a>
 				</div>
 				<div className="flex items-center text-gray-700 dark:text-gray-200">
