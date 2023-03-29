@@ -219,11 +219,7 @@ module.exports = {
 	variants: {
 		typography: ['dark'],
 	},
-	plugins: [
-		require('@tailwindcss/forms'),
-		require('@tailwindcss/typography'),
-		require('@tailwindcss/line-clamp'),
-	],
+	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 	safelist: [
 		'text-pink-700',
 		'text-rose-600',
