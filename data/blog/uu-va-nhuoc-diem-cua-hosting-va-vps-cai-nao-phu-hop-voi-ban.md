@@ -1,5 +1,5 @@
 ---
-title: 'Ưu và nhược điểm của Hosting so với VPS: Cái nào phù hợp với bạn?'
+title: 'Ưu và nhược điểm của Hosting và VPS: Cái nào phù hợp với bạn?'
 date: '2023-01-26'
 tags: ['hosting', 'vps-server']
 draft: false

@@ -12,8 +12,8 @@ export const TAGS = {
 				vi: 'airdrop',
 			},
 			dropshipping: {
-				en: 'drop-shipping',
-				vi: 'drop-shipping',
+				en: 'reup-video',
+				vi: 'reup-video',
 			},
 			crypto: {
 				en: 'crypto',
