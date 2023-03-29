@@ -2,7 +2,7 @@ import Scrollspy from 'react-scrollspy';
 
 function BlogToc({ toc }) {
 	return (
-		<nav className="sticky top-24 rounded-lg bg-slate-100/70 p-2 py-4 text-sm dark:bg-slate-800 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto">
+		<nav className="sticky top-24 max-h-[calc(60vh)] overflow-auto rounded-lg bg-slate-100/70 p-2 py-4 text-sm dark:bg-slate-800">
 			<ul className="relative max-h-48 overflow-hidden lg:max-h-[unset] lg:overflow-visible">
 				<div className="absolute bottom-0 left-0 h-16 w-full  bg-gradient-to-t from-slate-100 to-transparent transition-all dark:from-slate-800 lg:hidden"></div>
 

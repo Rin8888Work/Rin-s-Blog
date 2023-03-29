@@ -66,11 +66,11 @@ export function TagLayout(props: TagLayoutProps) {
 										<div className="mt-2 flex flex-wrap gap-2">
 											{Object.keys(TAGS[key]['options']).map((k) => (
 												<div
-													className={`rounded-xl ${
+													className={`rounded-sm bg-gradient-to-t ${
 														tag === TAGS[key]['options'][k]['vi']
-															? 'bg-rose-800 text-white  dark:bg-red-500 '
+															? 'from-cyan-700 to-teal-500  text-white'
 															: ''
-													}  p-1 text-sm hover:bg-rose-800  hover:dark:bg-red-500`}
+													}  p-1 text-sm hover:from-teal-500 hover:to-cyan-700 hover:text-white`}
 													key={k}
 												>
 													<Link
@@ -79,7 +79,7 @@ export function TagLayout(props: TagLayoutProps) {
 														)}`}
 													>
 														<span className="umami--click--tag italic">
-															#{TAGS[key]['options'][k]['vi']}
+															{TAGS[key]['options'][k]['vi']}
 														</span>
 													</Link>
 												</div>

@@ -64,7 +64,7 @@ export function BlogLayout(props: BlogLayoutProps) {
 										<div className="mt-2 flex flex-wrap gap-2">
 											{Object.keys(TAGS[key]['options']).map((k) => (
 												<div
-													className="rounded-xl bg-rose-600 p-1 text-sm hover:bg-rose-800 dark:bg-rose-700 hover:dark:bg-red-500"
+													className="rounded-sm bg-gradient-to-t from-cyan-700 to-teal-500 p-1 text-sm hover:from-teal-500 hover:to-cyan-700"
 													key={k}
 												>
 													<Link
@@ -73,7 +73,7 @@ export function BlogLayout(props: BlogLayoutProps) {
 														)}`}
 													>
 														<span className="umami--click--tag italic text-white ">
-															#{TAGS[key]['options'][k]['vi']}
+															{TAGS[key]['options'][k]['vi']}
 														</span>
 													</Link>
 												</div>

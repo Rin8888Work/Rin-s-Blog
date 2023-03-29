@@ -1,3 +1,4 @@
 User-agent: *
-Disallow:
-Sitemap: https://phuocnv.com/sitemap.xml
+Allow: /
+Host: https://nguyenvanphuoc.com
+Sitemap: https://nguyenvanphuoc.com/sitemap.xml

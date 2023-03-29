@@ -31,7 +31,7 @@ export const TAGS = {
 		options: {
 			domain: {
 				en: 'domain',
-				vi: 'tên-miền',
+				vi: 'ten-mien',
 			},
 			hosting: {
 				en: 'hosting',
