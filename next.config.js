@@ -1,10 +1,8 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 });
-const { i18n } = require('./next-i18next.config');
 
 module.exports = withBundleAnalyzer({
-	i18n,
 	reactStrictMode: true,
 	env: {
 		GISCUS_REPO: process.env.GISCUS_REPO,
@@ -26,7 +24,7 @@ module.exports = withBundleAnalyzer({
 		dirs: ['components', 'constant', 'layouts', 'libs', 'pages', 'scripts', 'utils'],
 	},
 	images: {
-		domains: ['drive.inet.vn', 'letrongdai.vn'],
+		domains: ['drive.inet.vn'],
 	},
 	typescript: { tsconfigPath: './tsconfig.json' },
 	// webpack: (config, { dev, isServer }) => {

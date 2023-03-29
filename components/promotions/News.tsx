@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
 import type { BlogFrontMatter } from '~/types';
@@ -7,11 +6,9 @@ import { Link } from '../Link';
 import TitleSection from '../TitleSection';
 
 export function PromotionNews({ posts }: { posts: BlogFrontMatter[] }) {
-	const { t } = useTranslation(['promotion']);
-
 	return (
 		<div className="border-t border-gray-200 dark:border-gray-700">
-			<TitleSection>{t('promotionNewsTitle')}</TitleSection>
+			<TitleSection>{`Tin tức khuyến mãi`}</TitleSection>
 			<Masonry
 				breakpointCols={{
 					default: 2,
@@ -29,7 +26,7 @@ export function PromotionNews({ posts }: { posts: BlogFrontMatter[] }) {
 							<div className=" flex flex-col items-center bg-white">
 								<div className=" relative w-full ">
 									<Image
-										className="absolute top-5 right-5 z-10"
+										className="absolute right-5 top-5 z-10"
 										src={'/static/images/promotions/new.png'}
 										alt={`hot---${title}`}
 										width={80}
@@ -39,7 +36,7 @@ export function PromotionNews({ posts }: { posts: BlogFrontMatter[] }) {
 											height: 'auto',
 										}}
 									></Image>
-									<Link href={`/blog/${slug}`}>
+									<Link href={`/bai-viet/${slug}`}>
 										<Image
 											src={images[0]}
 											alt={title}
@@ -60,7 +57,7 @@ export function PromotionNews({ posts }: { posts: BlogFrontMatter[] }) {
 										<div>
 											<h2 className="mb-1 text-xl font-bold tracking-tight hover:underline">
 												<Link
-													href={`/blog/${slug}`}
+													href={`/bai-viet/${slug}`}
 													className="text-red-800"
 												>
 													<span className="umami--click--featured-title line-clamp-2">

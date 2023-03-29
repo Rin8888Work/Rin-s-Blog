@@ -1,26 +1,17 @@
 import { useEffect } from 'react';
 import { getKeysGoExternal, getLinkFromKey } from '~/libs/go-external';
 
-// import dynamic from 'next/dynamic'
-// const DynamicComponentWithNoSSR = dynamic(
-//     () => import('../components/hello3'),
-//     { ssr: false }
-//   )
-
-export function getStaticPaths({ locales }) {
+export function getStaticPaths() {
 	const allKeys = getKeysGoExternal();
 	const paths = [];
 
-	locales?.map((locale) => {
-		allKeys?.map((key) =>
-			paths.push({
-				params: {
-					key,
-				},
-				locale,
-			})
-		);
-	});
+	allKeys?.map((key) =>
+		paths.push({
+			params: {
+				key,
+			},
+		})
+	);
 
 	return {
 		paths,

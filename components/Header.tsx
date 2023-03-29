@@ -1,17 +1,16 @@
 import clsx from 'clsx';
 import { headerNavLinks, headerToolbar } from 'data/headerNavLinks';
-import { useTranslation } from 'next-i18next';
 import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 import { siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
-import LanguageSwitcher from './LanguageSwitcher';
+import { AnalyticsLink } from './AnalyticsLink';
+// import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from './Link';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 	let router = useRouter();
-	const { t } = useTranslation('header');
 
 	return (
 		<>
@@ -26,7 +25,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 							);
 							return (
 								<Link key={link.title} href={link.href}>
-									<span className={className}>{t(link.title)}</span>
+									<span className={className}>{link.title}</span>
 								</Link>
 							);
 						})}
@@ -68,15 +67,15 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 								return (
 									<li key={link.title}>
 										<Link href={link.href}>
-											<span className={className}>{t(link.title)}</span>
+											<span className={className}>{link.title}</span>
 										</Link>
 									</li>
 								);
 							})}
 						</ul>
-						{/* <AnalyticsLink /> */}
+						<AnalyticsLink />
 						<ThemeSwitcher />
-						<LanguageSwitcher />
+						{/* <LanguageSwitcher /> */}
 						<button
 							className="umami--click--mobile-nav-toggle ml-2 mr-1 h-8 w-8 rounded sm:hidden"
 							type="button"

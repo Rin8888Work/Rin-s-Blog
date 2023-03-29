@@ -1,12 +1,9 @@
 import Script from 'next/script';
-import { useTranslation } from 'next-i18next';
 import { siteMetadata } from '~/data/siteMetadata';
 
 let isProduction = process.env.NODE_ENV === 'production';
 
 function Facebook() {
-	const { t } = useTranslation();
-
 	if (!isProduction) return null;
 
 	return (
@@ -32,7 +29,7 @@ function Facebook() {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
               js = d.createElement(s); js.id = id;
-              js.src = 'https://connect.facebook.net/${t('language')}/sdk/xfbml.customerchat.js';
+              js.src = 'https://connect.facebook.net/vi-VN/sdk/xfbml.customerchat.js';
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         `}

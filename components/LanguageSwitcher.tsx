@@ -1,14 +1,12 @@
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 
 const conditionRedirectToBlogPage = {
-	options: ['/tags/[tag]', '/blog/[...slug]'],
-	redirectTo: '/blog',
+	options: ['/tags/[tag]', '/bai-viet/[...slug]'],
+	redirectTo: '/bai-viet',
 };
 
 function LanguageSwitcher() {
 	const router = useRouter();
-	const { t } = useTranslation('header');
 
 	const handleLanguageChange = (value) => {
 		// redirect if on Tag, blog page
@@ -19,8 +17,8 @@ function LanguageSwitcher() {
 
 	return (
 		<button
-			title={t('switchLanguage')}
-			aria-label={t('switchLanguage')}
+			title={`Chuyển đổi ngôn ngữ`}
+			aria-label={`Chuyển đổi ngôn ngữ`}
 			type="button"
 			className="umami--click--nav-theme-switcher ml-1 rounded p-1.5"
 			onClick={() => handleLanguageChange(router.locale == 'vi' ? 'en' : 'vi')}

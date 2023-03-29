@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { useTranslation } from 'next-i18next';
+import { useEffect, useState } from 'react';
 
 export function ThemeSwitcher() {
 	let [mounted, setMounted] = useState(false);
 	let { theme, setTheme, resolvedTheme } = useTheme();
-	const { t } = useTranslation('header');
 
 	// When mounted on client, now we can show the UI
 	useEffect(() => setMounted(true), []);
@@ -13,8 +11,8 @@ export function ThemeSwitcher() {
 
 	return (
 		<button
-			title={t('switchTheme')}
-			aria-label={t('switchTheme')}
+			title={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
+			aria-label={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
 			type="button"
 			className="umami--click--nav-theme-switcher ml-1 rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
 			onClick={() => setTheme(isDark ? 'light' : 'dark')}

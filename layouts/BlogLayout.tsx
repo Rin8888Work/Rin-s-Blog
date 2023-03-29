@@ -1,22 +1,18 @@
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { Link } from '~/components/Link';
 import { PageTitle } from '~/components/PageTitle';
 import { Pagination } from '~/components/Pagination';
 import { PostListItem } from '~/components/PostListItem';
 import { PostsSearch } from '~/components/PostsSearch';
-import type { BlogLayoutProps } from '~/types';
-import ScreenWidth from './ScreenWidth';
-import { siteMetadata } from '~/data/siteMetadata';
-import { PageSeo } from '~/components/SEO';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
+import { PageSeo } from '~/components/SEO';
+import { siteMetadata } from '~/data/siteMetadata';
 import { TAGS } from '~/data/tags';
-import { useRouter } from 'next/router';
+import type { BlogLayoutProps } from '~/types';
 import { kebabCase } from '~/utils/kebab-case';
-import { Link } from '~/components/Link';
+import ScreenWidth from './ScreenWidth';
 
 export function BlogLayout(props: BlogLayoutProps) {
-	const { t } = useTranslation(['blog', 'common']);
-	const { locale } = useRouter();
 	let { posts, initialDisplayPosts = [], pagination } = props;
 	let [searchValue, setSearchValue] = useState('');
 	let filteredBlogPosts = posts.filter((frontMatter) => {
@@ -31,10 +27,15 @@ export function BlogLayout(props: BlogLayoutProps) {
 	return (
 		<>
 			<PageSeo
-				title={`${t('blog:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
-				description={t('blog:description')}
+				title={`${`Bài viết`} | ${siteMetadata.fullName}`}
+				description={
+					'Tổng hợp kinh nghiệm, các bài viết, kiến thức kinh doanh, kiếm tiền online, marketing chất lượng nhất không thể bỏ qua'
+				}
 			/>
-			<PageTitle title={t('blog:title')} leading={t('blog:leading')} />
+			<PageTitle
+				title={`Bài viết`}
+				leading={`Mình chủ yếu viết về phát triển web, liên quan đến công nghệ, chia sẻ những cách kiếm tiền qua mạng và đôi khi về cuộc sống cá nhân của mình`}
+			/>
 			<ScrollTopButton />
 
 			<ScreenWidth>
@@ -55,13 +56,11 @@ export function BlogLayout(props: BlogLayoutProps) {
 							</ul>
 						</div>
 						<div className="row-start-1 mb-4 xl:col-span-3">
-							<h2 className="mb-3 text-xl font-bold uppercase ">
-								{t('common:tags')}
-							</h2>
+							<h2 className="mb-3 text-xl font-bold uppercase ">Tags</h2>
 							<div>
 								{Object.keys(TAGS).map((key) => (
 									<div className="mt-4" key={key}>
-										<h3>{TAGS[key][locale]}</h3>
+										<h3>{TAGS[key]['vi']}</h3>
 										<div className="mt-2 flex flex-wrap gap-2">
 											{Object.keys(TAGS[key]['options']).map((k) => (
 												<div
@@ -70,11 +69,11 @@ export function BlogLayout(props: BlogLayoutProps) {
 												>
 													<Link
 														href={`/tags/${kebabCase(
-															TAGS[key]['options'][k][locale]
+															TAGS[key]['options'][k]['vi']
 														)}`}
 													>
 														<span className="umami--click--tag italic text-white ">
-															#{TAGS[key]['options'][k][locale]}
+															#{TAGS[key]['options'][k]['vi']}
 														</span>
 													</Link>
 												</div>

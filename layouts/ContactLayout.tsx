@@ -1,5 +1,4 @@
 import { PageSeo } from 'components/SEO';
-import { useTranslation } from 'next-i18next';
 import { PageTitle } from '~/components/PageTitle';
 import { ScrollTopButton } from '~/components/ScrollTopButton';
 import { siteMetadata } from '~/data/siteMetadata';
@@ -7,16 +6,17 @@ import type { PageLayoutProps } from '~/types';
 import ScreenWidth from './ScreenWidth';
 
 export function ContactLayout({ children }: PageLayoutProps) {
-	const { t } = useTranslation(['contact', 'common']);
-
 	return (
 		<>
 			<PageSeo
-				title={`${t('contact:title')} | ${t(`common:${siteMetadata.fullName}`)}`}
-				description={`${t('contact:description')}`}
+				title={`${`Liên hệ`} | ${siteMetadata.fullName}`}
+				description={`Vui lòng liên hệ thông qua những phương thức được liệt kê trong trang này hoặc gửi thông tin liên hệ của bạn nếu bạn có bất kì thắc mắc nào. `}
 			/>
 			<ScrollTopButton />
-			<PageTitle title={t('contact:title')} leading={t('contact:leading')} />
+			<PageTitle
+				title={`Liên hệ`}
+				leading={`Nếu bạn có bất kì thắc mắc nào. Vui lòng liên hệ thông qua những phương thức bên dưới hoặc gửi thông tin liên hệ của bạn`}
+			/>
 			<ScreenWidth>{children}</ScreenWidth>
 		</>
 	);

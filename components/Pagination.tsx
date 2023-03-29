@@ -17,7 +17,13 @@ export function Pagination({ totalPages, currentPage }: PaginationType) {
 					</button>
 				)}
 				{hasPrevPage && (
-					<Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
+					<Link
+						href={
+							currentPage - 1 === 1
+								? `/bai-viet/`
+								: `/bai-viet/page/${currentPage - 1}`
+						}
+					>
 						<button>Previous</button>
 					</Link>
 				)}
@@ -33,7 +39,7 @@ export function Pagination({ totalPages, currentPage }: PaginationType) {
 					</button>
 				)}
 				{hasNextPage && (
-					<Link href={`/blog/page/${currentPage + 1}`}>
+					<Link href={`/bai-viet/page/${currentPage + 1}`}>
 						<button>Next</button>
 					</Link>
 				)}

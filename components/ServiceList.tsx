@@ -1,16 +1,8 @@
-import ServiceItem from './ServiceItem';
-import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { seedingLink } from '~/data/siteMetadata';
+import ServiceItem from './ServiceItem';
 
-export default function ServiceList({
-	list,
-	description,
-	color,
-	i18name,
-	isExternalLink = true,
-}: any) {
-	const { t } = useTranslation(['service']);
+export default function ServiceList({ list, description, color, isExternalLink = true }: any) {
 	const [itemActive, setItemActive] = useState('');
 
 	const openItem = (item) => {
@@ -19,11 +11,7 @@ export default function ServiceList({
 
 	return (
 		<div>
-			{t(`${i18name}:${description}`) && (
-				<div className="mb-4 text-xl font-bold sm:text-xl">
-					{t(`${i18name}:${description}`)}
-				</div>
-			)}
+			{description && <div className="mb-4 text-xl font-bold sm:text-xl">{description}</div>}
 			<ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
 				{list?.map((item, index) => (
 					<ServiceItem
@@ -34,7 +22,6 @@ export default function ServiceList({
 						openItem={openItem}
 						externalLink={isExternalLink ? seedingLink.socialSeeding.key : undefined}
 						adviseLink={seedingLink.adviseLink.key}
-						i18name={i18name}
 					/>
 				))}
 			</ul>
