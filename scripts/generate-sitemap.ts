@@ -13,15 +13,15 @@ let globalSiteMapName = 'sitemap-global.xml';
 	let prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
 	let pages = await globby([
 		'pages/*.tsx',
-		'public/rss/tags/**/*.vi.xml',
+		'public/rss/tags/**/*.xml',
 		'!pages/_*.tsx',
 		'!pages/api',
 	]);
 	let viDynamicPages = await globby([
-		'data/blog/vi/**/*.mdx',
-		'data/blog/vi/**/*.md',
-		'data/promotions/vi/**/*.mdx',
-		'data/promotions/vi/**/*.md',
+		'data/blog/**/*.mdx',
+		'data/blog/**/*.md',
+		'data/promotions/**/*.mdx',
+		'data/promotions/**/*.md',
 	]);
 
 	let sitemap = `
@@ -43,9 +43,9 @@ let globalSiteMapName = 'sitemap-global.xml';
 					.replace('public/rss/', '/')
 					.replace('.tsx', '')
 					.replace('.ts', '')
-					.replace(`/feed.vi.xml`, '');
+					.replace(`/feed.xml`, '');
 				let route = path === '/index' ? '' : path;
-				if (page === `pages/404.tsx` || page === `pages/blog/[...slug].tsx`) {
+				if (page === `pages/404.tsx` || page === `pages/bai-viet/[...slug].tsx`) {
 					return;
 				}
 				let lastmod = fs.statSync(page).mtime.toISOString().slice(0, 10);
@@ -56,8 +56,8 @@ let globalSiteMapName = 'sitemap-global.xml';
 		${viDynamicPages
 			.map((page) => {
 				let path = page
-					.replace('data/blog/vi', '/bai-viet')
-					.replace('data/promotions/vi', '/bai-viet')
+					.replace('data/blog', '/bai-viet')
+					.replace('data/promotions', '/bai-viet')
 					.replace('.mdx', '')
 					.replace('.md', '');
 				let route = path === '/index' ? '' : path;

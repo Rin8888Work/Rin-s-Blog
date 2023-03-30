@@ -134,11 +134,11 @@ export let siteMetadata = {
 	youtube: 'https://www.youtube.com/@rin8888work',
 	linkedin: 'https://www.linkedin.com/in/rin8888work/',
 	locale: 'vi-VN',
-	analyticsURL: 'https://analytics.umami.is/websites/af8b54df-c1fa-4a45-aded-32b6e8ecc1fd',
+	analyticsURL: process.env.UMAMI_PUBLIC_URL,
 	analytics: {
 		plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
 		simpleAnalytics: false, // true or false
-		umamiWebsiteId: 'af8b54df-c1fa-4a45-aded-32b6e8ecc1fd', // e.g. 123e4567-e89b-12d3-a456-426614174000
+		umamiWebsiteId: process.env.UMAMI_WEBSITE_ID, // e.g. 123e4567-e89b-12d3-a456-426614174000
 		googleAnalyticsId: process.env.GG_ANALYTIC_ID, // e.g. UA-000000-2 or G-XXXXXXX
 	},
 	socialAccounts: {

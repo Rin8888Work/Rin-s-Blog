@@ -18,6 +18,8 @@ module.exports = withBundleAnalyzer({
 		GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
 		GG_ANALYTIC_ID: process.env.GG_ANALYTIC_ID,
 		FACEBOOK_PAGE_ID: process.env.FACEBOOK_PAGE_ID,
+		UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID,
+		UMAMI_PUBLIC_URL: process.env.UMAMI_PUBLIC_URL,
 	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	eslint: {
