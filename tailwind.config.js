@@ -244,5 +244,10 @@ module.exports = {
 		'text-emerald-600',
 		'bg-emerald-600',
 		'bg-teal-700',
+		'ml-4px',
+		'ml-8px',
+		'ml-12px',
+		'ml-16px',
+		'ml-20px',
 	],
 };

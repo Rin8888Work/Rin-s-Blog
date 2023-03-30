@@ -11,8 +11,8 @@ export function ThemeSwitcher() {
 
 	return (
 		<button
-			title={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
-			aria-label={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
+			title={mounted && isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
+			aria-label={mounted && isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
 			type="button"
 			className="umami--click--nav-theme-switcher ml-1 rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
 			onClick={() => setTheme(isDark ? 'light' : 'dark')}

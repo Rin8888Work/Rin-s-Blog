@@ -40,11 +40,11 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
 								<div className="mr-3 flex items-center justify-center">
 									<NextImage
 										priority
-										src="/static/images/logo.jpg"
+										src={'/static/images/logo.png'}
 										alt={siteMetadata.title}
 										width={45}
 										height={45}
-										className="rounded-full"
+										className="rounded-md"
 										style={{
 											maxWidth: '100%',
 											height: 'auto',
