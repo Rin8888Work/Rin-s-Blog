@@ -1,11 +1,12 @@
 ---
 title: 'Top 3 cách kiếm tiền online hot nhất hiện nay'
 date: '2023-03-29'
-tags: ['kiem-tiem-online', 'tiep-thi-lien-ket', 'airdrop', 'reup-video']
+tags: ['kiem-tien-online', 'tiep-thi-lien-ket', 'airdrop', 'reup-video']
 draft: false
 summary: "3 hình thức kiếm tiền online đang đứng top hiện nay như: tiếp thị liên kết, reup video, airdrop. Vậy hãy cùng xem cách để kiếm tiền từ 3 hình thức này nhé."
 images: ['/static/images/blog-banner/top-3-cach-kiem-tien-online-ban-nen-thu.jpg']
 authors: ['default']
+lastmod: '2023-03-31'
 ---
 
 ![thumbnail-image Tin mình đi! Bạn có thể sẽ thốt lên rằng "Tại sao mình không biết sớm hơn 😂"](/static/images/blog-banner/top-3-cach-kiem-tien-online-ban-nen-thu.jpg)
