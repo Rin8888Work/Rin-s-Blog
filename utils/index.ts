@@ -16,3 +16,28 @@ export const randomTextColor = () => {
 
 	return classes[randomNumberInRange(0, classes.length)];
 };
+
+export const getIconTocLevel = (level: number | string) => {
+	switch (level) {
+		case 1:
+			return '1st-place-medal';
+
+		case 2:
+			return '2nd-place-medal';
+
+		case 3:
+			return '3rd-place-medal';
+
+		case 'h2':
+			return '1st-place-medal';
+
+		case 'h3':
+			return '2nd-place-medal';
+
+		case 'h4':
+			return '3rd-place-medal';
+
+		default:
+			return '1st-place-medal';
+	}
+};

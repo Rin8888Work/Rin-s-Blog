@@ -249,5 +249,6 @@ module.exports = {
 		'ml-12px',
 		'ml-16px',
 		'ml-20px',
+		'bg-teal-500',
 	],
 };
