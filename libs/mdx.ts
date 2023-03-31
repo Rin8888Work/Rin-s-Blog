@@ -11,6 +11,7 @@ import remarkGFM from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 import { TOKEN_CLASSNAME_MAP } from '~/constant';
 import type { BlogFrontMatter, MdxFileData, MdxFrontMatter, TOC, UnistNodeType } from '~/types';
+import { getIconTocLevel } from '~/utils';
 import { dateSortDesc } from '~/utils/date';
 import { formatSlug, getAllFilesRecursively } from './files';
 import { remarkCodeBlockTitle } from './remark-code-block-title';
@@ -78,7 +79,25 @@ export async function getFileBySlug(type: string, slug: string): Promise<MdxFile
 			options.rehypePlugins = [
 				...(options.rehypePlugins || []),
 				rehypeSlug,
-				rehypeAutolinkHeadings,
+				[
+					rehypeAutolinkHeadings,
+					{
+						behavior: 'prepend',
+						content: ({ tagName }) => {
+							const iconClassName = getIconTocLevel(tagName);
+							return [
+								{
+									type: 'element',
+									tagName: 'i',
+									properties: {
+										className: `inline-block twa twa-lg twa-${iconClassName}`,
+									},
+									children: [],
+								},
+							];
+						},
+					},
+				],
 				[rehypePrismPlus, { ignoreMissing: true }],
 				rehypePresetMinify,
 				() => {

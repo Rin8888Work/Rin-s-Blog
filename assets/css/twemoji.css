@@ -318,3 +318,12 @@
 .twa-link {
 	background-image: url(https://twitter.github.io/twemoji/v/latest/svg/1f517.svg);
 }
+.twa-1st-place-medal {
+	background-image: url(https://twitter.github.io/twemoji/v/latest/svg/1f947.svg);
+}
+.twa-2nd-place-medal {
+	background-image: url(https://twitter.github.io/twemoji/v/latest/svg/1f948.svg);
+}
+.twa-3rd-place-medal {
+	background-image: url(https://twitter.github.io/twemoji/v/latest/svg/1f949.svg);
+}

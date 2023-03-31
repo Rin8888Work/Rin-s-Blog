@@ -46,24 +46,6 @@ Mặc dù là một hình thức `kiếm tiền online` rất đơn giản nhưn
 
 ![Airdrop tiền mã hóa là dì? Nguồn: iStock](/static/images/blog-banner/1391572277.jpg)
 
-### h3
-Trong ngành blockchain hiện này, ngày càng có nhiều dự án khủng ra mắt và thời gian đầu họ ra mắt sẽ có một chương trình gọi là `airdrop`. Chương trình airdrop mục đích nhằm để thu hút cộng đồng, giúp cho dự án được nhiều người biết đến hơn và đây có thể xem là 1 cách Marketing khá hiệu quả trong những năm vừa qua. 
-
-Airdrop tiền mã hóa là một chiến lược tiếp thị được các công ty khởi nghiệp tiền mã hóa áp dụng để quảng bá dự án và token mới của họ. Nó liên quan đến việc phân phối miễn phí tiền mã hoá gốc của họ cho người dùng hiện tại hoặc người dùng tiềm năng. Đôi khi, người dùng phải hoàn thành các hoạt động quảng cáo đơn giản trước khi họ có thể nhận các khoản tiền "từ trên trời" này, chẳng hạn như theo dõi các tài khoản mạng xã hội của dự án và chia sẻ bài đăng của họ.
-#### h4
-Trong ngành blockchain hiện này, ngày càng có nhiều dự án khủng ra mắt và thời gian đầu họ ra mắt sẽ có một chương trình gọi là `airdrop`. Chương trình airdrop mục đích nhằm để thu hút cộng đồng, giúp cho dự án được nhiều người biết đến hơn và đây có thể xem là 1 cách Marketing khá hiệu quả trong những năm vừa qua. 
-
-Airdrop tiền mã hóa là một chiến lược tiếp thị được các công ty khởi nghiệp tiền mã hóa áp dụng để quảng bá dự án và token mới của họ. Nó liên quan đến việc phân phối miễn phí tiền mã hoá gốc của họ cho người dùng hiện tại hoặc người dùng tiềm năng. Đôi khi, người dùng phải hoàn thành các hoạt động quảng cáo đơn giản trước khi họ có thể nhận các khoản tiền "từ trên trời" này, chẳng hạn như theo dõi các tài khoản mạng xã hội của dự án và chia sẻ bài đăng của họ.
-##### h5
-Trong ngành blockchain hiện này, ngày càng có nhiều dự án khủng ra mắt và thời gian đầu họ ra mắt sẽ có một chương trình gọi là `airdrop`. Chương trình airdrop mục đích nhằm để thu hút cộng đồng, giúp cho dự án được nhiều người biết đến hơn và đây có thể xem là 1 cách Marketing khá hiệu quả trong những năm vừa qua. 
-
-Airdrop tiền mã hóa là một chiến lược tiếp thị được các công ty khởi nghiệp tiền mã hóa áp dụng để quảng bá dự án và token mới của họ. Nó liên quan đến việc phân phối miễn phí tiền mã hoá gốc của họ cho người dùng hiện tại hoặc người dùng tiềm năng. Đôi khi, người dùng phải hoàn thành các hoạt động quảng cáo đơn giản trước khi họ có thể nhận các khoản tiền "từ trên trời" này, chẳng hạn như theo dõi các tài khoản mạng xã hội của dự án và chia sẻ bài đăng của họ.
-###### h6
-
-Trong ngành blockchain hiện này, ngày càng có nhiều dự án khủng ra mắt và thời gian đầu họ ra mắt sẽ có một chương trình gọi là `airdrop`. Chương trình airdrop mục đích nhằm để thu hút cộng đồng, giúp cho dự án được nhiều người biết đến hơn và đây có thể xem là 1 cách Marketing khá hiệu quả trong những năm vừa qua. 
-
-Airdrop tiền mã hóa là một chiến lược tiếp thị được các công ty khởi nghiệp tiền mã hóa áp dụng để quảng bá dự án và token mới của họ. Nó liên quan đến việc phân phối miễn phí tiền mã hoá gốc của họ cho người dùng hiện tại hoặc người dùng tiềm năng. Đôi khi, người dùng phải hoàn thành các hoạt động quảng cáo đơn giản trước khi họ có thể nhận các khoản tiền "từ trên trời" này, chẳng hạn như theo dõi các tài khoản mạng xã hội của dự án và chia sẻ bài đăng của họ.
-
 Airdrop có một số loại dưới đây:
 
 - **Các chương trình Airdrop trên các nền tảng như Discord**, Telegram: Đây là 1 dạng Airdrop mà token sẽ được phân phối cho cộng đồng miễn phí và anh em có thể không phải thực hiện bất kỳ thao tác nào. Có thể yêu cầu chỉ là tạo 1 tài khoản hoặc cung cấp địa chỉ ví

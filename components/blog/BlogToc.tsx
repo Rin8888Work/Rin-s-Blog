@@ -1,27 +1,41 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { getIconTocLevel } from '~/utils';
+import Twemoji from '../Twemoji';
 
-const mapChildrenTOC = (toc, activeHeading) =>
-	toc?.map((t) => (
+const mapChildrenTOC = (toc, activeHeading) => {
+	const handleClick = async (event, hash) => {
+		event.preventDefault();
+		await import('../../utils/scrollToHash').then((module) => {
+			module.scrollToHash(`#${hash}`, 60);
+		});
+	};
+
+	return toc?.map((t) => (
 		<li className={`${t.depth > 2 ? 'ml-4' : ''} py-2`} key={t.url}>
 			<div className="flex items-center">
 				<span
 					className={`${
-						activeHeading === t.url ? 'bg-teal-500 ' : ''
-					} mr-2 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  bg-transparent  dark:border-teal-500`}
+						activeHeading === t.url ? 'bg-teal-500' : ''
+					} mr-2 h-2.5 w-2.5 flex-shrink-0  border-2 !border-teal-600  dark:border-teal-500`}
 				></span>
-				<a
+				<Link
 					title={t.value}
 					href={`#${t.url}`}
 					className={`${
 						activeHeading === t.url ? 'text-teal-600 dark:text-teal-500' : ''
-					} cursor-pointer`}
+					} flex cursor-pointer items-center gap-1`}
+					onClick={(event) => handleClick(event, t.url)}
 				>
-					{t.value}
-				</a>
+					<Twemoji emoji={getIconTocLevel(t.depth - 1)} />
+
+					<span>{t.value}</span>
+				</Link>
 			</div>
 			{t.children && <ul>{mapChildrenTOC(t.children, activeHeading)} </ul>}
 		</li>
 	));
+};
 
 function BlogToc({ toc }) {
 	const [activeHeading, setActiveHeading] = useState(null);
@@ -33,7 +47,7 @@ function BlogToc({ toc }) {
 			for (let i = 0; i < headings.length; i++) {
 				const heading = headings[i];
 				const rect = heading.getBoundingClientRect();
-				if (rect.top + 60 >= 0 && rect.bottom <= window.innerHeight) {
+				if (rect.top >= 50 && rect.bottom <= window.innerHeight / 2) {
 					activeHeading = heading.getAttribute('id');
 				}
 			}
