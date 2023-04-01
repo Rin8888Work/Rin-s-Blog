@@ -1,48 +1,33 @@
+import Link from 'next/link';
 import type { PaginationType } from '~/types';
-import { Link } from './Link';
 
 export function Pagination({ totalPages, currentPage }: PaginationType) {
-	let hasPrevPage = currentPage - 1 > 0;
-	let hasNextPage = currentPage + 1 <= totalPages;
+	let pages = Array.from(Array(totalPages)).map((_, index) => index + 1);
 
 	return (
-		<div className="space-y-2 md:space-y-5">
-			<nav className="flex justify-between">
-				{!hasPrevPage && (
-					<button
-						className="umami--click--prev-posts cursor-auto disabled:opacity-50"
-						disabled={!hasPrevPage}
-					>
-						Previous
-					</button>
-				)}
-				{hasPrevPage && (
-					<Link
-						href={
-							currentPage - 1 === 1
-								? `/bai-viet/`
-								: `/bai-viet/page/${currentPage - 1}`
-						}
-					>
-						<button>Previous</button>
-					</Link>
-				)}
-				<span>
-					{currentPage} of {totalPages}
-				</span>
-				{!hasNextPage && (
-					<button
-						className="umami--click--next-posts cursor-auto disabled:opacity-50"
-						disabled={!hasNextPage}
-					>
-						Next
-					</button>
-				)}
-				{hasNextPage && (
-					<Link href={`/bai-viet/page/${currentPage + 1}`}>
-						<button>Next</button>
-					</Link>
-				)}
+		<div className="space-y-2 pt-6 sm:pt-8 md:space-y-5">
+			<nav className="flex justify-center gap-x-1">
+				{pages.map((pageNumber) => {
+					return (
+						<Link
+							key={`page-${pageNumber}`}
+							href={pageNumber === 1 ? '/bai-viet' : `/bai-viet/trang/${pageNumber}`}
+							passHref
+							legacyBehavior
+						>
+							<a
+								className={`mx-1 rounded-md bg-gray-100 px-3 py-2 text-dark hover:bg-gray-200 dark:bg-gray-400 ${
+									pageNumber === currentPage ? '!bg-gray-400 font-semibold' : ''
+								}`}
+								href={
+									pageNumber === 1 ? '/bai-viet' : `/bai-viet/trang/${pageNumber}`
+								}
+							>
+								{pageNumber}
+							</a>
+						</Link>
+					);
+				})}
 			</nav>
 		</div>
 	);

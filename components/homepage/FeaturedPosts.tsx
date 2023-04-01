@@ -9,7 +9,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 	return (
 		<div className="border-t border-gray-200 dark:border-gray-700">
 			<TitleSection>Bài viết mới nhất</TitleSection>
-			<div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8 ">
+			<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 ">
 				{!posts.length && 'No posts found.'}
 				{posts.slice(0, FEATURED_POSTS).map((frontMatter) => {
 					let { slug, date, title, summary, images } = frontMatter;
@@ -30,14 +30,14 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
 										></Image>
 									</Link>
 								</div>
-								<dl className="py-3">
+								<dl className="py-1 sm:py-3">
 									<dt className="sr-only">Published on</dt>
 									<dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
 										<time dateTime={date}>{formatDate(date)}</time>
 									</dd>
 								</dl>
-								<div className="space-y-5 xl:col-span-3">
-									<div className="space-y-3">
+								<div className="space-y-2 sm:space-x-5 xl:col-span-3">
+									<div className="space-y-2 sm:space-y-3">
 										<div>
 											<h2 className="mb-1 text-xl font-bold tracking-tight">
 												<Link
