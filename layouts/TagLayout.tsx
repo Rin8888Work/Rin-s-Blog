@@ -56,47 +56,49 @@ export function TagLayout(props: TagLayoutProps) {
 									/>
 								))}
 							</ul>
+							{pagination && pagination.totalPages > 1 && !searchValue && (
+								<Pagination
+									currentPage={pagination.currentPage}
+									totalPages={pagination.totalPages}
+								/>
+							)}
 						</div>
 						<div className="row-start-1 mb-4 xl:col-span-3">
-							<h2 className="mb-3 text-xl font-bold uppercase ">Tags</h2>
-							<div>
-								{Object.keys(TAGS).map((key) => (
-									<div className="mt-4" key={key}>
-										<h3>{TAGS[key]['vi']}</h3>
-										<div className="mt-2 flex flex-wrap gap-2">
-											{Object.keys(TAGS[key]['options']).map((k) => (
-												<div
-													className={`rounded-sm bg-gradient-to-t ${
-														tag === TAGS[key]['options'][k]['vi']
-															? 'from-cyan-700 to-teal-500  text-white'
-															: ''
-													}  p-1 text-sm hover:from-teal-500 hover:to-cyan-700 hover:text-white`}
-													key={k}
-												>
-													<Link
-														href={`/tags/${kebabCase(
-															TAGS[key]['options'][k]['vi']
-														)}`}
+							<div className="sticky top-20">
+								<h2 className="mb-3 text-xl font-bold uppercase ">Tags</h2>
+								<div>
+									{Object.keys(TAGS).map((key) => (
+										<div className="mt-4" key={key}>
+											<h3>{TAGS[key]['vi']}</h3>
+											<div className="mt-2 flex flex-wrap gap-2">
+												{Object.keys(TAGS[key]['options']).map((k) => (
+													<div
+														className={`rounded-sm bg-gradient-to-t ${
+															tag === TAGS[key]['options'][k]['vi']
+																? 'from-cyan-700 to-teal-500  text-white'
+																: ''
+														}  p-1 text-sm hover:from-teal-500 hover:to-cyan-700 hover:text-white`}
+														key={k}
 													>
-														<span className="umami--click--tag italic">
-															{TAGS[key]['options'][k]['vi']}
-														</span>
-													</Link>
-												</div>
-											))}
+														<Link
+															href={`/tags/${kebabCase(
+																TAGS[key]['options'][k]['vi']
+															)}`}
+														>
+															<span className="umami--click--tag italic">
+																{TAGS[key]['options'][k]['vi']}
+															</span>
+														</Link>
+													</div>
+												))}
+											</div>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				{pagination && pagination.totalPages > 1 && !searchValue && (
-					<Pagination
-						currentPage={pagination.currentPage}
-						totalPages={pagination.totalPages}
-					/>
-				)}
 			</ScreenWidth>
 		</>
 	);

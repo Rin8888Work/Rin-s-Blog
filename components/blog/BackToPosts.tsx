@@ -3,7 +3,7 @@ import { Link } from '../Link';
 export function BackToPosts({ page }: { page: number }) {
 	return (
 		<Link
-			href={`/bai-viet/page/${page}`}
+			href={`/bai-viet/trang/${page}`}
 			className="flex text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
 		>
 			<svg viewBox="0 -9 3 24" className="mr-3 h-6 w-auto overflow-visible">
@@ -16,7 +16,7 @@ export function BackToPosts({ page }: { page: number }) {
 					strokeLinejoin="round"
 				></path>
 			</svg>
-			Back to the blog
+			Quay lại trang bài viết
 		</Link>
 	);
 }
