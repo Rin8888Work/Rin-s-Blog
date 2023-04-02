@@ -35,7 +35,6 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 			<meta name="twitter:description" content={description} />
 			{image && <meta name="twitter:image" content={`${siteMetadata.siteUrl}${image}`} />}
 
-			<meta name="google-site-verification" content={siteMetadata.domainVerifyId} />
 			<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
 			<meta name="author" content={siteMetadata.fullName} />
 		</Head>
@@ -125,7 +124,6 @@ export function BlogSeo(props: BlogSeoProps) {
 				<meta property="profile:last_name" content="Phước" />
 				<meta property="profile:username" content="nguyenvanphuoc" />
 				<meta property="profile:gender" content="male" />
-				<meta name="google-site-verification" content={siteMetadata.domainVerifyId} />
 				<meta name="dmca-site-verification" content={siteMetadata.dmcaVerifyId} />
 
 				{date && <meta property="article:published_time" content={publishedAt} />}
