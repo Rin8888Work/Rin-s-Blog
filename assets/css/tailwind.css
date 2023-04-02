@@ -79,24 +79,6 @@
 	border-left-color: #b7abab !important;
 }
 
-.prose :where(code):not(:where([class~='not-prose'] *))::before {
-	--tw-content: '`';
-	content: var(--tw-content);
-	margin: 0 3px;
-}
-.prose :where(code):not(:where([class~='not-prose'] *))::after {
-	--tw-content: '`';
-	content: var(--tw-content);
-	margin: 0 3px;
-}
-.prose :where(code):not(:where([class~='not-prose'] *)) {
-	background-color: transparent;
-	color: black;
-}
-.dark .dark\:prose-dark :where(code):not(:where([class~='not-prose'] *)) {
-	background-color: transparent;
-	color: white;
-}
 .prose.prose :not(pre) > code:not([class*='language']) {
 	display: inline-block;
 	font-weight: 600;
@@ -107,6 +89,7 @@
 	text-decoration: none;
 	font-weight: bold;
 	position: relative;
+	display: inline-block;
 }
 
 .dark .dark\:prose-dark :where(a):not(:where([class~='not-prose'] *)) {
@@ -219,4 +202,29 @@ html.lightbox-loading * {
 ::-webkit-scrollbar-thumb {
 	background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 	border-radius: 2px;
+}
+
+.text-code-green {
+	--tw-text-opacity: 1;
+	color: rgb(181 244 165 / var(--tw-text-opacity));
+}
+.text-code-purple {
+	--tw-text-opacity: 1;
+	color: rgb(217 169 255 / var(--tw-text-opacity));
+}
+.text-code-red {
+	--tw-text-opacity: 1;
+	color: rgb(255 131 131 / var(--tw-text-opacity));
+}
+.text-code-white {
+	--tw-text-opacity: 1;
+	color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-code-yellow {
+	--tw-text-opacity: 1;
+	color: rgb(255 228 132 / var(--tw-text-opacity));
+}
+.text-code-blue {
+	--tw-text-opacity: 1;
+	color: rgb(147 221 253 / var(--tw-text-opacity));
 }
