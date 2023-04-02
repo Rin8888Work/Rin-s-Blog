@@ -49,6 +49,10 @@ export const TAGS = {
 				en: 'backend',
 				vi: 'backend',
 			},
+			dev: {
+				en: 'dev',
+				vi: 'dev',
+			},
 			react: {
 				en: 'reactjs',
 				vi: 'reactjs',
