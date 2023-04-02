@@ -108,8 +108,7 @@ export const seedingLink = {
 };
 
 export let siteMetadata = {
-	domainVerifyId: '6oP9j3owBNBZc_m8OirYVDJM4UxVEN4fx-jhUVzQcMA',
-	dmcaVerifyId: 'UGREN2l2UnpiemFlUHpzRG5HL2hDZz090',
+	dmcaVerifyId: process.env.DMCA_VERIFY_ID,
 	introduceWebsite:
 		'Phát triển bởi Nguyễn Văn Phước vào năm 2023, là website cá nhân cung cấp các dịch vụ về website và seeding mạng xã hội và chia sẻ kiến thức IT, Marketing giúp mọi người level up kỹ năng của bản thân nhanh nhất. Mình tự tin đáp ứng mọi yêu cầu của bạn, giúp bạn có thể tiếp cận tốt hơn đến khách hàng của mình trên internet',
 	phoneNumber: '036 561 0561',

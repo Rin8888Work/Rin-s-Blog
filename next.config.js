@@ -20,6 +20,7 @@ module.exports = withBundleAnalyzer({
 		FACEBOOK_PAGE_ID: process.env.FACEBOOK_PAGE_ID,
 		UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID,
 		UMAMI_PUBLIC_URL: process.env.UMAMI_PUBLIC_URL,
+		DMCA_VERIFY_ID: process.env.DMCA_VERIFY_ID,
 	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	eslint: {
