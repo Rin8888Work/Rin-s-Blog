@@ -114,7 +114,7 @@ Cuối cùng, để tự động hóa việc cài đặt các hooks của `husky
 }
 ```
 
-### Thêm `commit-msg` hook vào các commit
+### Thêm commit-msg hook vào các commit
 
 Các bạn chạy dòng lệnh sau:
 

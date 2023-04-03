@@ -121,7 +121,8 @@ code,
 kbd,
 pre,
 samp {
-	font-family: iCielVAG, system-ui, sans-serif;
+	/* font-family: iCielVAG, system-ui, sans-serif; */
+	font-family: 'JetBrains Mono', monospace;
 	letter-spacing: initial;
 }
 
@@ -228,4 +229,11 @@ html.lightbox-loading * {
 .text-code-blue {
 	--tw-text-opacity: 1;
 	color: rgb(147 221 253 / var(--tw-text-opacity));
+}
+.prose-lg :where(code):not(:where([class~='code-highlight'] *)) {
+	padding: 0 2px;
+	color: black;
+}
+.code-highlight {
+	color: white;
 }
