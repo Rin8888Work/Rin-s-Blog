@@ -29,7 +29,7 @@ export function BuiltWith() {
 				</Link>
 				<Link
 					className="dmca-badge pl-px"
-					href={`https://dmca.com/Protection/Status.aspx?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8&refurl=${siteMetadata.siteUrl}${router.pathname}&rlo=true`}
+					href={`https://dmca.com/Protection/Status.aspx?ID=fde0a6d4-3c92-4914-bccb-f1c7ded156b8&refurl=${siteMetadata.siteUrl}${router.asPath}&rlo=true`}
 					aria-label={`Trang chủ của dmca`}
 				>
 					<img
