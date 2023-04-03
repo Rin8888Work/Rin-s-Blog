@@ -1,41 +1,41 @@
-# My 🏠 on the ☁️
+# Ngôi nhà của tôi trên internet
 
-My personal over-engineering site on the cloud.
+Đây là trang cá nhân, blog, cũng là ngôi nhà thứ 2 của tôi
 
-## Motivation
+## Động lực để tôi làm nó
 
-> Sharing is learning!
+> Mục đích của blog là giới thiệu bản thân tôi cũng như chia sẻ những kinh nghiệm của tôi trong một số mặt như `dev`, `life`, `mmo` với phương châm **Chia sẻ là học hỏi**
 
-I started this blog as a way to document and share the things I have learned and found useful in my journey as a software engineer.
+Tôi đã phát triển blog này như một cách để ghi lại và chia sẻ những điều tôi đã học được và thấy hữu ích cho những bạn lập trình viên mới hoặc những bạn đam mê kiếm tiền online.
 
-Writing and noting things down is a great way for me to solidify my understanding of new concepts and technologies,
-and I hope that my blog can be a helpful resource for others who are interested in web development, eCommerce, and related technologies.
+Viết và ghi lại mọi thứ là một cách tuyệt vời để tôi củng cố hiểu biết của mình về các khái niệm và công nghệ mới, và mình hy vọng rằng blog của mình có thể là một nguồn tài nguyên hữu ích cho những người khác quan tâm đến phát triển web, kiếm tiền online và các công nghệ liên quan.
 
-I would be highly appreciated if you could leave your comments and thoughts on what I have written 🍻
+Mình sẽ rất cảm kích nếu bạn có thể để lại nhận xét và suy nghĩ của mình về những gì mình đã viết.
 
-## Tech stack
+## Công nghệ
 
-This blog is hosted on [Vercel](https://vercel.com/), built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) using **Tailwind Nextjs Starter Blog**.
+Blog này được lưu trữ trên [Vercel](https://vercel.com/), được xây dựng bằng [Next.js](https://nextjs.org/) và [Tailwind CSS](https://tailwindcss.com/ ) sử dụng **Tailwind Nextjs Starter Blog**.
 
-A huge thanks to [Timothy Lin](https://twitter.com/timlrxx) for the minimal, lightweight, and super easy-to-customize blog starter.
+Một vài thay đổi lớn về kỹ thuật so với repo ban đầu:
 
-A few major over-engineering-changes from the original repo:
+- Thông qua **TypeScript**, commit với [Conventional Commits](https://www.conventionalcommits.org/)
+- Thêm chức năng để có thể thay đổi giao diện sáng tối.
+- Thực hiện nhiều thay đổi đối với giao diện người dùng, thiết kế trang chủ mới
+- Thực hiện protected site với DMCA
+- Giám sát trang web với phân tích trang web [Umami](https://umami.is/)
+- Custom thêm phần TOC trong chi tiết bài viết.
+- Cải thiện SEO
 
-- ⚛️ Upgrading to **React 18**, **NextJS 13**
-- 🎉 Adopting **Typescript**, committing with [Conventional Commits](https://www.conventionalcommits.org/)
-- 📊 Monitoring site with [Umami](https://umami.is/) website analytics
-- 👀 Theming in dark mode with [Github dark dimmed](https://github.blog/changelog/2021-04-14-dark-and-dimmed-themes-are-now-generally-available/) colors for better contrast
-- 👨‍💻 Making a lot of changes to the UI, new homepage design, adding `ProfileCard`, `CareerTimeline` components, adding `/snippets`, `/resume` page, etc.
-- 📥 Bumping up `mdx-bundler`, `rehype`/`remark` plugins and dependencies to the latest version
+## Tài sản
 
-_This blog have a legacy version built with **Gatsby** which can be found [here](https://leo-blog-legacy.vercel.app/)_.
+Blog sử dụng hình ảnh do mình tự thiết kế và một phần hình ảnh được lấy từ các nguồn tài nguyên miễn phí(Mình đều để nguồn dưới hình ảnh)
 
-## Assets
+## Cảm ơn
 
-The images in this blog are from [Unsplash](https://unsplash.com/), gifs from [GIPHY](https://giphy.com/), and illustrations are from [Storyset](https://storyset.com/).
+Cảm ơn các nguồn tài nguyên, lưu trữ miễn phí đã giúp mình có thể triển khai blog này đến người đọc.
 
-Thanks for the free resources 🙏
+Mình cũng cảm ơn [Timothy Lin](https://twitter.com/timlrxx) vì đã tạo ra một source code nhẹ và siêu dễ tùy chỉnh.
 
 ---
 
-Copyright (c) 2023 Tuan Anh Huynh (Leo) - Alrights reserved.
+Bản quyền (c) 2023 Nguyễn Văn Phước (Rin) - Alrights reserved.
