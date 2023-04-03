@@ -34,7 +34,7 @@ export function BlogLinks() {
 					Thông tin thêm về mình?
 				</span>
 			</Link>
-			<Link href="/thanh-toan" className="inline-block hover:underline">
+			<Link href="/thong-tin-thanh-toan" className="inline-block hover:underline">
 				<Twemoji emoji="ticket" />
 				<span className="umami--click--home-link-payment ml-1.5">
 					Làm thế nào để thanh toán cho mình?
