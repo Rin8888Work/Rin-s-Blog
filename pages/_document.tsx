@@ -17,6 +17,7 @@ class MyDocument extends Document {
 					<link rel="alternate" type="application/rss+xml" href="/rss/feed.xml" />
 
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preload" href="/fonts/iCielVAG.ttf" as="font" type="font/ttf" />
 					<link
 						rel="preconnect"
 						href="https://fonts.gstatic.com"

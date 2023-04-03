@@ -4,9 +4,10 @@
 
 @font-face {
 	font-family: 'iCielVAG';
-	src: url('../fonts/iCielVAG.ttf');
+	src: url('/fonts/iCielVAG.ttf');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @layer base {
