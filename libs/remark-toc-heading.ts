@@ -6,14 +6,32 @@ import type { RemarkTocHeadingOptions, UnistNodeType, UnistTreeType } from '~/ty
 export function remarkTocHeading(options: RemarkTocHeadingOptions) {
 	let parents: any[] = [];
 
-	return (tree: UnistTreeType) =>
+	return (tree: UnistTreeType) => {
+		let numbering = 0;
+		let lastParentNumbering = 0;
 		visit(tree, 'heading', (node: UnistNodeType) => {
+			const { depth } = node;
+
+			if (depth === 2) {
+				numbering++;
+				lastParentNumbering = 0;
+			}
+
+			if (depth === 3) {
+				lastParentNumbering = numbering;
+			}
+
 			const textContent = toString(node);
 			const heading = {
-				value: textContent,
+				value: `${
+					lastParentNumbering > 0 ? `${lastParentNumbering}.` : ''
+				}${numbering}. ${textContent}`,
 				url: slug(textContent),
 				depth: node.depth,
 				children: [],
+				numbering: `${
+					lastParentNumbering > 0 ? `${lastParentNumbering}.` : ''
+				}${numbering}.`,
 			};
 
 			// Determine the current depth level
@@ -34,4 +52,5 @@ export function remarkTocHeading(options: RemarkTocHeadingOptions) {
 			// Add the new heading to the parent nodes array
 			parents.push(heading);
 		});
+	};
 }

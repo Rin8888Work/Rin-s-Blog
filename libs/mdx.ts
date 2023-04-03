@@ -83,9 +83,27 @@ export async function getFileBySlug(type: string, slug: string): Promise<MdxFile
 					rehypeAutolinkHeadings,
 					{
 						behavior: 'prepend',
-						content: ({ tagName }) => {
+						content: ({ tagName, properties }) => {
 							const iconClassName = getIconTocLevel(tagName);
-							return [
+							let tocEntry = undefined;
+
+							toc.map((entry) => {
+								if (entry.url === properties.id) {
+									tocEntry = entry;
+									return;
+								}
+
+								if (entry.children.length > 0) {
+									entry.children.map((childEntry) => {
+										if (childEntry.url === properties.id) {
+											tocEntry = childEntry;
+											return;
+										}
+									});
+								}
+							});
+
+							const result = [
 								{
 									type: 'element',
 									tagName: 'i',
@@ -95,6 +113,21 @@ export async function getFileBySlug(type: string, slug: string): Promise<MdxFile
 									children: [],
 								},
 							];
+							if (tocEntry)
+								result.push({
+									type: 'element',
+									tagName: 'span',
+									properties: {
+										className: 'heading-number mr-2',
+									},
+									children: [
+										{
+											type: 'text',
+											value: `${tocEntry.numbering} `,
+										},
+									],
+								});
+							return result;
 						},
 					},
 				],
