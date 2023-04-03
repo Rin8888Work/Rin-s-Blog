@@ -123,7 +123,7 @@ export let siteMetadata = {
 	siteUrl: 'https://nguyenvanphuoc.com',
 	siteRepo: '',
 	siteLogo: '/static/images/logo.png',
-	socialBanner: '/static/images/logo.png',
+	socialBanner: '/static/images/social-banner.png',
 	email: 'work.rin8888@pm.me',
 	tiktok: '',
 	github: 'https://github.com/rin8888work',
