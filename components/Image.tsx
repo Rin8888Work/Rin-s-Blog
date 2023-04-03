@@ -29,6 +29,7 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 			<figure className={className}>
 				<NextImage
 					{...rest}
+					loading="lazy"
 					blurDataURL={blurDataURL}
 					onClick={handleOpenLightbox}
 					style={{

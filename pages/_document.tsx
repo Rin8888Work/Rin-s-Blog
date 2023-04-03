@@ -23,6 +23,10 @@ class MyDocument extends Document {
 						href="https://fonts.gstatic.com"
 						crossOrigin="anonymous"
 					/>
+					<link
+						href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+						rel="stylesheet"
+					/>
 				</Head>
 				<body className="bg-white text-black antialiased dark:bg-slate-900 dark:text-white">
 					<Main />

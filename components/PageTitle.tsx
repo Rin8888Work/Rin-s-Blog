@@ -8,6 +8,7 @@ export function PageTitle({ children, title, leading = '' }: PageTitleProps) {
 		<div className="relative mb-4 sm:mb-10">
 			<div className="absolute top-0 -z-20 h-full w-full after:absolute after:block after:h-full after:w-full after:bg-neutral-800/50">
 				<Image
+					priority
 					src={'/static/images/bg-head.jpg'}
 					alt={`Background header of ${siteMetadata.title}`}
 					fill
