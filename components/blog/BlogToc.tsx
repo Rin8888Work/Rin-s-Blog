@@ -27,8 +27,9 @@ const mapChildrenTOC = (toc, activeHeading) => {
 					} flex cursor-pointer items-center gap-1`}
 					onClick={(event) => handleClick(event, t.url)}
 				>
-					<Twemoji emoji={getIconTocLevel(t.depth - 1)} />
-
+					<span className="w-6">
+						<Twemoji emoji={getIconTocLevel(t.depth - 1)} />
+					</span>
 					<span>{t.value}</span>
 				</Link>
 			</div>

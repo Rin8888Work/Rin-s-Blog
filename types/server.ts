@@ -60,6 +60,7 @@ export interface TOC {
 	url: string;
 	depth: number;
 	children: Array<TOC>;
+	numbering: string;
 }
 
 export interface RemarkTocHeadingOptions {
