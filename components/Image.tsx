@@ -24,6 +24,12 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 		rest.alt.includes('thumbnail-image') && 'thumbnail-image umami--click--view-post-thumbnail'
 	);
 
+	let imgClassName = clsx(
+		`flex justify-center flex-col items-center`,
+		rest.alt.includes('w-full') && 'w-full sm:w-4/5',
+		rest.alt.includes('w-mobile') && 'w-96'
+	);
+
 	return (
 		<>
 			<figure className={className}>
@@ -32,6 +38,7 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 					loading="lazy"
 					blurDataURL={blurDataURL}
 					onClick={handleOpenLightbox}
+					className={imgClassName}
 					style={{
 						maxWidth: '100%',
 						height: 'auto',
@@ -39,7 +46,12 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 				/>
 				{rest.alt.replaceAll('thumbnail-image', '') && (
 					<figcaption className="text-center italic">
-						<span>{rest.alt.replaceAll('thumbnail-image', '')}</span>
+						<span>
+							{rest.alt
+								.replaceAll('thumbnail-image', '')
+								.replaceAll('w-full', '')
+								.replaceAll('w-mobile', '')}
+						</span>
 					</figcaption>
 				)}
 			</figure>

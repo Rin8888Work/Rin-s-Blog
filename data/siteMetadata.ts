@@ -3,6 +3,14 @@
  * Each data here get value from i18n for multiple language
  */
 
+export let refLink = {
+	binance: {
+		key: 'binance',
+		label: 'Trang chủ Binance',
+		link: 'https://accounts.binance.com/register?ref=BXZ8BKJ6',
+	},
+};
+
 export let affiliatesLink = {
 	vultr: {
 		key: 'vultr-get-100',
