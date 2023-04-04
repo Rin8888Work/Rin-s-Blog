@@ -57,7 +57,7 @@ export function ProfileCard({ direction }: { direction?: 'column' | 'row' }) {
 			>
 				<div className={` ${direction === 'column' ? '' : 'xl:w-2/4'}`}>
 					<Image
-						src={'/static/images/logo.jpg'}
+						src={'/static/images/nguyen-van-phuoc.jpg'}
 						alt="avatar"
 						width={320}
 						height={180}

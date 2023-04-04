@@ -1,7 +1,7 @@
 ---
 layout: AuthorLayout
 name: Nguyễn Văn Phước(Rin)
-avatar: /static/images/logo.jpg
+avatar: /static/images/nguyen-van-phuoc.jpg
 ---
 
 import Twemoji from './Twemoji.tsx';

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { siteMetadata } from '~/data/siteMetadata';
 import type { AuthorSEO, BlogSeoProps, PageSeoProps } from '~/types';
 
