@@ -1,6 +1,6 @@
-import { affiliatesLink, seedingLink } from '~/data/siteMetadata';
+import { affiliatesLink, seedingLink, refLink } from '~/data/siteMetadata';
 
-const allLink = { ...affiliatesLink, ...seedingLink };
+const allLink = { ...affiliatesLink, ...seedingLink, ...refLink };
 
 export function getKeysGoExternal() {
 	return Object.keys(allLink)?.map((key) => allLink[key].key);

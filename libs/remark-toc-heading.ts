@@ -8,30 +8,30 @@ export function remarkTocHeading(options: RemarkTocHeadingOptions) {
 
 	return (tree: UnistTreeType) => {
 		let numbering = 0;
-		let lastParentNumbering = 0;
+		let childNumbering = 0;
 		visit(tree, 'heading', (node: UnistNodeType) => {
 			const { depth } = node;
 
 			if (depth === 2) {
 				numbering++;
-				lastParentNumbering = 0;
+				childNumbering = 0;
 			}
 
 			if (depth === 3) {
-				lastParentNumbering = numbering;
+				childNumbering++;
 			}
 
 			const textContent = toString(node);
 			const heading = {
-				value: `${
-					lastParentNumbering > 0 ? `${lastParentNumbering}.` : ''
-				}${numbering}. ${textContent}`,
+				value: `${numbering > 0 ? `${numbering}.` : ''}${
+					childNumbering > 0 ? `${childNumbering}.` : ''
+				} ${textContent}`,
 				url: slug(textContent),
 				depth: node.depth,
 				children: [],
-				numbering: `${
-					lastParentNumbering > 0 ? `${lastParentNumbering}.` : ''
-				}${numbering}.`,
+				numbering: `${numbering > 0 ? `${numbering}.` : ''}${
+					childNumbering > 0 ? `${childNumbering}.` : ''
+				}`,
 			};
 
 			// Determine the current depth level
