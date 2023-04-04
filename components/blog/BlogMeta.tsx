@@ -13,7 +13,9 @@ export function BlogMeta({ date, slug, readingTime }: BlogMetaProps) {
 			<span className="mx-2">{` • `}</span>
 			<div className="flex items-center">
 				<Twemoji emoji="hourglass-not-done" size="" />
-				<span className="ml-1.5 md:ml-2">{readingTime.text.replace('min', 'mins')}</span>
+				<span className="ml-1.5 md:ml-2">
+					{readingTime.text.replace('min read', 'phút đọc')}
+				</span>
 			</div>
 			<span className="mx-2">{` • `}</span>
 			<div className="flex items-center">

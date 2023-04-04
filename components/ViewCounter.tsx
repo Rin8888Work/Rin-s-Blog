@@ -17,6 +17,8 @@ export function ViewCounter({ slug, className }: ViewCounterProps) {
 	}, [slug]);
 
 	return (
-		<span className={className}>{`${views > 0 ? views.toLocaleString() : '–––'} views`}</span>
+		<span className={className}>{`${
+			views > 0 ? views.toLocaleString() : '–––'
+		} lượt xem`}</span>
 	);
 }
