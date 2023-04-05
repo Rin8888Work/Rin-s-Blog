@@ -1,11 +1,12 @@
 ---
 title: 'Hướng dẫn đăng ký tài khoản Binance - 2023'
 date: '2023-04-04'
-tags: ['crypto', 'share']
+tags: ['crypto', 'chia-se']
 draft: false
 summary: 'Hướng dẫn đăng ký tài khoản Binance, xác minh danh tính nhanh chóng và nhận ưu đãi 20% phí giao dịch trọn đời(04-04-2023)'
 images: ['/static/images/blog-banner/huong-dan-dang-ky-tai-khoan-binance-2023.jpg']
 authors: ['default']
+lastmod: '2023-04-05'
 ---
 
 ![thumbnail-image Hướng dẫn đăng ký tài khoản binance mới nhất 2023](/static/images/blog-banner/huong-dan-dang-ky-tai-khoan-binance-2023.jpg)

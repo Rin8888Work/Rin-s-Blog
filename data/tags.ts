@@ -53,14 +53,6 @@ export const TAGS = {
 				en: 'dev',
 				vi: 'dev',
 			},
-			react: {
-				en: 'reactjs',
-				vi: 'reactjs',
-			},
-			next: {
-				en: 'nextjs',
-				vi: 'nextjs',
-			},
 		},
 	},
 	aboutMe: {
