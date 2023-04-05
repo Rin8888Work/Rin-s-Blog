@@ -1,12 +1,12 @@
 ---
 title: 'Tối ưu hóa hình ảnh theo kích thước màn hình với thuộc tính srcset và sizes'
 date: '2023-04-03'
-tags: ['dev', 'frontend', 'share']
+tags: ['dev', 'frontend', 'chia-se']
 draft: false
 summary: 'Trong bài viết này mình sẽ hướng dẫn các bạn sử dụng thuộc tính srcset và sizes để responsive thẻ img một cách hiệu quả nhất'
 images: ['/static/images/blog-banner/toi-uu-hoa-hinh-anh-theo-kich-thuoc-man-hinh-voi-thuoc-tinh-srcset-va-sizes.jpg']
 authors: ['default']
-lastmod: '2023-04-03'
+lastmod: '2023-04-05'
 ---
 
 import Twemoji from './Twemoji.tsx'
