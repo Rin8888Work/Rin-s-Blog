@@ -11,6 +11,12 @@ export function PageSeo({ title, description, image }: PageSeoProps) {
 		<Head>
 			<title>{title}</title>
 			<meta name="robots" content="follow, index" />
+			<meta name="ROBOTS" content="index,follow" />
+			<meta name="googlebot" content="index,follow" />
+			<meta name="BingBOT" content="index,follow" />
+			<meta name="yahooBOT" content="index,follow" />
+			<meta name="slurp" content="index,follow" />
+			<meta name="msnbot" content="index,follow" />
 			<meta name="description" content={description} />
 			<link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
 			<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
@@ -105,6 +111,12 @@ export function BlogSeo(props: BlogSeoProps) {
 			<Head>
 				<title>{`${title} | ${siteMetadata.fullName}`}</title>
 				<meta name="robots" content="follow, index" />
+				<meta name="ROBOTS" content="index,follow" />
+				<meta name="googlebot" content="index,follow" />
+				<meta name="BingBOT" content="index,follow" />
+				<meta name="yahooBOT" content="index,follow" />
+				<meta name="slurp" content="index,follow" />
+				<meta name="msnbot" content="index,follow" />
 				<meta name="description" content={summary} />
 				<meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
 				<meta property="og:type" content="article" />

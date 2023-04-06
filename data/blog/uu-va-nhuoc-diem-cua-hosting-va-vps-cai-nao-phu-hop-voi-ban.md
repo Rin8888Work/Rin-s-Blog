@@ -6,6 +6,7 @@ draft: false
 summary: "Trong bài viết này, chúng ta sẽ thảo luận về sự khác biệt giữa hai loại lưu trữ này, ưu và nhược điểm của chúng và giúp bạn đưa ra quyết định sáng suốt. Hãy đọc tiếp để tìm ra giải pháp lưu trữ nào phù hợp nhất cho nhu cầu trang web của bạn."
 images: ['/static/images/blog-banner/hosting.jpg']
 authors: ['default']
+lastmod: '2023-04-06'
 ---
 
 import Twemoji from './Twemoji.tsx';

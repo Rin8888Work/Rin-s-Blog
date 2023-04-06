@@ -7,6 +7,7 @@ summary: 'Trong hướng dẫn cơ bản này, chúng ta sẽ đi sâu vào th�
 images:
     ['/static/images/blog-banner/huong-dan-co-ban-de-hieu-ve-thiet-ke-web-va-muc-dich-cua-no.jpg']
 authors: ['default']
+lastmod: '2023-04-06'
 ---
 
 ![thumbnail-image Hướng dẫn cơ bản để hiểu về thiết kế web và mục đích của nó](/static/images/blog-banner/huong-dan-co-ban-de-hieu-ve-thiet-ke-web-va-muc-dich-cua-no.jpg)

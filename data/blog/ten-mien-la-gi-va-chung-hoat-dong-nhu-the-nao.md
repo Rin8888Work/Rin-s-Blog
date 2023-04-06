@@ -6,6 +6,7 @@ draft: false
 summary: "Tên miền là những gì mọi người có thể truy cập trong trình duyệt của mình để tìm một trang web nào đó. Nhưng tên miền còn nhiều hơn thế. Vì vậy, hãy bắt đầu!"
 images: ['/static/images/domain.png']
 authors: ['default']
+lastmod: '2023-04-06'
 ---
 
 import Twemoji from './Twemoji.tsx';

@@ -6,6 +6,7 @@ draft: false
 summary: 'Bạn vẫn đang cân nhắc có nên xây dựng trang web của riêng mình hay không? Dưới đây là mười lý do thuyết phục sẽ thay đổi suy nghĩ của bạn và truyền cảm hứng để bạn bắt đầu xây dựng trang web của riêng mình ngay hôm nay.'
 images: ['/static/images/blog-banner/10-ly-do-thuyet-phuc-ban-nen-xay-dung-trang-web-rieng.jpg']
 authors: ['default']
+lastmod: '2023-04-06'
 ---
 
 ![thumbnail-image 10 lý do thuyết phục bạn nên xây dựng trang web riêng](/static/images/blog-banner/10-ly-do-thuyet-phuc-ban-nen-xay-dung-trang-web-rieng.jpg)
