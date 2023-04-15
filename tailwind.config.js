@@ -40,6 +40,16 @@ module.exports = {
 					'35.7%': { height: '0%' },
 					'85.7%': { height: '70%' },
 				},
+				bounce: {
+					'0%, 100%': {
+						transform: 'translateY(-25%)',
+						'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)',
+					},
+					'50%': {
+						transform: 'translateY(0)',
+						'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
+					},
+				},
 			},
 			animation: {
 				wiggle: 'wiggle 7s linear infinite',
@@ -47,6 +57,11 @@ module.exports = {
 				'music-bar-2': 'music-bar-2 .8s linear infinite',
 				'music-bar-3': 'music-bar-3 .8s linear infinite',
 				'music-bar-4': 'music-bar-4 .8s linear infinite',
+				'bounce-custom-4': 'bounce 1.5s infinite',
+				'bounce-custom-2': 'bounce 2s infinite',
+				'bounce-custom-5': 'bounce 2.6s infinite',
+				'bounce-custom-1': 'bounce 3.5s infinite',
+				'bounce-custom-3': 'bounce 2.5s infinite',
 			},
 			spacing: {
 				'9/16': '56.25%',
