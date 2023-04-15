@@ -1,7 +1,7 @@
 import '~/assets/css/custom.css';
 import '~/assets/css/tailwind.css';
 import '~/assets/css/twemoji.css';
-
+import 'react-multi-carousel/lib/styles.css';
 import { ThemeProvider } from 'next-themes';
 import Head from 'next/head';
 import { Analytics } from '~/components/analytics';
