@@ -126,7 +126,7 @@ export let siteMetadata = {
 	nickName: 'Rin',
 	footerTitle: 'Nguyễn Văn Phước - Uy Tín - Chuyên Nghiệp - Trách nhiệm',
 	description:
-		'Nguyễn Văn Phước là một kỹ sư frontend tại thành phố Hồ Chí Minh. Anh là developer ‍💻, blogger ️ và là người đam mê kinh doanh, kiếm tiền online',
+		'Nguyễn Văn Phước là ai? - Một lập trình viên thiết kế website tại thành phố Hồ Chí Minh. Anh là developer ‍💻, blogger ️ và là người đam mê kinh doanh, kiếm tiền online',
 	language: 'vi-VN',
 	siteUrl: 'https://nguyenvanphuoc.com',
 	siteRepo: '',

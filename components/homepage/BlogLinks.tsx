@@ -13,7 +13,7 @@ export function BlogLinks() {
 			<Link href="/thiet-ke-web" className="inline-block hover:underline">
 				<Twemoji emoji="hammer-and-wrench" />
 				<span className="umami--click--home-link-website-services ml-1.5">
-					Tôi cung cấp những dịch vụ trang web nào?
+					Tôi cung cấp những dịch vụ thiết kế website nào?
 				</span>
 			</Link>
 			<Link href="/bai-viet" className="inline-block hover:underline">

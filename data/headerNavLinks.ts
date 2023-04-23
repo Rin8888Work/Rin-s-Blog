@@ -11,6 +11,10 @@ export let headerNavLinks = [
 		href: '/thiet-ke-web',
 		title: 'Thiết kế web',
 	},
+	{
+		href: '/mau-thiet-ke-web',
+		title: 'Mẫu website',
+	},
 	{ href: '/bai-viet', title: 'Bài viết' },
 	// {
 	// 	href: '/pricing',

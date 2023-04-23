@@ -1,10 +1,7 @@
 import Link from 'next/link';
-import { getWebsiteServicesData } from '~/data/servicesData';
 import { seedingLink } from '~/data/siteMetadata';
 
-export default function WebsitePricing() {
-	const { websitePriceList } = getWebsiteServicesData();
-
+export default function WebsitePricing({ websitePriceList }) {
 	return (
 		<div className="grid lg:grid-cols-3 ">
 			{websitePriceList?.map((item, index) => (
