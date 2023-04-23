@@ -12,22 +12,31 @@ import { ProfileCard } from '~/components/ProfileCard';
 import TitleSection from '~/components/TitleSection';
 import WebsitePricing from '~/components/WebsitePricing';
 import { particlesData } from '~/data/particlesData';
-import { homeServices } from '~/data/servicesData';
+import { getWebsiteServicesData, homeServices } from '~/data/servicesData';
 import { seedingLink, siteMetadata } from '~/data/siteMetadata';
 import ScreenWidth from '~/layouts/ScreenWidth';
 import { getAllFilesFrontMatter } from '~/libs/mdx';
 import type { BlogFrontMatter } from '~/types';
 
 export const getStaticProps: GetStaticProps = async () => {
+	const { websitePriceList } = getWebsiteServicesData();
+
 	let posts = getAllFilesFrontMatter(`blog`);
 	return {
 		props: {
 			posts,
+			websitePriceList,
 		},
 	};
 };
 
-export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
+export default function Home({
+	posts,
+	websitePriceList,
+}: {
+	posts: BlogFrontMatter[];
+	websitePriceList: any;
+}) {
 	return (
 		<>
 			<PageSeo title={siteMetadata.title} description={siteMetadata.description} />
@@ -70,7 +79,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
 				</section>
 				<section className="my-5 border-t border-gray-200 text-gray-800 dark:border-gray-700 sm:my-10">
 					<TitleSection>Bảng báo giá thiết kế website</TitleSection>
-					<WebsitePricing />
+					<WebsitePricing websitePriceList={websitePriceList} />
 				</section>
 				<FeaturedPosts posts={posts} />
 			</ScreenWidth>
