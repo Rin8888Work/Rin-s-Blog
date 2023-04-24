@@ -2,7 +2,7 @@ import { affiliatesLink, seedingLink, refLink } from '~/data/siteMetadata';
 import fs from 'fs';
 import path from 'path';
 
-function getProjectExternalLink() {
+export function getProjectExternalLink() {
 	const root = process.cwd();
 	const projectsJson = fs.readFileSync(path.join(root, 'data', 'hrefDemoData.json'), 'utf8');
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
