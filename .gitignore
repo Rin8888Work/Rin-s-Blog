@@ -42,3 +42,5 @@ yarn-error.log*
 .env
 
 tsconfig.tsbuildinfo
+
+mapmeta.js
