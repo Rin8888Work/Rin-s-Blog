@@ -41,3 +41,57 @@ export const getIconTocLevel = (level: number | string) => {
 			return '1st-place-medal';
 	}
 };
+
+export const getNameCategory = (key) => {
+	switch (key) {
+		case 'thoi-trang':
+			return {
+				base: 'Mẫu --thiết kế website thời trang--',
+				hl: 'thiết kế website thời trang',
+			};
+
+		case 'ban-hang':
+			return {
+				base: 'Mẫu --thiết kế website bán hàng--',
+				hl: 'thiết kế website bán hàng',
+			};
+		case 'bat-dong-san':
+			return {
+				base: 'Mẫu --thiết kế website bất động sản--',
+				hl: 'thiết kế website bất động sản',
+			};
+		case 'my-pham':
+			return {
+				base: 'Mẫu --thiết kế website mỹ phẩm--',
+				hl: 'thiết kế website mỹ phẩm',
+			};
+		case 'noi-that':
+			return {
+				base: 'Mẫu --thiết kế website nội thất--',
+				hl: 'thiết kế website nội thất',
+			};
+		case 'doanh-nghiep':
+			return {
+				base: 'Mẫu --thiết kế website doanh nghiệp--',
+				hl: 'thiết kế website doanh nghiệp',
+			};
+
+		case 'du-lich-khach-san':
+			return {
+				base: 'Mẫu --thiết kế website du lịch & khách sạn--',
+				hl: 'thiết kế website du lịch & khách sạn',
+			};
+
+		case 'giao-duc':
+			return {
+				base: 'Mẫu --thiết kế website giáo dục--',
+				hl: 'thiết kế website giáo dục',
+			};
+
+		default:
+			return {
+				base: 'Mẫu --thiết kế website khác--',
+				hl: 'thiết kế website khác',
+			};
+	}
+};

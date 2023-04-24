@@ -17,7 +17,7 @@ export function SocialButtons({ postUrl, title }: SocialButtonsProps) {
 					rel="nofollow"
 					className="hover:underline"
 				>
-					{'Discuss on Twitter'}
+					{'Tìm kiếm trên Twitter'}
 				</Link>
 			</div>
 			<div className="flex items-center">

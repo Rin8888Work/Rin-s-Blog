@@ -1,6 +1,19 @@
 import { affiliatesLink, seedingLink, refLink } from '~/data/siteMetadata';
+import fs from 'fs';
+import path from 'path';
 
-const allLink = { ...affiliatesLink, ...seedingLink, ...refLink };
+export function getProjectExternalLink() {
+	const root = process.cwd();
+	const projectsJson = fs.readFileSync(path.join(root, 'data', 'hrefDemoData.json'), 'utf8');
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const projectLinks = Object.entries(JSON.parse(projectsJson)).flatMap(([_, items]) =>
+		(items as Array<any>).map((item) => ({ key: item.slug, link: item.href }))
+	);
+
+	return projectLinks;
+}
+
+const allLink = { ...affiliatesLink, ...seedingLink, ...refLink, ...getProjectExternalLink() };
 
 export function getKeysGoExternal() {
 	return Object.keys(allLink)?.map((key) => allLink[key].key);

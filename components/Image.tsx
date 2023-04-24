@@ -5,7 +5,7 @@ import type { ImageProps } from 'types';
 import { ImageLightbox } from './ImageLightbox';
 import clsx from 'clsx';
 
-export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
+export function Image({ showDesc = true, shouldOpenLightbox = true, ...rest }: ImageProps) {
 	let blurDataURL = '';
 	if (rest.src !== LOGO_IMAGE_PATH) {
 		blurDataURL = BLUR_IMAGE_DATA_URL;
@@ -42,9 +42,10 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
 					style={{
 						maxWidth: '100%',
 						height: 'auto',
+						...rest.style,
 					}}
 				/>
-				{rest.alt.replaceAll('thumbnail-image', '') && (
+				{rest.alt.replaceAll('thumbnail-image', '') && showDesc && (
 					<figcaption className="text-center italic">
 						<span>
 							{rest.alt

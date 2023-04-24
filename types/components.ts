@@ -23,6 +23,7 @@ export interface SocialIconProps {
 export interface ImageProps extends NextImageProps {
 	shouldOpenLightbox?: boolean;
 	alt: string;
+	showDesc?: boolean;
 }
 
 export type ProjectDataType = (typeof projectsData)[0];
