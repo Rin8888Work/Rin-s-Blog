@@ -17,11 +17,18 @@ export async function getStaticPaths() {
 		(items as Array<any>).map((item) => ({ ...item, key }))
 	);
 
-	const paths = projects?.map((pj) => ({
-		params: {
-			demoSlug: pj['slug'],
+	const paths = projects?.flatMap((pj) => [
+		{
+			params: {
+				demoSlug: pj['slug'],
+			},
 		},
-	}));
+		{
+			params: {
+				demoSlug: pj['slug'].split('-')[pj['slug'].split('-').length - 1],
+			},
+		},
+	]);
 
 	return {
 		paths,
@@ -36,14 +43,43 @@ export async function getStaticProps({ params: { demoSlug } }) {
 	const projects = Object.entries(data).flatMap(([key, items]) =>
 		(items as Array<any>).map((item) => ({ ...item, key }))
 	);
-	const currentItem = projects?.find((item) => demoSlug === item['slug']) ?? {};
+
+	// Check if the demoSlug value is a product ID
+	const isId = /^[a-f0-9]{10}$/.test(demoSlug);
+
+	let currentItem;
+
+	if (isId) {
+		currentItem =
+			projects.find(
+				(item) => item['slug'].split('-')[item['slug'].split('-').length - 1] === demoSlug
+			) ?? {};
+		// Redirect to the demoSlug route
+		if (currentItem && currentItem.slug) {
+			return {
+				redirect: {
+					destination: `/${currentItem.slug}`,
+					permanent: true,
+				},
+			};
+		}
+	} else {
+		// Fetch the product data based on the demoSlug value
+		currentItem = projects.find((item) => item['slug'] === demoSlug) ?? {};
+	}
 
 	const { key } = currentItem;
 
-	const relatedItems = data[key]
-		.filter((item) => item.slug !== demoSlug)
-		.sort(() => Math.random() - 0.5)
-		.slice(0, 4);
+	const relatedItems = key
+		? data[key]
+				.filter(
+					(item) =>
+						item.slug !== demoSlug ||
+						item['slug'].split('-')[item['slug'].split('-').length - 1] !== demoSlug
+				)
+				.sort(() => Math.random() - 0.5)
+				.slice(0, 4)
+		: [];
 
 	return {
 		props: {
@@ -56,6 +92,8 @@ export async function getStaticProps({ params: { demoSlug } }) {
 
 const DemoDetail = ({ currentItem, relatedItems, relatedParent }) => {
 	const { alt, meta, name, slug, src } = currentItem;
+
+	if (!slug) return 'no item found';
 
 	return (
 		<DemoSiteLayout title={alt} desc={meta}>
