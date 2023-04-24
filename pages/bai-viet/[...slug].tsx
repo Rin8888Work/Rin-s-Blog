@@ -87,7 +87,7 @@ export default function Blog(props: BlogProps) {
 					mdxSource={mdxSource}
 					frontMatter={frontMatter}
 					toc={toc}
-					type="blog"
+					type="bai-viet"
 					{...rest}
 				/>
 			) : (
