@@ -23,11 +23,6 @@ export async function getStaticPaths() {
 				demoSlug: pj['slug'],
 			},
 		},
-		{
-			params: {
-				demoSlug: pj['slug'].split('-')[pj['slug'].split('-').length - 1],
-			},
-		},
 	]);
 
 	return {
@@ -44,39 +39,14 @@ export async function getStaticProps({ params: { demoSlug } }) {
 		(items as Array<any>).map((item) => ({ ...item, key }))
 	);
 
-	// Check if the demoSlug value is a product ID
-	const isId = /^[a-f0-9]{10}$/.test(demoSlug);
-
-	let currentItem;
-
-	if (isId) {
-		currentItem =
-			projects.find(
-				(item) => item['slug'].split('-')[item['slug'].split('-').length - 1] === demoSlug
-			) ?? {};
-		// Redirect to the demoSlug route
-		if (currentItem && currentItem.slug) {
-			return {
-				redirect: {
-					destination: `/${currentItem.slug}`,
-					permanent: true,
-				},
-			};
-		}
-	} else {
-		// Fetch the product data based on the demoSlug value
-		currentItem = projects.find((item) => item['slug'] === demoSlug) ?? {};
-	}
+	// Fetch the product data based on the demoSlug value
+	const currentItem = projects.find((item) => item['slug'] === demoSlug) ?? {};
 
 	const { key } = currentItem;
 
 	const relatedItems = key
 		? data[key]
-				.filter(
-					(item) =>
-						item.slug !== demoSlug ||
-						item['slug'].split('-')[item['slug'].split('-').length - 1] !== demoSlug
-				)
+				.filter((item) => item.slug !== demoSlug)
 				.sort(() => Math.random() - 0.5)
 				.slice(0, 4)
 		: [];
