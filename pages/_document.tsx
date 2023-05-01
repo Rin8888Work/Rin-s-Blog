@@ -27,6 +27,10 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
 						rel="stylesheet"
 					/>
+					<meta
+						name="google-site-verification"
+						content="Oe_jBmLFr3-ptKg0iBAH3OO7PrhevAUb_Q-mC9h923E"
+					/>
 				</Head>
 				<body className="bg-white text-black antialiased dark:bg-slate-900 dark:text-white">
 					<Main />
