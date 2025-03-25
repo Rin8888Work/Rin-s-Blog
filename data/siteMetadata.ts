@@ -128,7 +128,7 @@ export let siteMetadata = {
 	description:
 		'Nguyễn Văn Phước là ai? - Một lập trình viên thiết kế website tại thành phố Hồ Chí Minh. Anh là developer ‍💻, blogger ️ và là người đam mê kinh doanh, kiếm tiền online',
 	language: 'vi-VN',
-	siteUrl: 'https://nguyenvanphuoc.com',
+	siteUrl: 'https://nguyenvanphuoc.id.vn',
 	siteRepo: '',
 	siteLogo: '/static/images/logo.png',
 	socialBanner: '/static/images/social-banner.png',
